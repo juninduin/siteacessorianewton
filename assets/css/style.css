@@ -3156,12 +3156,7 @@ hr {
     position: relative;
   }
   .cs_site_header.cs_style_1 .cs_main_header_center .cs_nav + .cs_main_header_right::before {
-    content: "";
-    width: 1px;
-    height: 30px;
-    background-color: var(--body-color);
-    position: absolute;
-    left: 0;
+    content: none;
   }
   .cs_site_header.cs_style_1 .cs_main_header_left {
     height: 100%;
