@@ -91,28 +91,16 @@
   --------------------------------------------------------------*/
   function stickyHeader() {
     var $window = $(window);
-    var lastScrollTop = 0;
     var $header = $('.cs_sticky_header');
     var headerHeight = $header.outerHeight() + 20;
 
     $window.scroll(function () {
       var windowTop = $window.scrollTop();
-
       if (windowTop >= headerHeight) {
-        $header.addClass('cs_gescout_sticky');
+        $header.addClass('cs_fixed_active');
       } else {
-        $header.removeClass('cs_gescout_sticky');
-        $header.removeClass('cs_gescout_show');
+        $header.removeClass('cs_fixed_active');
       }
-
-      if ($header.hasClass('cs_gescout_sticky')) {
-        if (windowTop < lastScrollTop) {
-          $header.addClass('cs_gescout_show');
-        } else {
-          $header.removeClass('cs_gescout_show');
-        }
-      }
-      lastScrollTop = windowTop;
     });
   }
 
