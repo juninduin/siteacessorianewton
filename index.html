@@ -323,15 +323,44 @@
         background-color: #0d1a24;
         background-image: repeating-linear-gradient(
           -45deg, transparent, transparent 32px,
-          rgba(255,255,255,0.03) 32px, rgba(255,255,255,0.03) 33px
+          rgba(255,255,255,0.025) 32px, rgba(255,255,255,0.025) 33px
         );
         position: relative;
+      }
+      .cs_vt_stage {
+        position: relative;
+        overflow: hidden;
+        padding: 10px 0 0;
+      }
+      .cs_vt_track {
+        display: flex;
+        align-items: center;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: transform;
+      }
+      .cs_vt_item {
+        flex: 0 0 54%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        transform: scale(0.82);
+        filter: blur(4px);
+        opacity: 0.3;
+        transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+      }
+      .cs_vt_item.cs_vt_active {
+        transform: scale(1);
+        filter: none;
+        opacity: 1;
       }
       .cs_vt_card {
         border-radius: 14px;
         overflow: hidden;
         border: 2px solid rgba(255,255,255,0.07);
         transition: border-color 0.4s, box-shadow 0.4s;
+      }
+      .cs_vt_item.cs_vt_active .cs_vt_card {
+        border-color: rgba(201,169,110,0.65);
+        box-shadow: 0 0 40px rgba(201,169,110,0.18);
       }
       .cs_vt_thumb_wrap {
         position: relative;
@@ -371,7 +400,7 @@
       .cs_vt_overlay_text {
         position: absolute;
         bottom: 0; left: 0; right: 0;
-        padding: 80px 20px 20px;
+        padding: 80px 22px 22px;
         background: linear-gradient(to top, rgba(5,17,26,0.97) 50%, transparent);
       }
       .cs_vt_name {
@@ -389,44 +418,44 @@
         margin: 0;
         line-height: 1.5;
       }
-      /* Slides inativos: embaçados e reduzidos */
-      .cs_video_testimonials .cs_slider_wrapper .slick-slide {
-        opacity: 0.4;
-        transform: scale(0.84);
-        filter: blur(3px);
-        transition: all 0.5s ease;
-      }
-      .cs_video_testimonials .cs_slider_wrapper .slick-center {
-        opacity: 1;
-        transform: scale(1);
-        filter: none;
-      }
-      .cs_video_testimonials .cs_slider_wrapper .slick-center .cs_vt_card {
-        border-color: rgba(201,169,110,0.65);
-        box-shadow: 0 0 40px rgba(201,169,110,0.18);
-      }
-      .cs_vt_slider_wrap { position: relative; }
-      .cs_vt_arrow {
+      .cs_vt_prev_btn, .cs_vt_next_btn {
         position: absolute;
-        top: 40%;
+        top: 42%;
         transform: translateY(-50%);
         z-index: 10;
-        width: 36px;
-        height: 36px;
         background: none;
         border: none;
-        color: rgba(255,255,255,0.45);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        color: rgba(255,255,255,0.38);
+        font-size: 26px;
         cursor: pointer;
-        font-size: 22px;
+        padding: 8px;
+        line-height: 1;
         transition: color 0.3s;
       }
-      .cs_vt_arrow:hover { color: #C9A96E; }
-      .cs_vt_arrow_left { left: 12px; }
-      .cs_vt_arrow_right { right: 12px; }
-      .cs_vt_slider_wrap .cs_pagination { text-align: center; margin-top: 28px; }
+      .cs_vt_prev_btn:hover, .cs_vt_next_btn:hover { color: #C9A96E; }
+      .cs_vt_prev_btn { left: 14px; }
+      .cs_vt_next_btn { right: 14px; }
+      .cs_vt_dots_row {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 30px;
+        padding-bottom: 4px;
+      }
+      .cs_vt_dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.22);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .cs_vt_dot.cs_vt_dot_active {
+        background: #C9A96E;
+        transform: scale(1.45);
+      }
 
       /* Footer branco */
       .cs_footer.cs_style_1.cs_type_2 {
@@ -566,92 +595,83 @@
         <div class="cs_height_74 cs_height_lg_50"></div>
       </div>
       <!-- Slider de Vídeos -->
-      <div class="cs_slider">
-        <div class="cs_vt_slider_wrap">
-          <div class="cs_slider_container"
-            data-autoplay="6000"
-            data-speed="700"
-            data-loop="1"
-            data-center="1"
-            data-variable-width="0"
-            data-slides-per-view="responsive"
-            data-add-slides="1"
-            data-lg-slides="1"
-            data-md-slides="1"
-            data-sm-slides="1"
-            data-xs-slides="1">
-            <div class="cs_slider_wrapper">
-              <!-- Depoimento 1 — substitua href pelo embed do YouTube: https://www.youtube.com/embed/SEU_VIDEO_ID -->
-              <div style="padding: 0 8px;">
-                <div class="cs_vt_card">
-                  <a href="#" class="cs_video_open cs_vt_thumb_wrap">
-                    <img src="assets/img/feature_5.jpg" alt="Depoimento" class="cs_vt_thumb">
-                    <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
-                    <div class="cs_vt_overlay_text">
-                      <p class="cs_vt_name">Carlos Mendonça</p>
-                      <p class="cs_vt_quote">"É O CAMINHO PERFEITO PRA QUEM quer transformar sua empresa com gestão de verdade."</p>
-                    </div>
-                  </a>
+      <div class="cs_vt_stage" id="cs_vt_stage">
+        <div class="cs_vt_track" id="cs_vt_track">
+          <!-- Item 1 — substitua href por https://www.youtube.com/embed/SEU_VIDEO_ID -->
+          <div class="cs_vt_item cs_vt_active">
+            <div class="cs_vt_card">
+              <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                <img src="assets/img/feature_5.jpg" alt="Depoimento" class="cs_vt_thumb">
+                <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                <div class="cs_vt_overlay_text">
+                  <p class="cs_vt_name">Carlos Mendonça</p>
+                  <p class="cs_vt_quote">"É O CAMINHO PERFEITO pra quem quer transformar a empresa com gestão de verdade."</p>
                 </div>
-              </div>
-              <!-- Depoimento 2 -->
-              <div style="padding: 0 8px;">
-                <div class="cs_vt_card">
-                  <a href="#" class="cs_video_open cs_vt_thumb_wrap">
-                    <img src="assets/img/feature_6.jpg" alt="Depoimento" class="cs_vt_thumb">
-                    <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
-                    <div class="cs_vt_overlay_text">
-                      <p class="cs_vt_name">Ana Paula Lima</p>
-                      <p class="cs_vt_quote">"A MENTORIA ME DEU CLAREZA que eu precisava para crescer com estratégia."</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <!-- Depoimento 3 -->
-              <div style="padding: 0 8px;">
-                <div class="cs_vt_card">
-                  <a href="#" class="cs_video_open cs_vt_thumb_wrap">
-                    <img src="assets/img/feature_1.jpg" alt="Depoimento" class="cs_vt_thumb">
-                    <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
-                    <div class="cs_vt_overlay_text">
-                      <p class="cs_vt_name">Roberto Farias</p>
-                      <p class="cs_vt_quote">"FINALMENTE MEU NEGÓCIO ESTÁ PROTEGIDO com a assessoria jurídica certa."</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <!-- Depoimento 4 -->
-              <div style="padding: 0 8px;">
-                <div class="cs_vt_card">
-                  <a href="#" class="cs_video_open cs_vt_thumb_wrap">
-                    <img src="assets/img/feature_4.jpg" alt="Depoimento" class="cs_vt_thumb">
-                    <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
-                    <div class="cs_vt_overlay_text">
-                      <p class="cs_vt_name">Fernanda Costa</p>
-                      <p class="cs_vt_quote">"PROFISSIONALISMO E ENTREGA. A parceira certa para crescer de verdade."</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <!-- Depoimento 5 -->
-              <div style="padding: 0 8px;">
-                <div class="cs_vt_card">
-                  <a href="#" class="cs_video_open cs_vt_thumb_wrap">
-                    <img src="assets/img/feature_8.jpg" alt="Depoimento" class="cs_vt_thumb">
-                    <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
-                    <div class="cs_vt_overlay_text">
-                      <p class="cs_vt_name">Marcos Oliveira</p>
-                      <p class="cs_vt_quote">"RESULTADOS REAIS EM POUCOS MESES com a Lacerda do meu lado."</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
+              </a>
             </div>
           </div>
-          <div class="cs_left_arrow cs_vt_arrow cs_vt_arrow_left"><i class="fa-solid fa-chevron-left"></i></div>
-          <div class="cs_right_arrow cs_vt_arrow cs_vt_arrow_right"><i class="fa-solid fa-chevron-right"></i></div>
-          <ul class="cs_pagination"></ul>
+          <!-- Item 2 -->
+          <div class="cs_vt_item">
+            <div class="cs_vt_card">
+              <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                <img src="assets/img/feature_6.jpg" alt="Depoimento" class="cs_vt_thumb">
+                <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                <div class="cs_vt_overlay_text">
+                  <p class="cs_vt_name">Ana Paula Lima</p>
+                  <p class="cs_vt_quote">"A MENTORIA ME DEU CLAREZA que eu precisava para crescer com estratégia."</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="cs_vt_item">
+            <div class="cs_vt_card">
+              <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                <img src="assets/img/feature_1.jpg" alt="Depoimento" class="cs_vt_thumb">
+                <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                <div class="cs_vt_overlay_text">
+                  <p class="cs_vt_name">Roberto Farias</p>
+                  <p class="cs_vt_quote">"FINALMENTE MEU NEGÓCIO ESTÁ PROTEGIDO com a assessoria jurídica certa."</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="cs_vt_item">
+            <div class="cs_vt_card">
+              <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                <img src="assets/img/feature_4.jpg" alt="Depoimento" class="cs_vt_thumb">
+                <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                <div class="cs_vt_overlay_text">
+                  <p class="cs_vt_name">Fernanda Costa</p>
+                  <p class="cs_vt_quote">"PROFISSIONALISMO E ENTREGA. A parceira certa para crescer de verdade."</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="cs_vt_item">
+            <div class="cs_vt_card">
+              <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                <img src="assets/img/feature_8.jpg" alt="Depoimento" class="cs_vt_thumb">
+                <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                <div class="cs_vt_overlay_text">
+                  <p class="cs_vt_name">Marcos Oliveira</p>
+                  <p class="cs_vt_quote">"RESULTADOS REAIS EM POUCOS MESES com a Lacerda do meu lado."</p>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
+        <button class="cs_vt_prev_btn" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="cs_vt_next_btn" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <div class="cs_vt_dots_row">
+        <button class="cs_vt_dot cs_vt_dot_active" aria-label="Slide 1"></button>
+        <button class="cs_vt_dot" aria-label="Slide 2"></button>
+        <button class="cs_vt_dot" aria-label="Slide 3"></button>
+        <button class="cs_vt_dot" aria-label="Slide 4"></button>
+        <button class="cs_vt_dot" aria-label="Slide 5"></button>
       </div>
       <div class="cs_height_140 cs_height_lg_80"></div>
     </section>
@@ -1533,6 +1553,60 @@
           d.addEventListener('click', function () { showSlide(i); resetTimer(); });
         });
 
+        startTimer();
+      })();
+    </script>
+    <script>
+      (function () {
+        var stage = document.getElementById('cs_vt_stage');
+        var track = document.getElementById('cs_vt_track');
+        if (!stage || !track) return;
+        var items = Array.prototype.slice.call(track.querySelectorAll('.cs_vt_item'));
+        var dots = Array.prototype.slice.call(document.querySelectorAll('.cs_vt_dot'));
+        var current = 0;
+        var total = items.length;
+        var timer;
+
+        function getOffset() {
+          var stageW = stage.offsetWidth;
+          var itemW = items[0].offsetWidth;
+          var startOffset = (stageW - itemW) / 2;
+          return startOffset - (current * itemW);
+        }
+
+        function update(skipTransition) {
+          if (skipTransition) {
+            track.style.transition = 'none';
+          }
+          items.forEach(function (el, i) {
+            el.classList.toggle('cs_vt_active', i === current);
+          });
+          dots.forEach(function (d, i) {
+            d.classList.toggle('cs_vt_dot_active', i === current);
+          });
+          track.style.transform = 'translateX(' + getOffset() + 'px)';
+          if (skipTransition) {
+            track.offsetWidth;
+            track.style.transition = '';
+          }
+        }
+
+        function showSlide(n) {
+          current = (n + total) % total;
+          update(false);
+        }
+
+        function startTimer() { timer = setInterval(function () { showSlide(current + 1); }, 6000); }
+        function resetTimer() { clearInterval(timer); startTimer(); }
+
+        document.querySelector('.cs_vt_prev_btn').addEventListener('click', function () { showSlide(current - 1); resetTimer(); });
+        document.querySelector('.cs_vt_next_btn').addEventListener('click', function () { showSlide(current + 1); resetTimer(); });
+        dots.forEach(function (d, i) {
+          d.addEventListener('click', function () { showSlide(i); resetTimer(); });
+        });
+
+        update(true);
+        window.addEventListener('resize', function () { update(true); });
         startTimer();
       })();
     </script>
