@@ -318,6 +318,90 @@
         .cs_banner_next { right: 10px; }
       }
 
+      /* Video Depoimentos Section */
+      .cs_video_testimonials { background-color: #05111A; position: relative; }
+      .cs_vt_card {
+        border-radius: 14px;
+        overflow: hidden;
+        background: #091720;
+        border: 1px solid rgba(255,255,255,0.07);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .cs_vt_thumb_wrap {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        overflow: hidden;
+      }
+      .cs_vt_thumb {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s;
+      }
+      .cs_vt_thumb_wrap:hover .cs_vt_thumb { transform: scale(1.04); }
+      .cs_vt_play_btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.92);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #05111A;
+        font-size: 22px;
+        padding-left: 4px;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .cs_vt_thumb_wrap:hover .cs_vt_play_btn {
+        background: #C9A96E;
+        color: #fff;
+        transform: translate(-50%, -50%) scale(1.12);
+      }
+      .cs_vt_info { padding: 20px 24px 24px; }
+      .cs_vt_name {
+        font-size: 13px;
+        font-weight: 700;
+        color: #C9A96E;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        margin-bottom: 8px;
+      }
+      .cs_vt_quote {
+        font-size: 14px;
+        color: rgba(255,255,255,0.68);
+        margin: 0;
+        line-height: 1.65;
+      }
+      .cs_vt_slider_wrap { position: relative; padding: 0 60px; }
+      .cs_vt_arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.2);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background 0.3s;
+      }
+      .cs_vt_arrow:hover { background: rgba(201,169,110,0.7); border-color: #C9A96E; }
+      .cs_vt_arrow_left { left: 6px; }
+      .cs_vt_arrow_right { right: 6px; }
+      .cs_vt_slider_wrap .cs_pagination { text-align: center; margin-top: 32px; }
+
       /* Footer branco */
       .cs_footer.cs_style_1.cs_type_2 {
         background-color: #ffffff;
@@ -442,6 +526,100 @@
       </div>
     </section>
     <!-- End Hero Banner Slider -->
+    <!-- Start Video Depoimentos -->
+    <section class="cs_video_testimonials" id="depoimentos">
+      <div class="cs_height_140 cs_height_lg_80"></div>
+      <div class="container">
+        <div class="text-center">
+          <p style="color:#C9A96E; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2.5px; margin-bottom:16px;">Depoimentos</p>
+          <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInDown">
+            O que dizem sobre a<br>
+            <span style="color:#C9A96E;">Lacerda Assessoria</span>
+          </h2>
+        </div>
+        <div class="cs_height_74 cs_height_lg_50"></div>
+      </div>
+      <!-- Slider de Vídeos -->
+      <div class="container-fluid px-0">
+        <div class="cs_slider">
+          <div class="cs_vt_slider_wrap">
+            <div class="cs_slider_container"
+              data-autoplay="6000"
+              data-speed="700"
+              data-loop="1"
+              data-center="1"
+              data-variable-width="0"
+              data-slides-per-view="responsive"
+              data-add-slides="3"
+              data-lg-slides="3"
+              data-md-slides="2"
+              data-sm-slides="2"
+              data-xs-slides="1">
+              <div class="cs_slider_wrapper">
+                <!-- Depoimento 1 -->
+                <div style="padding: 0 10px;">
+                  <div class="cs_vt_card">
+                    <!-- Substitua o href pelo link embed do YouTube: https://www.youtube.com/embed/SEU_VIDEO_ID -->
+                    <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                      <img src="assets/img/feature_5.jpg" alt="Depoimento" class="cs_vt_thumb">
+                      <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                    </a>
+                    <div class="cs_vt_info">
+                      <p class="cs_vt_name">Carlos Mendonça</p>
+                      <p class="cs_vt_quote">"A Lacerda transformou completamente a gestão da minha empresa. Os resultados vieram rápido."</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Depoimento 2 -->
+                <div style="padding: 0 10px;">
+                  <div class="cs_vt_card">
+                    <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                      <img src="assets/img/feature_6.jpg" alt="Depoimento" class="cs_vt_thumb">
+                      <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                    </a>
+                    <div class="cs_vt_info">
+                      <p class="cs_vt_name">Ana Paula Lima</p>
+                      <p class="cs_vt_quote">"A mentoria me deu clareza sobre meu negócio e abriu caminhos que eu não enxergava antes."</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Depoimento 3 -->
+                <div style="padding: 0 10px;">
+                  <div class="cs_vt_card">
+                    <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                      <img src="assets/img/feature_1.jpg" alt="Depoimento" class="cs_vt_thumb">
+                      <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                    </a>
+                    <div class="cs_vt_info">
+                      <p class="cs_vt_name">Roberto Farias</p>
+                      <p class="cs_vt_quote">"Com a assessoria jurídica e financeira da Lacerda, finalmente sinto que meu negócio está protegido."</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Depoimento 4 -->
+                <div style="padding: 0 10px;">
+                  <div class="cs_vt_card">
+                    <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                      <img src="assets/img/feature_4.jpg" alt="Depoimento" class="cs_vt_thumb">
+                      <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                    </a>
+                    <div class="cs_vt_info">
+                      <p class="cs_vt_name">Fernanda Costa</p>
+                      <p class="cs_vt_quote">"Profissionalismo, atenção e entrega. A Lacerda é a parceira certa para quem quer crescer de verdade."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cs_left_arrow cs_vt_arrow cs_vt_arrow_left"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="cs_right_arrow cs_vt_arrow cs_vt_arrow_right"><i class="fa-solid fa-chevron-right"></i></div>
+            <ul class="cs_pagination"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="cs_height_140 cs_height_lg_80"></div>
+    </section>
+    <!-- End Video Depoimentos -->
     <!-- Start Features Section -->
     <section>
     <div class="cs_height_140 cs_height_lg_80"></div>
