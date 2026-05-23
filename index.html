@@ -10,7 +10,7 @@
     <!-- Favicon Icon -->
     <link rel="icon" href="assets/img/favicon.png">
     <!-- Site Title -->
-   <title>Gosaas - SaaS & Software Startup Template</title>
+   <title>Lacerda Exemplo site</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/animate.css">
@@ -207,6 +207,289 @@
       .cs_task_management .cs_hero .cs_newsletter_form.cs_type_2 .cs_mail_icon i {
         color: #ffffff !important;
       }
+
+      /* Hero Banner Slider */
+      .cs_hero_banner { position: relative; overflow: hidden; }
+      .cs_banner_slide {
+        display: none;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 620px;
+      }
+      .cs_banner_slide.cs_banner_active {
+        display: block;
+      }
+      .cs_banner_overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, rgba(5,17,26,0.92) 45%, rgba(5,17,26,0.5) 100%);
+      }
+      .cs_banner_content {
+        position: relative;
+        z-index: 1;
+        max-width: 620px;
+        padding: 130px 0 110px;
+      }
+      .cs_banner_title {
+        font-size: 46px;
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 1.2;
+        margin-bottom: 22px;
+      }
+      .cs_banner_subtitle {
+        font-size: 18px;
+        color: rgba(255,255,255,0.82);
+        line-height: 1.75;
+        margin-bottom: 36px;
+      }
+      .cs_banner_btn {
+        display: inline-block;
+        padding: 16px 38px;
+        background-color: #C9A96E;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        border-radius: 4px;
+        transition: background 0.3s, transform 0.2s;
+      }
+      .cs_banner_btn:hover {
+        background-color: #b8944e;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+      .cs_banner_prev,
+      .cs_banner_next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.3);
+        color: #ffffff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cs_banner_prev { left: 24px; }
+      .cs_banner_next { right: 24px; }
+      .cs_banner_prev:hover,
+      .cs_banner_next:hover { background: rgba(201,169,110,0.7); border-color: #C9A96E; }
+      .cs_banner_dots {
+        position: absolute;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        gap: 10px;
+      }
+      .cs_dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.35);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .cs_dot.cs_dot_active {
+        background: #C9A96E;
+        transform: scale(1.4);
+      }
+      @media (max-width: 768px) {
+        .cs_banner_title { font-size: 28px; }
+        .cs_banner_subtitle { font-size: 15px; }
+        .cs_banner_slide { min-height: 480px; }
+        .cs_banner_content { padding: 90px 0 80px; }
+        .cs_banner_prev { left: 10px; }
+        .cs_banner_next { right: 10px; }
+      }
+
+      /* Video Depoimentos Section */
+      .cs_video_testimonials {
+        background-color: #0d1a24;
+        background-image: repeating-linear-gradient(
+          -45deg, transparent, transparent 32px,
+          rgba(255,255,255,0.025) 32px, rgba(255,255,255,0.025) 33px
+        );
+        position: relative;
+      }
+      .cs_vt_stage {
+        position: relative;
+        overflow: hidden;
+        padding: 10px 0 0;
+      }
+      .cs_vt_track {
+        display: flex;
+        align-items: center;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: transform;
+      }
+      .cs_vt_item {
+        flex: 0 0 54%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        transform: scale(0.82);
+        filter: blur(4px);
+        opacity: 0.3;
+        transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+      }
+      .cs_vt_item.cs_vt_active {
+        transform: scale(1);
+        filter: none;
+        opacity: 1;
+      }
+      .cs_vt_card {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 2px solid rgba(255,255,255,0.07);
+        transition: border-color 0.4s, box-shadow 0.4s;
+      }
+      .cs_vt_item.cs_vt_active .cs_vt_card {
+        border-color: rgba(201,169,110,0.65);
+        box-shadow: 0 0 40px rgba(201,169,110,0.18);
+      }
+      .cs_vt_thumb_wrap {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        overflow: hidden;
+      }
+      .cs_vt_thumb {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        display: block;
+      }
+      .cs_vt_play_btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.90);
+        border: 3px solid rgba(255,255,255,0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0d1a24;
+        font-size: 22px;
+        padding-left: 5px;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .cs_vt_thumb_wrap:hover .cs_vt_play_btn {
+        background: #C9A96E;
+        color: #fff;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      .cs_vt_overlay_text {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        padding: 80px 22px 22px;
+        background: linear-gradient(to top, rgba(5,17,26,0.97) 50%, transparent);
+      }
+      .cs_vt_name {
+        font-size: 12px;
+        font-weight: 700;
+        color: #C9A96E;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 6px;
+      }
+      .cs_vt_quote {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.88);
+        margin: 0;
+        line-height: 1.5;
+      }
+      .cs_vt_prev_btn, .cs_vt_next_btn {
+        position: absolute;
+        top: 42%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: none;
+        border: none;
+        color: rgba(255,255,255,0.38);
+        font-size: 26px;
+        cursor: pointer;
+        padding: 8px;
+        line-height: 1;
+        transition: color 0.3s;
+      }
+      .cs_vt_prev_btn:hover, .cs_vt_next_btn:hover { color: #C9A96E; }
+      .cs_vt_prev_btn { left: 14px; }
+      .cs_vt_next_btn { right: 14px; }
+      .cs_vt_dots_row {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 30px;
+        padding-bottom: 4px;
+      }
+      .cs_vt_dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.22);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .cs_vt_dot.cs_vt_dot_active {
+        background: #C9A96E;
+        transform: scale(1.45);
+      }
+
+      /* Footer branco */
+      .cs_footer.cs_style_1.cs_type_2 {
+        background-color: #ffffff;
+      }
+      .cs_footer.cs_style_1.cs_type_2 p,
+      .cs_footer.cs_style_1.cs_type_2 .cs_footer_medu a,
+      .cs_footer.cs_style_1.cs_type_2 .cs_footer_medu li,
+      .cs_footer.cs_style_1.cs_type_2 .cs_footer_text,
+      .cs_footer.cs_style_1.cs_type_2 .cs_support_text,
+      .cs_footer.cs_style_1.cs_type_2 .cs_social_links a,
+      .cs_footer.cs_style_1.cs_type_2 .cs_social_links span {
+        color: #475569 !important;
+      }
+      .cs_footer.cs_style_1.cs_type_2 .cs_white_color,
+      .cs_footer.cs_style_1.cs_type_2 .cs_footer_widget_title,
+      .cs_footer.cs_style_1.cs_type_2 .cs_support_link,
+      .cs_footer.cs_style_1.cs_type_2 .cs_footer_text {
+        color: #0f172a !important;
+      }
+      .cs_footer.cs_style_1.cs_type_2 hr {
+        border-color: #e2e8f0;
+      }
+      .cs_footer.cs_style_1.cs_type_2 .cs_ellipse_1,
+      .cs_footer.cs_style_1.cs_type_2 .cs_ellipse_2,
+      .cs_footer.cs_style_1.cs_type_2 .cs_ellipse_3,
+      .cs_footer.cs_style_1.cs_type_2 .cs_ellipse_4,
+      .cs_footer.cs_style_1.cs_type_2 .cs_vector_1 {
+        display: none;
+      }
+      .cs_footer.cs_style_1 .cs_support_link .cs_support_icon,
+      .cs_footer.cs_style_1 .cs_support_link.cs_phone .cs_support_icon {
+        background-color: #C9A96E;
+      }
     </style>
   </head>
   <body class="cs_task_management">
@@ -253,99 +536,196 @@
       </div>
     </header>
     <!-- End Header Section -->
-    <!-- Start Hero Section -->
-    <section class="cs_hero cs_style_1 cs_type_2 cs_bg_filed cs_heading_bg position-relative" id="home" data-src="assets/img/hero_shape_2.svg">
-      <div class="container">
-        <div class="cs_hero_content cs_center_column text-center position-relative z-1">
-          <h1 class="cs_fs_68 cs_white_color cs_mb_42 wow fadeInDown">We unite tasks, team, and <br> tools in one place</h1>
-          <p class="cs_mb_46">Streamline your tasks, stay organized, and enhance your productivity <br> with our intuitive task management web application.</p>
-          <form action="#" class="cs_newsletter_form cs_type_2 cs_mb_21 position-relative wow fadeInUp">
-            <input type="text" class="cs_newsletter_input cs_radius_50 text-capitalize" placeholder="Enter your email address">
-            <span class="cs_mail_icon position-absolute"><i class="fa-regular fa-envelope"></i></span>
-            <button type="submit" aria-label="Subscribe button" class="cs_btn cs_style_1 cs_purple_bg cs_fs_16 cs_semibold cs_white_color cs_accent_hover">
-            <span>Sign Up Free</span>
-            </button>
-          </form>
-        </div>
-        <div class="cs_height_60 cs_height_lg_50"></div>
-        <div class="cs_hero_thumbnail position-relative wow fadeInDown">
-          <img src="assets/img/hero_img_3.jpg" alt="Hero image">
-        </div>
-        <div class="cs_blob_1 cs_radius_100 position-absolute"></div>
-        <div class="cs_blob_2 cs_radius_100 position-absolute"></div>
-        <div class="cs_blob_3 cs_radius_100 position-absolute"></div>
-        <div class="cs_blob_4 cs_radius_100 position-absolute"></div>
-        <div class="cs_hero_shape_1 position-absolute">
-          <img src="assets/img/hero_shape_3.svg" alt="Circular shape">
-        </div>
-        <div class="cs_hero_shape_2 position-absolute">
-          <img src="assets/img/hero_shape_4.svg" alt="Triangle shape">
+    <!-- Start Hero Banner Slider -->
+    <section class="cs_hero_banner" id="home">
+      <!-- Slide 1 -->
+      <div class="cs_banner_slide cs_banner_active" style="background-image: url('assets/img/feature_5.jpg')">
+        <div class="cs_banner_overlay"></div>
+        <div class="container">
+          <div class="cs_banner_content">
+            <h1 class="cs_banner_title">Transforme sua empresa com quem entende de gestão</h1>
+            <p class="cs_banner_subtitle">Assessoria especializada em gestão empresarial, mentoria, jurídico e financeiro para empresários que querem crescer com segurança e estratégia.</p>
+            <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn">Quero Conhecer</a>
+          </div>
         </div>
       </div>
+      <!-- Slide 2 -->
+      <div class="cs_banner_slide" style="background-image: url('assets/img/feature_6.jpg')">
+        <div class="cs_banner_overlay"></div>
+        <div class="container">
+          <div class="cs_banner_content">
+            <h1 class="cs_banner_title">Mentoria que acelera o seu crescimento profissional</h1>
+            <p class="cs_banner_subtitle">Desenvolvimento personalizado para líderes e empreendedores que buscam evolução contínua, clareza de propósito e resultados concretos.</p>
+            <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn">Quero Ser Mentorado</a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="cs_banner_slide" style="background-image: url('assets/img/feature_1.jpg')">
+        <div class="cs_banner_overlay"></div>
+        <div class="container">
+          <div class="cs_banner_content">
+            <h1 class="cs_banner_title">Assessoria jurídica e financeira para proteger e crescer</h1>
+            <p class="cs_banner_subtitle">Segurança jurídica e saúde financeira para que o seu negócio cresça com solidez, previsibilidade e sem surpresas no caminho.</p>
+            <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn">Falar com Especialista</a>
+          </div>
+        </div>
+      </div>
+      <!-- Controles -->
+      <button class="cs_banner_prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="cs_banner_next" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="cs_banner_dots">
+        <button class="cs_dot cs_dot_active" aria-label="Slide 1"></button>
+        <button class="cs_dot" aria-label="Slide 2"></button>
+        <button class="cs_dot" aria-label="Slide 3"></button>
+      </div>
     </section>
-    <!-- End Hero Section -->
+    <!-- End Hero Banner Slider -->
+    <!-- Start Video Depoimentos -->
+    <section class="cs_video_testimonials" id="depoimentos">
+      <div class="cs_height_140 cs_height_lg_80"></div>
+      <div class="container">
+        <div class="text-center">
+          <p style="color:#C9A96E; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2.5px; margin-bottom:16px;">Depoimentos</p>
+          <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInDown">
+            O que dizem sobre a<br>
+            <span style="color:#C9A96E;">Lacerda Assessoria</span>
+          </h2>
+        </div>
+        <div class="cs_height_74 cs_height_lg_50"></div>
+      </div>
+      <!-- Slider de Vídeos -->
+      <div class="cs_vt_stage" id="cs_vt_stage">
+        <div class="cs_vt_track" id="cs_vt_track">
+          <!-- Item 1 — substitua href por https://www.youtube.com/embed/SEU_VIDEO_ID -->
+          <div class="cs_vt_item cs_vt_active">
+            <div class="cs_vt_card">
+              <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                <img src="assets/img/feature_5.jpg" alt="Depoimento" class="cs_vt_thumb">
+                <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                <div class="cs_vt_overlay_text">
+                  <p class="cs_vt_name">Carlos Mendonça</p>
+                  <p class="cs_vt_quote">"É O CAMINHO PERFEITO pra quem quer transformar a empresa com gestão de verdade."</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="cs_vt_item">
+            <div class="cs_vt_card">
+              <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                <img src="assets/img/feature_6.jpg" alt="Depoimento" class="cs_vt_thumb">
+                <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                <div class="cs_vt_overlay_text">
+                  <p class="cs_vt_name">Ana Paula Lima</p>
+                  <p class="cs_vt_quote">"A MENTORIA ME DEU CLAREZA que eu precisava para crescer com estratégia."</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="cs_vt_item">
+            <div class="cs_vt_card">
+              <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                <img src="assets/img/feature_1.jpg" alt="Depoimento" class="cs_vt_thumb">
+                <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                <div class="cs_vt_overlay_text">
+                  <p class="cs_vt_name">Roberto Farias</p>
+                  <p class="cs_vt_quote">"FINALMENTE MEU NEGÓCIO ESTÁ PROTEGIDO com a assessoria jurídica certa."</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="cs_vt_item">
+            <div class="cs_vt_card">
+              <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                <img src="assets/img/feature_4.jpg" alt="Depoimento" class="cs_vt_thumb">
+                <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                <div class="cs_vt_overlay_text">
+                  <p class="cs_vt_name">Fernanda Costa</p>
+                  <p class="cs_vt_quote">"PROFISSIONALISMO E ENTREGA. A parceira certa para crescer de verdade."</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="cs_vt_item">
+            <div class="cs_vt_card">
+              <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                <img src="assets/img/feature_8.jpg" alt="Depoimento" class="cs_vt_thumb">
+                <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                <div class="cs_vt_overlay_text">
+                  <p class="cs_vt_name">Marcos Oliveira</p>
+                  <p class="cs_vt_quote">"RESULTADOS REAIS EM POUCOS MESES com a Lacerda do meu lado."</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button class="cs_vt_prev_btn" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="cs_vt_next_btn" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <div class="cs_vt_dots_row">
+        <button class="cs_vt_dot cs_vt_dot_active" aria-label="Slide 1"></button>
+        <button class="cs_vt_dot" aria-label="Slide 2"></button>
+        <button class="cs_vt_dot" aria-label="Slide 3"></button>
+        <button class="cs_vt_dot" aria-label="Slide 4"></button>
+        <button class="cs_vt_dot" aria-label="Slide 5"></button>
+      </div>
+      <div class="cs_height_140 cs_height_lg_80"></div>
+    </section>
+    <!-- End Video Depoimentos -->
     <!-- Start Features Section -->
     <section>
     <div class="cs_height_140 cs_height_lg_80"></div>
     <div class="container">
       <div class="cs_section_heading cs_style_1 text-center">
-        <p class="cs_section_subtitle cs_accent_color cs_border cs_radius_15 cs_semibold cs_mb_19">FEATURES</p>
-        <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInDown">Key features to boost your <br> productivity</h2>
+        <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInDown">Conheça nossos <br> serviços</h2>
       </div>
       <div class="cs_height_74 cs_height_lg_50"></div>
       <div class="row cs_gap_y_24 justify-content-center">
-        <div class="col-lg-4 col-md-6 wow fadeInLeft">
+        <div class="col-lg-3 col-md-6 wow fadeInLeft">
           <div class="cs_iconbox cs_style_2 cs_type_1 cs_radius_15">
-            <span class="cs_iconbox_icon cs_center cs_radius_100  cs_mb_25">
-            <img src="assets/img/icons/easy-task.svg" alt="Task creation icon">
+            <span class="cs_iconbox_icon cs_center cs_radius_100 cs_mb_25">
+            <img src="assets/img/icons/megaphone.svg" alt="Show de Gestão icon">
             </span>
             <div class="cs_iconbox_info">
-              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Easy Task Creation</h3>
-              <p class="mb-0">Add new tasks quickly with a simple and user-friendly interface. Organize your workload without the hassle.</p>
+              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Show de Gestão</h3>
+              <p class="mb-0">Transforme a gestão da sua empresa com metodologias modernas e resultados práticos.</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 wow fadeInUp">
+        <div class="col-lg-3 col-md-6 wow fadeInUp">
           <div class="cs_iconbox cs_style_2 cs_type_1 cs_radius_15">
-            <span class="cs_iconbox_icon cs_center cs_bg_2 cs_radius_100  cs_mb_25">
-            <img src="assets/img/icons/due-date.svg" alt="Calendar icon">
+            <span class="cs_iconbox_icon cs_center cs_bg_2 cs_radius_100 cs_mb_25">
+            <img src="assets/img/icons/magnet-user.svg" alt="Mentoria icon">
             </span>
             <div class="cs_iconbox_info">
-              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Due Date & Reminders</h3>
-              <p class="mb-0">Set due dates and reminders to ensure you meet your deadlines. Get notified via email or in-app alerts.</p>
+              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Mentoria</h3>
+              <p class="mb-0">Desenvolvimento personalizado para líderes e empreendedores que buscam evolução contínua.</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 wow fadeInRight">
+        <div class="col-lg-3 col-md-6 wow fadeInRight">
           <div class="cs_iconbox cs_style_2 cs_type_1 cs_radius_15">
-            <span class="cs_iconbox_icon cs_center cs_bg_3 cs_radius_100  cs_mb_25">
-            <img src="assets/img/icons/slider.svg" alt="Slider icon">
+            <span class="cs_iconbox_icon cs_center cs_bg_3 cs_radius_100 cs_mb_25">
+            <img src="assets/img/icons/shield-keyhole.svg" alt="Juridico icon">
             </span>
             <div class="cs_iconbox_info">
-              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Customizable Lists</h3>
-              <p class="mb-0">Customize task lists to match your unique workflow. Group tasks by project, priority, or deadline to stay on top of everything.</p>
+              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Jurídico</h3>
+              <p class="mb-0">Assessoria jurídica especializada para proteger e fortalecer o seu negócio.</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 wow fadeInLeft">
+        <div class="col-lg-3 col-md-6 wow fadeInUp">
           <div class="cs_iconbox cs_style_2 cs_type_1 cs_radius_15">
-            <span class="cs_iconbox_icon cs_center cs_bg_4 cs_radius_100  cs_mb_25">
-            <img src="assets/img/icons/progress.svg" alt="Loading icon">
+            <span class="cs_iconbox_icon cs_center cs_bg_4 cs_radius_100 cs_mb_25">
+            <img src="assets/img/icons/point-of-sale-bill.svg" alt="Financeiro icon">
             </span>
             <div class="cs_iconbox_info">
-              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Progress Tracking</h3>
-              <p class="mb-0">Visualize your progress with intuitive dashboards and progress bars. Keep track of completed and pending tasks effortlessly.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 wow fadeInRight">
-          <div class="cs_iconbox cs_style_2 cs_type_1 cs_radius_15">
-            <span class="cs_iconbox_icon cs_center cs_bg_5 cs_radius_100  cs_mb_25">
-            <img src="assets/img/icons/cross-plateform.svg" alt="Sync icon">
-            </span>
-            <div class="cs_iconbox_info">
-              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Cross Platform Sync</h3>
-              <p class="mb-0">Access your tasks from any device. Our application syncs across web, mobile, and desktop to keep you connected.</p>
+              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Financeiro</h3>
+              <p class="mb-0">Planejamento e gestão financeira para garantir a saúde e o crescimento do seu negócio.</p>
             </div>
           </div>
         </div>
@@ -370,9 +750,9 @@
             <div class="col-xl-6 col-lg-7 order-lg-1">
               <div class="cs_card_content">
                 <div class="cs_section_heading cs_style_1 cs_mb_39">
-                  <p class="cs_body_color cs_mb_11">FLEXIBILIY</p>
-                  <h2 class="cs_section_title cs_white_color cs_fs_50 cs_mb_24 wow fadeInDown">Access real-time updates on your team's work</h2>
-                  <p class="cs_section_text cs_fs_21 mb-0">Skip the tedious manual work. Automation handles it for you, streamlining workflows, minimizing errors, and freeing up time for more critical tasks.</p>
+                  <p class="cs_body_color cs_mb_11">SHOW DE GESTÃO</p>
+                  <h2 class="cs_section_title cs_white_color cs_fs_50 cs_mb_24 wow fadeInDown">Transforme a gestão da sua empresa com resultados reais</h2>
+                  <p class="cs_section_text cs_fs_21 mb-0">Diagnóstico completo, implantação de processos e acompanhamento prático para que sua empresa funcione com eficiência, clareza e crescimento sustentável.</p>
                 </div>
                 <div class="row cs_gap_y_40">
                   <div class="col-md-6 wow fadeInLeft">
@@ -389,8 +769,8 @@
                           </defs>
                         </svg>
                       </span>
-                      <h3 class="cs_fs_21 cs_white_color cs_mb_15">Automate Task Creation</h3>
-                      <p class="mb-0">Automate task creation to streamline your workflow and boost productivity.</p>
+                      <h3 class="cs_fs_21 cs_white_color cs_mb_15">Diagnóstico Empresarial</h3>
+                      <p class="mb-0">Identificamos os gargalos e oportunidades do seu negócio com uma análise profunda e personalizada.</p>
                     </div>
                   </div>
                   <div class="col-md-6 wow fadeInRight">
@@ -407,8 +787,8 @@
                           </defs>
                         </svg>
                       </span>
-                      <h3 class="cs_fs_21 cs_white_color cs_mb_15">Enhanced Collaboration</h3>
-                      <p class="mb-0">Enabling seamless communication and collaboration from anywhere.</p>
+                      <h3 class="cs_fs_21 cs_white_color cs_mb_15">Implantação de Melhorias</h3>
+                      <p class="mb-0">Acompanhamos a execução das mudanças lado a lado com sua equipe, garantindo resultados concretos.</p>
                     </div>
                   </div>
                 </div>
@@ -423,19 +803,25 @@
               <div class="cs_card_thumbnail cs_radius_15 position-relative wow fadeInLeft">
                 <img src="assets/img/feature_6.jpg" alt="Feature image">
                 <div class="cs_active_users_badge position-absolute">
-                  <img src="assets/img/fast-messaging.png" alt="Users text image">
+                  <div style="background:#0d1f2d; border:1px solid rgba(201,169,110,0.4); border-radius:50px; padding:10px 18px; display:flex; align-items:center; gap:8px; white-space:nowrap;">
+                    <i class="fa-solid fa-user-tie" style="color:#C9A96E; font-size:14px;"></i>
+                    <span style="color:#fff; font-size:14px; font-weight:600;">Mentoria Online</span>
+                  </div>
                 </div>
                 <div class="cs_search_badge position-absolute">
-                  <img src="assets/img/advance-search-2.png" alt="Search info image">
+                  <div style="background:#0d1f2d; border:1px solid rgba(201,169,110,0.4); border-radius:50px; padding:10px 18px; display:flex; align-items:center; gap:8px; white-space:nowrap;">
+                    <i class="fa-solid fa-chart-line" style="color:#C9A96E; font-size:14px;"></i>
+                    <span style="color:#fff; font-size:14px; font-weight:600;">Resultados em 30 dias</span>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col-xl-6 col-lg-7 offset-xl-1">
               <div class="cs_card_content ms-auto">
                 <div class="cs_section_heading cs_style_1 cs_mb_42">
-                  <p class="cs_body_color cs_semibold cs_mb_11">FAST RESPONSE</p>
-                  <h2 class="cs_section_title cs_fs_50 cs_white_color cs_mb_27 wow fadeInDown">Experience unmatched speed and efficiency</h2>
-                  <p class="cs_section_text mb-0">Our fast response system helps you tackle tasks efficiently, <br> enabling you to focus on what truly matters and achieve your <br> goals with ease.</p>
+                  <p class="cs_body_color cs_semibold cs_mb_11">MENTORIA</p>
+                  <h2 class="cs_section_title cs_fs_50 cs_white_color cs_mb_27 wow fadeInDown">Desenvolvimento personalizado para líderes e empreendedores</h2>
+                  <p class="cs_section_text mb-0">Nossa mentoria é um acompanhamento próximo e estratégico, <br> desenhado para acelerar o seu crescimento como empresário <br> e como pessoa.</p>
                 </div>
                 <ul class="cs_list cs_style_1 cs_mp_0 wow fadeInUp">
                   <li>
@@ -451,7 +837,7 @@
                         </defs>
                       </svg>
                     </span>
-                    <span class="cs_fs_21 cs_white_color cs_semibold">Real-Time Messaging</span>
+                    <span class="cs_fs_21 cs_white_color cs_semibold">Sessões Individuais Focadas</span>
                   </li>
                   <li>
                     <span class="cs_list_icon cs_purple_color">
@@ -466,7 +852,7 @@
                         </defs>
                       </svg>
                     </span>
-                    <span class="cs_fs_21 cs_white_color cs_semibold">Quick File Sharing</span>
+                    <span class="cs_fs_21 cs_white_color cs_semibold">Plano de Metas Personalizado</span>
                   </li>
                   <li>
                     <span class="cs_list_icon cs_purple_color">
@@ -481,7 +867,7 @@
                         </defs>
                       </svg>
                     </span>
-                    <span class="cs_fs_21 cs_white_color cs_semibold">Fast System Integration</span>
+                    <span class="cs_fs_21 cs_white_color cs_semibold">Acompanhamento Contínuo</span>
                   </li>
                 </ul>
               </div>
@@ -496,41 +882,41 @@
       <div class="cs_height_123 cs_height_lg_80"></div>
       <div class="container">
         <div class="cs_section_heading cs_style_1 text-center">
-          <h2 class="cs_fs_50 cs_white_color cs_fs_24 wow fadeInDown">Increase your productivity</h2>
-          <p class="mb-0 wow fadeInUp">Packed with features to provide you the ultimate web <br> conferencing experience</p>
+          <h2 class="cs_fs_50 cs_white_color cs_fs_24 wow fadeInDown">Por que escolher a Lacerda?</h2>
+          <p class="mb-0 wow fadeInUp">Experiência, método e comprometimento real com o <br> crescimento do seu negócio</p>
         </div>
         <div class="cs_height_67 cs_height_lg_50"></div>
         <div class="row cs_gap_y_24">
           <div class="col-lg-4 wow fadeInLeft">
             <div class="cs_card cs_style_2 cs_radius_15">
               <div class="cs_card_thumbnail cs_radius_10 cs_mb_31">
-                <img src="assets/img/card-img-1.png" alt="Card image">
+                <img src="assets/img/feature_1.jpg" alt="Experiência comprovada">
               </div>
               <div class="cs_card_info">
-                <h3 class="cs_fs_21 cs_white_color cs_mb_14">Task Creation & Assignment</h3>
-                <p class="mb-0">Increase productivity through streamlined workflows and highly efficient task management solutions.</p>
+                <h3 class="cs_fs_21 cs_white_color cs_mb_14">Experiência Comprovada</h3>
+                <p class="mb-0">Anos de atuação no mercado com empresas de diferentes segmentos, entregando resultados mensuráveis e duradouros.</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4 wow fadeInDown">
             <div class="cs_card cs_style_2 cs_radius_15">
               <div class="cs_card_thumbnail cs_radius_10 cs_mb_31">
-                <img src="assets/img/card-img-2.png" alt="Card image">
+                <img src="assets/img/feature_8.jpg" alt="Atendimento personalizado">
               </div>
               <div class="cs_card_info">
-                <h3 class="cs_fs_21 cs_white_color cs_mb_14">Deadline & Priority Setting</h3>
-                <p class="mb-0">Set deadlines and prioritize tasks to help manage workloads and meet project timelines effectively.</p>
+                <h3 class="cs_fs_21 cs_white_color cs_mb_14">Atendimento Personalizado</h3>
+                <p class="mb-0">Cada empresa é única. Por isso, desenvolvemos soluções sob medida para o seu contexto, seus desafios e seus objetivos.</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4 wow fadeInRight">
             <div class="cs_card cs_style_2 cs_radius_15">
               <div class="cs_card_thumbnail cs_radius_10 cs_mb_31">
-                <img src="assets/img/card-img-3.png" alt="Card image">
+                <img src="assets/img/feature_4.jpg" alt="Resultados mensuráveis">
               </div>
               <div class="cs_card_info">
-                <h3 class="cs_fs_21 cs_white_color cs_mb_14">Progress Tracking</h3>
-                <p class="mb-0">Monitor task progress with status updates, checklists, and completion indicators, keeping everyone on the same page.</p>
+                <h3 class="cs_fs_21 cs_white_color cs_mb_14">Resultados Mensuráveis</h3>
+                <p class="mb-0">Trabalhamos com metas claras e indicadores reais para que você acompanhe a evolução do seu negócio em cada etapa.</p>
               </div>
             </div>
           </div>
@@ -543,8 +929,8 @@
       <div class="cs_height_130 cs_height_lg_80"></div>
       <div class="container">
         <div class="cs_section_heading cs_style_1 text-center">
-          <p class="cs_section_subtitle cs_accent_color cs_border cs_radius_15 cs_semibold wow fadeInDown">INTEGRATIONS</p>
-          <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInUp">Seamlessly integrating with your <br> preferred tools</h2>
+          <p class="cs_section_subtitle cs_accent_color cs_border cs_radius_15 cs_semibold wow fadeInDown">PRESENÇA DIGITAL</p>
+          <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInUp">Conectados às principais <br> plataformas do mercado</h2>
         </div>
       </div>
       <div class="cs_height_75 cs_height_lg_50"></div>
@@ -732,42 +1118,59 @@
             <div class="cs_card_thumbnail cs_radius_15 position-relative wow fadeInRight">
               <img src="assets/img/feature_7.jpg" alt="Feature image">
               <div class="cs_fast_managing_badge position-absolute">
-                <img src="assets/img/fast-messaging.png" alt="Users text image">
+                <div style="background:#0d1f2d; border:1px solid rgba(201,169,110,0.4); border-radius:50px; padding:10px 18px; display:flex; align-items:center; gap:8px; white-space:nowrap;">
+                  <i class="fa-solid fa-briefcase" style="color:#C9A96E; font-size:14px;"></i>
+                  <span style="color:#fff; font-size:14px; font-weight:600;">Assessoria Completa</span>
+                </div>
               </div>
               <div class="cs_task_info_badge position-absolute">
-                <img src="assets/img/Illustration_3.png" alt="Task info image">
+                <div style="background:#0d1f2d; border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:16px 20px; min-width:180px;">
+                  <p style="color:#C9A96E; font-size:12px; font-weight:700; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">Nossos Resultados</p>
+                  <div style="display:flex; flex-direction:column; gap:6px;">
+                    <div style="display:flex; justify-content:space-between; color:#fff; font-size:13px;">
+                      <span>Empresas atendidas</span><span style="color:#C9A96E; font-weight:700;">200+</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; color:#fff; font-size:13px;">
+                      <span>Anos de experiência</span><span style="color:#C9A96E; font-weight:700;">10+</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; color:#fff; font-size:13px;">
+                      <span>Taxa de satisfação</span><span style="color:#C9A96E; font-weight:700;">98%</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="cs_rating_badge position-absolute">
-                <img src="assets/img/rating.png" alt="Rating info image">
+                <div style="background:#0d1f2d; border:1px solid rgba(201,169,110,0.4); border-radius:50px; padding:10px 18px; display:flex; align-items:center; gap:8px; white-space:nowrap;">
+                  <i class="fa-solid fa-star" style="color:#C9A96E; font-size:14px;"></i>
+                  <span style="color:#fff; font-size:14px; font-weight:600;">200+ Empresas</span>
+                </div>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="cs_card_content">
               <div class="cs_section_heading cs_style_1 cs_mb_37">
-                <p class="cs_body_color cs_semibold cs_mb_11">AWESOME FACT</p>
-                <h2 class="cs_section_title cs_fs_50 cs_white_color cs_mb_27 wow fadeInDown">A task Manager that’s both <span class="cs_gradient_color">powerful & essential</span></h2>
-                <p class="cs_section_text mb-0">Skip the tedious manual work. Automation handles it for you,<br> streamlining workflows, minimizing errors, and freeing up time <br> for more critical tasks.</p>
+                <p class="cs_body_color cs_semibold cs_mb_11">NOSSOS NÚMEROS</p>
+                <h2 class="cs_section_title cs_fs_50 cs_white_color cs_mb_27 wow fadeInDown">Uma assessoria <span class="cs_gradient_color">completa e de resultado</span></h2>
+                <p class="cs_section_text mb-0">Combinamos gestão, mentoria, suporte jurídico e financeiro<br> para que você tenha tudo o que precisa para crescer<br> em um único lugar.</p>
               </div>
-              <form action="#" class="cs_newsletter_form cs_type_2 cs_mb_29 position-relative wow fadeInUp">
-                <input type="text" class="cs_newsletter_input cs_radius_50 text-capitalize" placeholder="Email address">
-                <span class="cs_mail_icon position-absolute"><i class="fa-regular fa-envelope"></i></span>
-                <button type="submit" aria-label="Subscribe button" class="cs_btn cs_style_1 cs_purple_bg cs_fs_16 cs_semibold cs_white_color cs_accent_hover">
-                <span>Sign Up Free</span>
-                </button>
-              </form>
+              <div class="cs_mb_29 wow fadeInUp">
+                <a href="https://wa.me/5585991578001" target="_blank" class="cs_btn cs_style_1 cs_purple_bg cs_fs_16 cs_semibold cs_white_color cs_accent_hover">
+                <span>Fale com um especialista</span>
+                </a>
+              </div>
               <div class="cs_funfact_wrapper">
                 <div class="cs_funfact cs_style_1">
                   <div class="cs_funfact_number cs_fs_38 cs_bold cs_white_color cs_mb_2">
-                    <span class="odometer" data-count-to="35"></span> %
+                    <span class="odometer" data-count-to="200"></span>+
                   </div>
-                  <h3 class="cs_border_color cs_fs_16 cs_normal mb-0">Increase growth rate</h3>
+                  <h3 class="cs_border_color cs_fs_16 cs_normal mb-0">Empresas atendidas</h3>
                 </div>
                 <div class="cs_funfact cs_style_1">
                   <div class="cs_funfact_number cs_fs_38 cs_bold cs_white_color cs_mb_2">
-                    <span class="odometer" data-count-to="30"></span> K
+                    <span class="odometer" data-count-to="10"></span>+
                   </div>
-                  <h3 class="cs_border_color cs_fs_16 cs_normal mb-0">Happy Customers</h3>
+                  <h3 class="cs_border_color cs_fs_16 cs_normal mb-0">Anos de experiência</h3>
                 </div>
               </div>
             </div>
@@ -782,116 +1185,106 @@
       <div class="cs_height_140 cs_height_lg_80"></div>
       <div class="container">
         <div class="cs_section_heading cs_style_1 cs_mb_60 text-center">
-          <p class="cs_section_subtitle cs_accent_color cs_border cs_radius_15 cs_semibold wow fadeInDown">PRICING</p>
-          <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInUp">Select the plan that best fits <br> your business needs</h2>
+          <p class="cs_section_subtitle cs_accent_color cs_border cs_radius_15 cs_semibold wow fadeInDown">MODALIDADES</p>
+          <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInUp">Escolha a modalidade ideal <br> para o seu negócio</h2>
         </div>
-        <ul class="cs_pricing_control cs_type_2 cs_center p-0 position-relative">
-          <li class="active"><a href="monthly" aria-label="Pricing toggle button">Monthly</a><span class="cs_switch"></span></li>
-          <li><a href="yearly" aria-label="Pricing toggle button">Annually</a></li>
-        </ul>
         <div class="cs_pricing_table_wrapper">
           <div class="cs_pricing_table cs_style_1 cs_type_2 cs_white_bg cs_radius_15 wow fadeInLeft">
             <div class="cs_pricing_head cs_center_column cs_mb_24 text-center">
-              <p class="cs_medium cs_purple_color cs_mb_5">Free</p>
-              <h2 class="cs_fs_50 cs_white_color cs_mb_5">$<span class="monthlyPrice">0</span><span class="yearlyPrice">0</span></h2>
-              <p class="cs_pricing_head_subtitle cs_fs_18 cs_body_color cs_mb_29"><span class="monthlyText">Per month</span>
-                <span class="yearlyText">Per year</span>, billed annually
-              </p>
-              <a href="contact.html" aria-label="Buy service button" class="cs_pricing_btn cs_fs_16 cs_semibold cs_white_color">Try It For Free</a>
+              <p class="cs_medium cs_purple_color cs_mb_5">Consultoria Pontual</p>
+              <h2 class="cs_fs_50 cs_white_color cs_mb_5">Sob consulta</h2>
+              <p class="cs_pricing_head_subtitle cs_fs_18 cs_body_color cs_mb_29">Ideal para demandas específicas</p>
+              <a href="https://wa.me/5585991578001" target="_blank" aria-label="Falar no WhatsApp" class="cs_pricing_btn cs_fs_16 cs_semibold cs_white_color">Falar no WhatsApp</a>
             </div>
             <div class="mt-auto">
               <ul class="cs_pricing_feature_list cs_mp_0">
                 <li class="cs_white_color">
                   <i class="fa-solid fa-check cs_purple_color"></i>
-                  Unlimited cards
+                  Diagnóstico inicial gratuito
                 </li>
                 <li class="cs_white_color">
                   <i class="fa-solid fa-check cs_purple_color"></i>
-                  Up to 10 boards per
+                  Consultoria em gestão ou finanças
                 </li>
                 <li class="cs_white_color">
                   <i class="fa-solid fa-check cs_purple_color"></i>
-                  Unlimited Power-Ups per board
+                  Assessoria jurídica avulsa
                 </li>
                 <li class="cs_body_color"><i class="fa-solid fa-check"></i>
-                  Unlimited storage (10MB/file)
+                  Relatório com recomendações
                 </li>
                 <li class="cs_body_color"> <i class="fa-solid fa-check"></i>
-                  Unlimited activity log
+                  Suporte via WhatsApp
                 </li>
                 <li class="cs_body_color"> <i class="fa-solid fa-check"></i>
-                  Premium Support
+                  Atendimento presencial ou online
                 </li>
               </ul>
             </div>
           </div>
           <div class="cs_pricing_table cs_style_1 cs_type_2 cs_white_bg cs_radius_15 position-relative overflow-hidden active wow fadeInDown">
-            <span class="cs_pricing_badge cs_fs_16 position-absolute">Most Popular</span>
+            <span class="cs_pricing_badge cs_fs_16 position-absolute">Mais Escolhido</span>
             <div class="cs_pricing_head cs_center_column cs_mb_24 text-center">
-              <p class="cs_medium cs_purple_color cs_mb_5">Standard</p>
-              <h2 class="cs_fs_50 cs_white_color cs_mb_5">$<span class="monthlyPrice">15</span><span class="yearlyPrice">65</span></h2>
-              <p class="cs_pricing_head_subtitle cs_fs_18 cs_body_color cs_mb_29"><span class="monthlyText">Per month</span>
-                <span class="yearlyText">Per year</span>, billed annually
-              </p>
-              <a href="contact.html" aria-label="Buy service button" class="cs_pricing_btn cs_fs_16 cs_semibold cs_white_color">Try It For Free</a>
+              <p class="cs_medium cs_purple_color cs_mb_5">Mentoria + Gestão</p>
+              <h2 class="cs_fs_50 cs_white_color cs_mb_5">Sob consulta</h2>
+              <p class="cs_pricing_head_subtitle cs_fs_18 cs_body_color cs_mb_29">Para quem quer crescimento consistente</p>
+              <a href="https://wa.me/5585991578001" target="_blank" aria-label="Falar no WhatsApp" class="cs_pricing_btn cs_fs_16 cs_semibold cs_white_color">Falar no WhatsApp</a>
             </div>
             <div class="mt-auto">
               <ul class="cs_pricing_feature_list cs_mp_0">
                 <li class="cs_white_color">
                   <i class="fa-solid fa-check cs_purple_color"></i>
-                  Unlimited cards
+                  Diagnóstico empresarial completo
                 </li>
                 <li class="cs_white_color">
                   <i class="fa-solid fa-check cs_purple_color"></i>
-                  Up to 10 boards per
+                  Show de Gestão incluso
                 </li>
                 <li class="cs_white_color">
                   <i class="fa-solid fa-check cs_purple_color"></i>
-                  Unlimited Power-Ups per board
+                  Sessões de mentoria mensais
                 </li>
                 <li class="cs_white_color"><i class="fa-solid fa-check cs_purple_color"></i>
-                  Unlimited storage (10MB/file)
+                  Plano de metas personalizado
                 </li>
                 <li class="cs_body_color"> <i class="fa-solid fa-check"></i>
-                  Unlimited activity log
+                  Suporte financeiro básico
                 </li>
                 <li class="cs_body_color"> <i class="fa-solid fa-check"></i>
-                  Premium Support
+                  Acompanhamento contínuo
                 </li>
               </ul>
             </div>
           </div>
           <div class="cs_pricing_table cs_style_1 cs_type_2 cs_white_bg cs_radius_15 wow fadeInRight">
             <div class="cs_pricing_head cs_center_column cs_mb_24 text-center">
-              <p class="cs_medium cs_purple_color cs_mb_5">Premium</p>
-              <h2 class="cs_fs_50 cs_white_color cs_mb_5">$<span class="monthlyPrice">20</span><span class="yearlyPrice">90</span></h2>
-              <p class="cs_pricing_head_subtitle cs_fs_18 cs_body_color cs_mb_29"><span class="monthlyText">Per month</span>
-                <span class="yearlyText">Per year</span>, billed annually
-              </p>
-              <a href="contact.html" aria-label="Buy service button" class="cs_pricing_btn cs_fs_16 cs_semibold cs_white_color">Try It For Free</a>
+              <p class="cs_medium cs_purple_color cs_mb_5">Assessoria Completa</p>
+              <h2 class="cs_fs_50 cs_white_color cs_mb_5">Sob consulta</h2>
+              <p class="cs_pricing_head_subtitle cs_fs_18 cs_body_color cs_mb_29">Solução 360° para sua empresa</p>
+              <a href="https://wa.me/5585991578001" target="_blank" aria-label="Falar no WhatsApp" class="cs_pricing_btn cs_fs_16 cs_semibold cs_white_color">Falar no WhatsApp</a>
             </div>
             <div class="mt-auto">
               <ul class="cs_pricing_feature_list cs_mp_0">
                 <li class="cs_white_color">
                   <i class="fa-solid fa-check cs_purple_color"></i>
-                  Unlimited cards
+                  Show de Gestão completo
                 </li>
                 <li class="cs_white_color">
                   <i class="fa-solid fa-check cs_purple_color"></i>
-                  Up to 10 boards per
+                  Mentoria executiva
                 </li>
                 <li class="cs_white_color">
                   <i class="fa-solid fa-check cs_purple_color"></i>
-                  Unlimited Power-Ups per board
+                  Assessoria jurídica contínua
                 </li>
                 <li class="cs_white_color"><i class="fa-solid fa-check cs_purple_color"></i>
-                  Unlimited storage (10MB/file)
+                  Consultoria financeira completa
                 </li>
                 <li class="cs_white_color"> <i class="fa-solid fa-check cs_purple_color"></i>
-                  Unlimited activity log
+                  Reuniões semanais de acompanhamento
                 </li>
                 <li class="cs_white_color"> <i class="fa-solid fa-check cs_purple_color"></i>
-                  Premium Support
+                  Suporte prioritário 24h
                 </li>
               </ul>
             </div>
@@ -906,10 +1299,10 @@
       <div class="container">
         <div class="cs_cta cs_style_2 cs_radius_40 position-relative overflow-hidden">
           <div class="cs_cta_text text-center position-relative z-1">
-            <h2 class="cs_fs_50 cs_white_color cs_mb_30 wow fadeInDown">Ready to get started? Start your free trial now!</h2>
-            <p class="cs_border_color cs_mb_37">Elevate sales and stay ahead in the competitive market by being among <br> the first to benefit from our game-changing solutions.</p>
-            <a href="about-us.html" aria-label="About page link button" class="cs_btn cs_style_1 cs_purple_bg cs_fs_16 cs_white_color cs_semibold cs_accent_hover wow fadeInUp">
-            <span>Learn More</span>
+            <h2 class="cs_fs_50 cs_white_color cs_mb_30 wow fadeInDown">Pronto para transformar sua empresa?</h2>
+            <p class="cs_border_color cs_mb_37">Dê o primeiro passo agora. Uma conversa pode mudar <br> o rumo do seu negócio.</p>
+            <a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp" class="cs_btn cs_style_1 cs_purple_bg cs_fs_16 cs_white_color cs_semibold cs_accent_hover wow fadeInUp">
+            <span>Fale Conosco no WhatsApp</span>
             <span class="cs_btn_icon cs_center overflow-hidden">
             <i class="fa-solid fa-arrow-right"></i>
             </span>
@@ -934,83 +1327,83 @@
       <div class="cs_height_140 cs_height_lg_80"></div>
       <div class="container">
         <div class="cs_section_heading cs_style_1 cs_mb_60 text-center">
-          <p class="cs_section_subtitle cs_accent_color cs_border cs_radius_15 cs_semibold wow fadeInDown">FAQ'S</p>
-          <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInUp">Answers to Your Frequently <br> Asked Questions</h2>
+          <p class="cs_section_subtitle cs_accent_color cs_border cs_radius_15 cs_semibold wow fadeInDown">DÚVIDAS FREQUENTES</p>
+          <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInUp">Respostas para as suas <br> principais dúvidas</h2>
         </div>
         <div class="row cs_gap_y_24">
           <div class="col-xl-6 wow fadeInLeft">
             <div class="cs_accordian cs_type_1 cs_radius_20 position-relative">
               <div class="cs_accordian_head cs_fs_18 cs_border_color cs_medium">
-                What data types does your analytics application support?
+                O que é o Show de Gestão e para quem é indicado?
                 <span class="cs_accordian_toggle position-absolute"></span>
               </div>
               <div class="cs_accordian_body cs_body_color">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus quos vitae, consectetur eos, aut porro repellat quas eum reprehenderit magnam natus, voluptatem tempore numquam. Similique, dicta porro.
+                O Show de Gestão é um programa intensivo de transformação empresarial que combina diagnóstico, estratégia e implantação de melhorias na gestão do seu negócio. É indicado para empresários e gestores que querem resultados rápidos e práticos, independentemente do tamanho da empresa.
               </div>
             </div>
             <div class="cs_accordian cs_type_1 cs_radius_20 position-relative">
               <div class="cs_accordian_head cs_fs_18 cs_border_color cs_medium">
-                Do you offer a free trial of your analytics application?
+                Como funciona o processo de Mentoria?
                 <span class="cs_accordian_toggle position-absolute"></span>
               </div>
               <div class="cs_accordian_body cs_body_color">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus quos vitae, consectetur eos, aut porro repellat quas eum reprehenderit magnam natus, voluptatem tempore numquam. Similique, dicta porro.
+                A Mentoria é um acompanhamento personalizado onde você terá sessões regulares com um mentor experiente. Trabalhamos seu desenvolvimento como líder e empreendedor, definindo metas claras, identificando obstáculos e traçando um plano de ação para sua evolução contínua.
               </div>
             </div>
             <div class="cs_accordian cs_type_1 cs_radius_20 position-relative">
               <div class="cs_accordian_head cs_fs_18 cs_border_color cs_medium">
-                Can I upgrade or downgrade my plan at any time?
+                Quais serviços jurídicos a Lacerda Assessoria oferece?
                 <span class="cs_accordian_toggle position-absolute"></span>
               </div>
               <div class="cs_accordian_body cs_body_color">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus quos vitae, consectetur eos, aut porro repellat quas eum reprehenderit magnam natus, voluptatem tempore numquam. Similique, dicta porro.
+                Nossa assessoria jurídica atende empresas nas áreas de direito empresarial, trabalhista, contratual e tributário. Atuamos tanto na prevenção de riscos quanto na resolução de conflitos, garantindo segurança legal para o crescimento do seu negócio.
               </div>
             </div>
             <div class="cs_accordian cs_type_1 cs_radius_20 position-relative">
               <div class="cs_accordian_head cs_fs_18 cs_border_color cs_medium">
-                Do you offer discounts for annual subscriptions?
+                Como a consultoria financeira pode ajudar minha empresa?
                 <span class="cs_accordian_toggle position-absolute"></span>
               </div>
               <div class="cs_accordian_body cs_body_color">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus quos vitae, consectetur eos, aut porro repellat quas eum reprehenderit magnam natus, voluptatem tempore numquam. Similique, dicta porro.
+                Nossa consultoria financeira oferece análise do fluxo de caixa, planejamento orçamentário, controle de custos e estratégias de crescimento financeiro. Ajudamos sua empresa a tomar decisões mais inteligentes com base em dados reais, garantindo saúde financeira a longo prazo.
               </div>
             </div>
           </div>
           <div class="col-xl-6 wow fadeInRight">
             <div class="cs_accordian cs_type_1 cs_radius_20 position-relative">
               <div class="cs_accordian_head cs_fs_18 cs_border_color cs_medium">
-                What support options are available if I need help?
+                Em quanto tempo posso ver resultados?
                 <span class="cs_accordian_toggle position-absolute"></span>
               </div>
               <div class="cs_accordian_body cs_body_color">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus quos vitae, consectetur eos, aut porro repellat quas eum reprehenderit magnam natus, voluptatem tempore numquam. Similique, dicta porro.
+                Os primeiros resultados aparecem já nas primeiras semanas de trabalho conjunto. O Show de Gestão, por exemplo, é desenhado para gerar impacto rápido e visível. Para resultados mais estruturais e duradouros, recomendamos um acompanhamento de 3 a 6 meses.
               </div>
             </div>
             <div class="cs_accordian cs_type_1 cs_radius_20 position-relative">
               <div class="cs_accordian_head cs_fs_18 cs_border_color cs_medium">
-                Is there a mobile app available?
+                Os atendimentos são presenciais ou online?
                 <span class="cs_accordian_toggle position-absolute"></span>
               </div>
               <div class="cs_accordian_body cs_body_color">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus quos vitae, consectetur eos, aut porro repellat quas eum reprehenderit magnam natus, voluptatem tempore numquam. Similique, dicta porro.
+                Oferecemos atendimento tanto presencial quanto online, de acordo com a sua necessidade e localização. Nossos serviços foram pensados para ser acessíveis e flexíveis, sem abrir mão da qualidade e do relacionamento próximo com cada cliente.
               </div>
             </div>
             <div class="cs_accordian cs_type_1 cs_radius_20 position-relative">
               <div class="cs_accordian_head cs_fs_18 cs_border_color cs_medium">
-                What are benefits of using your analytics application?
+                Posso contratar mais de um serviço ao mesmo tempo?
                 <span class="cs_accordian_toggle position-absolute"></span>
               </div>
               <div class="cs_accordian_body cs_body_color">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus quos vitae, consectetur eos, aut porro repellat quas eum reprehenderit magnam natus, voluptatem tempore numquam. Similique, dicta porro.
+                Sim! Na verdade, a combinação de serviços potencializa muito os resultados. Muitos clientes contratam a Mentoria junto com a consultoria Financeira ou Jurídica, criando uma assessoria completa para o negócio. Converse conosco para montarmos o pacote ideal para você.
               </div>
             </div>
             <div class="cs_accordian cs_type_1 cs_radius_20 position-relative">
               <div class="cs_accordian_head cs_fs_18 cs_border_color cs_medium">
-                Is there any future prediction for business?
+                Como posso começar a trabalhar com a Lacerda Assessoria?
                 <span class="cs_accordian_toggle position-absolute"></span>
               </div>
               <div class="cs_accordian_body cs_body_color">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus quos vitae, consectetur eos, aut porro repellat quas eum reprehenderit magnam natus, voluptatem tempore numquam. Similique, dicta porro.
+                É simples! Entre em contato pelo nosso WhatsApp e agende uma conversa inicial sem compromisso. Vamos entender o momento da sua empresa e apresentar as melhores soluções para o seu caso. O primeiro passo é só uma mensagem.
               </div>
             </div>
           </div>
@@ -1028,56 +1421,55 @@
             <div class="col-xl-5 col-lg-4 col-md-7">
               <div class="cs_footer_widget cs_text_widget">
                 <div class="cs_brand cs_mb_13 wow fadeInUp">
-                  <img src="assets/img/logo.svg" alt="Logo">
+                  <img src="assets/img/LOGO-LACERDA-2.gif" alt="Lacerda Assessoria" style="height: 65px;">
                 </div>
-                <p class="cs_mb_27">Boosts your productivity with easy task creation, customizable lists, time tracking, and real-time collaboration. Organize tasks, teammates, and tools in one seamless platform.</p>
+                <p class="cs_mb_27">Assessoria especializada em gestão empresarial, mentoria, jurídico e financeiro. Transformamos negócios com estratégia, método e comprometimento real com os seus resultados.</p>
                 <div class="d-flex flex-column">
-                  <a href="mailto:contact@gosaas.com" aria-label="Email send link" class="cs_support_link cs_white_color cs_semibold cs_mb_23">
+                  <a href="mailto:contato@lacerdaassessoria.com.br" aria-label="Email" class="cs_support_link cs_white_color cs_semibold cs_mb_23">
                   <span class="cs_support_icon cs_center cs_radius_100">
                   <img src="assets/img/icons/envelopes.svg" alt="Email icon">
                   </span>
-                  <span class="cs_support_text">contact@gosaas.com</span>
+                  <span class="cs_support_text">contato@lacerdaassessoria.com.br</span>
                   </a>
-                  <a href="tel:+5514545155540" aria-label="Phone call link" class="cs_support_link cs_white_color cs_semibold cs_phone">
+                  <a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp" class="cs_support_link cs_white_color cs_semibold cs_phone">
                   <span class="cs_support_icon cs_center cs_radius_100">
                   <img src="assets/img/icons/phone-rotary.svg" alt="Phone icon">
                   </span>
-                  <span class="cs_support_text">+55 145451 55540</span>
+                  <span class="cs_support_text">(85) 99157-8001</span>
                   </a>
                 </div>
               </div>
             </div>
             <div class="col-xl-2 col-lg-2 col-md-4 offset-lg-0 offset-md-1">
               <div class="cs_footer_widget cs_links_widget">
-                <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Quick Links</h3>
+                <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Links Rápidos</h3>
                 <ul class="cs_footer_medu cs_mp_0">
-                  <li><a href="index.html" aria-label="Home page link">Home</a></li>
-                  <li><a href="features.html" aria-label="Features page link">Features</a></li>
-                  <li><a href="pricing.html" aria-label="Pricing page link">Pricing</a></li>
-                  <li><a href="blog.html" aria-label="Blog page link">Blog</a></li>
-                  <li><a href="contact.html" aria-label="Contact page link">Contact</a></li>
+                  <li><a href="index.html" aria-label="Início">Início</a></li>
+                  <li><a href="services.html" aria-label="Serviços">Serviços</a></li>
+                  <li><a href="about-us.html" aria-label="Quem somos">Quem Somos</a></li>
+                  <li><a href="contact.html" aria-label="Contato">Contato</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-xl-2 col-lg-3 col-md-7">
               <div class="cs_footer_widget cs_help_widget">
-                <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Features</h3>
+                <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Nossos Serviços</h3>
                 <ul class="cs_footer_medu cs_mp_0">
-                  <li>Easy Task Creation</li>
-                  <li>Progress Tracking</li>
-                  <li>Customizable List</li>
-                  <li>Cross Platform Sync</li>
+                  <li>Show de Gestão</li>
+                  <li>Mentoria</li>
+                  <li>Jurídico</li>
+                  <li>Financeiro</li>
                 </ul>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-3  col-md-4 offset-md-1 offset-lg-0">
+            <div class="col-xl-3 col-lg-3 col-md-4 offset-md-1 offset-lg-0">
               <div class="cs_footer_widget cs_contact_widget">
-                <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Help Center</h3>
+                <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Atendimento</h3>
                 <ul class="cs_footer_medu cs_mp_0">
-                  <li><a href="contact.html" aria-label="Contact page link">Contact</a></li>
-                  <li><a href="#" aria-label="Help link">Help</a></li>
-                  <li><a href="#" aria-label="Resources link">Resources</a></li>
-                   <li><a href="term-condition.html" aria-label="Terms & Condition link">Terms & Condition</a></li>
+                  <li><a href="contact.html" aria-label="Fale Conosco">Fale Conosco</a></li>
+                  <li><a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp">WhatsApp</a></li>
+                  <li><a href="#" aria-label="Política de privacidade">Política de Privacidade</a></li>
+                  <li><a href="term-condition.html" aria-label="Termos de Uso">Termos de Uso</a></li>
                 </ul>
               </div>
             </div>
@@ -1088,7 +1480,7 @@
       <hr>
       <div class="container">
         <div class="cs_footer_bottom position-relative z-1">
-          <div class="cs_footer_text cs_white_color">Copyright &copy; <span class="cs_getting_year"></span>GoSaas theme by Laralink All Rights.</div>
+          <div class="cs_footer_text cs_white_color">Copyright &copy; <span class="cs_getting_year"></span> Lacerda Assessoria. Todos os direitos reservados.</div>
           <div class="cs_social_links cs_style_1 cs_white_color">
             <a href="#" aria-label="Social link">
             <span class="cs_social_icon"><i class="fa-brands fa-facebook"></i></span>
@@ -1127,5 +1519,96 @@
     <script src="assets/js/jquery.slick.min.js"></script>
     <script src="assets/js/odometer.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      (function () {
+        var slides = document.querySelectorAll('.cs_banner_slide');
+        var dots = document.querySelectorAll('.cs_dot');
+        var current = 0;
+        var timer;
+
+        function showSlide(n) {
+          slides[current].classList.remove('cs_banner_active');
+          dots[current].classList.remove('cs_dot_active');
+          current = (n + slides.length) % slides.length;
+          slides[current].classList.add('cs_banner_active');
+          dots[current].classList.add('cs_dot_active');
+        }
+
+        function startTimer() {
+          timer = setInterval(function () { showSlide(current + 1); }, 5000);
+        }
+
+        function resetTimer() {
+          clearInterval(timer);
+          startTimer();
+        }
+
+        document.querySelector('.cs_banner_prev').addEventListener('click', function () {
+          showSlide(current - 1); resetTimer();
+        });
+        document.querySelector('.cs_banner_next').addEventListener('click', function () {
+          showSlide(current + 1); resetTimer();
+        });
+        dots.forEach(function (d, i) {
+          d.addEventListener('click', function () { showSlide(i); resetTimer(); });
+        });
+
+        startTimer();
+      })();
+    </script>
+    <script>
+      (function () {
+        var stage = document.getElementById('cs_vt_stage');
+        var track = document.getElementById('cs_vt_track');
+        if (!stage || !track) return;
+        var items = Array.prototype.slice.call(track.querySelectorAll('.cs_vt_item'));
+        var dots = Array.prototype.slice.call(document.querySelectorAll('.cs_vt_dot'));
+        var current = 0;
+        var total = items.length;
+        var timer;
+
+        function getOffset() {
+          var stageW = stage.offsetWidth;
+          var itemW = items[0].offsetWidth;
+          var startOffset = (stageW - itemW) / 2;
+          return startOffset - (current * itemW);
+        }
+
+        function update(skipTransition) {
+          if (skipTransition) {
+            track.style.transition = 'none';
+          }
+          items.forEach(function (el, i) {
+            el.classList.toggle('cs_vt_active', i === current);
+          });
+          dots.forEach(function (d, i) {
+            d.classList.toggle('cs_vt_dot_active', i === current);
+          });
+          track.style.transform = 'translateX(' + getOffset() + 'px)';
+          if (skipTransition) {
+            track.offsetWidth;
+            track.style.transition = '';
+          }
+        }
+
+        function showSlide(n) {
+          current = (n + total) % total;
+          update(false);
+        }
+
+        function startTimer() { timer = setInterval(function () { showSlide(current + 1); }, 6000); }
+        function resetTimer() { clearInterval(timer); startTimer(); }
+
+        document.querySelector('.cs_vt_prev_btn').addEventListener('click', function () { showSlide(current - 1); resetTimer(); });
+        document.querySelector('.cs_vt_next_btn').addEventListener('click', function () { showSlide(current + 1); resetTimer(); });
+        dots.forEach(function (d, i) {
+          d.addEventListener('click', function () { showSlide(i); resetTimer(); });
+        });
+
+        update(true);
+        window.addEventListener('resize', function () { update(true); });
+        startTimer();
+      })();
+    </script>
   </body>
 </html>
