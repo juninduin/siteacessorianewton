@@ -319,13 +319,19 @@
       }
 
       /* Video Depoimentos Section */
-      .cs_video_testimonials { background-color: #05111A; position: relative; }
+      .cs_video_testimonials {
+        background-color: #0d1a24;
+        background-image: repeating-linear-gradient(
+          -45deg, transparent, transparent 32px,
+          rgba(255,255,255,0.03) 32px, rgba(255,255,255,0.03) 33px
+        );
+        position: relative;
+      }
       .cs_vt_card {
         border-radius: 14px;
         overflow: hidden;
-        background: #091720;
-        border: 1px solid rgba(255,255,255,0.07);
-        transition: transform 0.3s, box-shadow 0.3s;
+        border: 2px solid rgba(255,255,255,0.07);
+        transition: border-color 0.4s, box-shadow 0.4s;
       }
       .cs_vt_thumb_wrap {
         position: relative;
@@ -338,69 +344,89 @@
         aspect-ratio: 16/9;
         object-fit: cover;
         display: block;
-        transition: transform 0.4s;
       }
-      .cs_vt_thumb_wrap:hover .cs_vt_thumb { transform: scale(1.04); }
       .cs_vt_play_btn {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 66px;
-        height: 66px;
+        width: 68px;
+        height: 68px;
         border-radius: 50%;
-        background: rgba(255,255,255,0.92);
+        background: rgba(255,255,255,0.90);
+        border: 3px solid rgba(255,255,255,0.6);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #05111A;
+        color: #0d1a24;
         font-size: 22px;
-        padding-left: 4px;
+        padding-left: 5px;
         transition: background 0.3s, transform 0.3s;
       }
       .cs_vt_thumb_wrap:hover .cs_vt_play_btn {
         background: #C9A96E;
         color: #fff;
-        transform: translate(-50%, -50%) scale(1.12);
+        transform: translate(-50%, -50%) scale(1.1);
       }
-      .cs_vt_info { padding: 20px 24px 24px; }
+      .cs_vt_overlay_text {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        padding: 80px 20px 20px;
+        background: linear-gradient(to top, rgba(5,17,26,0.97) 50%, transparent);
+      }
       .cs_vt_name {
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 700;
         color: #C9A96E;
         text-transform: uppercase;
-        letter-spacing: 1.2px;
-        margin-bottom: 8px;
+        letter-spacing: 1.5px;
+        margin-bottom: 6px;
       }
       .cs_vt_quote {
-        font-size: 14px;
-        color: rgba(255,255,255,0.68);
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.88);
         margin: 0;
-        line-height: 1.65;
+        line-height: 1.5;
       }
-      .cs_vt_slider_wrap { position: relative; padding: 0 60px; }
+      /* Slides inativos: embaçados e reduzidos */
+      .cs_video_testimonials .cs_slider_wrapper .slick-slide {
+        opacity: 0.4;
+        transform: scale(0.84);
+        filter: blur(3px);
+        transition: all 0.5s ease;
+      }
+      .cs_video_testimonials .cs_slider_wrapper .slick-center {
+        opacity: 1;
+        transform: scale(1);
+        filter: none;
+      }
+      .cs_video_testimonials .cs_slider_wrapper .slick-center .cs_vt_card {
+        border-color: rgba(201,169,110,0.65);
+        box-shadow: 0 0 40px rgba(201,169,110,0.18);
+      }
+      .cs_vt_slider_wrap { position: relative; }
       .cs_vt_arrow {
         position: absolute;
-        top: 50%;
+        top: 40%;
         transform: translateY(-50%);
         z-index: 10;
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.2);
-        color: #fff;
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        color: rgba(255,255,255,0.45);
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        font-size: 15px;
-        transition: background 0.3s;
+        font-size: 22px;
+        transition: color 0.3s;
       }
-      .cs_vt_arrow:hover { background: rgba(201,169,110,0.7); border-color: #C9A96E; }
-      .cs_vt_arrow_left { left: 6px; }
-      .cs_vt_arrow_right { right: 6px; }
-      .cs_vt_slider_wrap .cs_pagination { text-align: center; margin-top: 32px; }
+      .cs_vt_arrow:hover { color: #C9A96E; }
+      .cs_vt_arrow_left { left: 12px; }
+      .cs_vt_arrow_right { right: 12px; }
+      .cs_vt_slider_wrap .cs_pagination { text-align: center; margin-top: 28px; }
 
       /* Footer branco */
       .cs_footer.cs_style_1.cs_type_2 {
@@ -540,81 +566,91 @@
         <div class="cs_height_74 cs_height_lg_50"></div>
       </div>
       <!-- Slider de Vídeos -->
-      <div class="container-fluid px-0">
-        <div class="cs_slider">
-          <div class="cs_vt_slider_wrap">
-            <div class="cs_slider_container"
-              data-autoplay="6000"
-              data-speed="700"
-              data-loop="1"
-              data-center="1"
-              data-variable-width="0"
-              data-slides-per-view="responsive"
-              data-add-slides="3"
-              data-lg-slides="3"
-              data-md-slides="2"
-              data-sm-slides="2"
-              data-xs-slides="1">
-              <div class="cs_slider_wrapper">
-                <!-- Depoimento 1 -->
-                <div style="padding: 0 10px;">
-                  <div class="cs_vt_card">
-                    <!-- Substitua o href pelo link embed do YouTube: https://www.youtube.com/embed/SEU_VIDEO_ID -->
-                    <a href="#" class="cs_video_open cs_vt_thumb_wrap">
-                      <img src="assets/img/feature_5.jpg" alt="Depoimento" class="cs_vt_thumb">
-                      <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
-                    </a>
-                    <div class="cs_vt_info">
+      <div class="cs_slider">
+        <div class="cs_vt_slider_wrap">
+          <div class="cs_slider_container"
+            data-autoplay="6000"
+            data-speed="700"
+            data-loop="1"
+            data-center="1"
+            data-variable-width="0"
+            data-slides-per-view="responsive"
+            data-add-slides="1"
+            data-lg-slides="1"
+            data-md-slides="1"
+            data-sm-slides="1"
+            data-xs-slides="1">
+            <div class="cs_slider_wrapper">
+              <!-- Depoimento 1 — substitua href pelo embed do YouTube: https://www.youtube.com/embed/SEU_VIDEO_ID -->
+              <div style="padding: 0 8px;">
+                <div class="cs_vt_card">
+                  <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                    <img src="assets/img/feature_5.jpg" alt="Depoimento" class="cs_vt_thumb">
+                    <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                    <div class="cs_vt_overlay_text">
                       <p class="cs_vt_name">Carlos Mendonça</p>
-                      <p class="cs_vt_quote">"A Lacerda transformou completamente a gestão da minha empresa. Os resultados vieram rápido."</p>
+                      <p class="cs_vt_quote">"É O CAMINHO PERFEITO PRA QUEM quer transformar sua empresa com gestão de verdade."</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
-                <!-- Depoimento 2 -->
-                <div style="padding: 0 10px;">
-                  <div class="cs_vt_card">
-                    <a href="#" class="cs_video_open cs_vt_thumb_wrap">
-                      <img src="assets/img/feature_6.jpg" alt="Depoimento" class="cs_vt_thumb">
-                      <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
-                    </a>
-                    <div class="cs_vt_info">
+              </div>
+              <!-- Depoimento 2 -->
+              <div style="padding: 0 8px;">
+                <div class="cs_vt_card">
+                  <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                    <img src="assets/img/feature_6.jpg" alt="Depoimento" class="cs_vt_thumb">
+                    <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                    <div class="cs_vt_overlay_text">
                       <p class="cs_vt_name">Ana Paula Lima</p>
-                      <p class="cs_vt_quote">"A mentoria me deu clareza sobre meu negócio e abriu caminhos que eu não enxergava antes."</p>
+                      <p class="cs_vt_quote">"A MENTORIA ME DEU CLAREZA que eu precisava para crescer com estratégia."</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
-                <!-- Depoimento 3 -->
-                <div style="padding: 0 10px;">
-                  <div class="cs_vt_card">
-                    <a href="#" class="cs_video_open cs_vt_thumb_wrap">
-                      <img src="assets/img/feature_1.jpg" alt="Depoimento" class="cs_vt_thumb">
-                      <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
-                    </a>
-                    <div class="cs_vt_info">
+              </div>
+              <!-- Depoimento 3 -->
+              <div style="padding: 0 8px;">
+                <div class="cs_vt_card">
+                  <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                    <img src="assets/img/feature_1.jpg" alt="Depoimento" class="cs_vt_thumb">
+                    <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                    <div class="cs_vt_overlay_text">
                       <p class="cs_vt_name">Roberto Farias</p>
-                      <p class="cs_vt_quote">"Com a assessoria jurídica e financeira da Lacerda, finalmente sinto que meu negócio está protegido."</p>
+                      <p class="cs_vt_quote">"FINALMENTE MEU NEGÓCIO ESTÁ PROTEGIDO com a assessoria jurídica certa."</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
-                <!-- Depoimento 4 -->
-                <div style="padding: 0 10px;">
-                  <div class="cs_vt_card">
-                    <a href="#" class="cs_video_open cs_vt_thumb_wrap">
-                      <img src="assets/img/feature_4.jpg" alt="Depoimento" class="cs_vt_thumb">
-                      <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
-                    </a>
-                    <div class="cs_vt_info">
+              </div>
+              <!-- Depoimento 4 -->
+              <div style="padding: 0 8px;">
+                <div class="cs_vt_card">
+                  <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                    <img src="assets/img/feature_4.jpg" alt="Depoimento" class="cs_vt_thumb">
+                    <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                    <div class="cs_vt_overlay_text">
                       <p class="cs_vt_name">Fernanda Costa</p>
-                      <p class="cs_vt_quote">"Profissionalismo, atenção e entrega. A Lacerda é a parceira certa para quem quer crescer de verdade."</p>
+                      <p class="cs_vt_quote">"PROFISSIONALISMO E ENTREGA. A parceira certa para crescer de verdade."</p>
                     </div>
-                  </div>
+                  </a>
+                </div>
+              </div>
+              <!-- Depoimento 5 -->
+              <div style="padding: 0 8px;">
+                <div class="cs_vt_card">
+                  <a href="#" class="cs_video_open cs_vt_thumb_wrap">
+                    <img src="assets/img/feature_8.jpg" alt="Depoimento" class="cs_vt_thumb">
+                    <div class="cs_vt_play_btn"><i class="fa-solid fa-play"></i></div>
+                    <div class="cs_vt_overlay_text">
+                      <p class="cs_vt_name">Marcos Oliveira</p>
+                      <p class="cs_vt_quote">"RESULTADOS REAIS EM POUCOS MESES com a Lacerda do meu lado."</p>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
-            <div class="cs_left_arrow cs_vt_arrow cs_vt_arrow_left"><i class="fa-solid fa-chevron-left"></i></div>
-            <div class="cs_right_arrow cs_vt_arrow cs_vt_arrow_right"><i class="fa-solid fa-chevron-right"></i></div>
-            <ul class="cs_pagination"></ul>
           </div>
+          <div class="cs_left_arrow cs_vt_arrow cs_vt_arrow_left"><i class="fa-solid fa-chevron-left"></i></div>
+          <div class="cs_right_arrow cs_vt_arrow cs_vt_arrow_right"><i class="fa-solid fa-chevron-right"></i></div>
+          <ul class="cs_pagination"></ul>
         </div>
       </div>
       <div class="cs_height_140 cs_height_lg_80"></div>
