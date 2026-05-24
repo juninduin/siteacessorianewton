@@ -18,6 +18,50 @@
     <link rel="stylesheet" href="assets/css/slick.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
+      /* Header transparente */
+      .cs_site_header {
+        background: rgba(5, 17, 26, 0.55) !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+
+      /* Seção de serviços — fundo branco */
+      .cs_features_section {
+        background-color: #ffffff;
+      }
+      .cs_features_section h2,
+      .cs_features_section .cs_iconbox_info h3 {
+        color: #05111A !important;
+      }
+      .cs_features_section .cs_iconbox_info p {
+        color: #555555 !important;
+      }
+      .cs_features_section .cs_iconbox.cs_style_2 {
+        height: 100% !important;
+        padding: 22px !important;
+      }
+      .cs_features_section .row > div {
+        display: flex;
+      }
+      .cs_features_section .cs_iconbox_icon {
+        width: 56px !important;
+        height: 56px !important;
+        margin-bottom: 16px !important;
+      }
+      .cs_features_section .cs_iconbox_info h3 {
+        font-size: 17px !important;
+        margin-bottom: 8px !important;
+      }
+      .cs_features_section .cs_iconbox_info p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+      }
+
+      /* FAQ — borda dourada */
+      .cs_task_management .cs_accordian.cs_type_1 {
+        border: 1.5px solid #C9A96E !important;
+      }
+
       .cs_breath_section {
         background:
           radial-gradient(circle at top left, rgba(139, 92, 246, 0.08), transparent 30%),
@@ -653,34 +697,34 @@
     <!-- Start Hero Banner Slider -->
     <section class="cs_hero_banner" id="home">
       <!-- Slide 1 -->
-      <div class="cs_banner_slide cs_banner_active" style="background-image: url('assets/img/feature_5.jpg')">
-        <div class="cs_banner_overlay"></div>
+      <div class="cs_banner_slide cs_banner_active" style="background-image: url('assets/img-geral/banner-rotativo-1.webp')">
+        <!-- <div class="cs_banner_overlay"></div> -->
         <div class="container">
           <div class="cs_banner_content">
-            <h1 class="cs_banner_title">Transforme sua empresa com quem entende de gestão</h1>
-            <p class="cs_banner_subtitle">Assessoria especializada em gestão empresarial, mentoria, jurídico e financeiro para empresários que querem crescer com segurança e estratégia.</p>
+            <h1 class="cs_banner_title">Transforme sua empresa com estratégia e resultado</h1>
+            <p class="cs_banner_subtitle">Gestão, mentoria, jurídico e financeiro — tudo que seu negócio precisa em um só lugar.</p>
             <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn">Quero Conhecer</a>
           </div>
         </div>
       </div>
       <!-- Slide 2 -->
-      <div class="cs_banner_slide" style="background-image: url('assets/img/feature_6.jpg')">
-        <div class="cs_banner_overlay"></div>
+      <div class="cs_banner_slide" style="background-image: url('assets/img-geral/banner-rotativo-2.webp')">
+        <!-- <div class="cs_banner_overlay"></div> -->
         <div class="container">
           <div class="cs_banner_content">
-            <h1 class="cs_banner_title">Mentoria que acelera o seu crescimento profissional</h1>
-            <p class="cs_banner_subtitle">Desenvolvimento personalizado para líderes e empreendedores que buscam evolução contínua, clareza de propósito e resultados concretos.</p>
+            <h1 class="cs_banner_title">Mentoria para líderes que querem crescer de verdade</h1>
+            <p class="cs_banner_subtitle">Clareza, estratégia e acompanhamento próximo para acelerar seus resultados.</p>
             <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn">Quero Ser Mentorado</a>
           </div>
         </div>
       </div>
       <!-- Slide 3 -->
-      <div class="cs_banner_slide" style="background-image: url('assets/img/feature_1.jpg')">
-        <div class="cs_banner_overlay"></div>
+      <div class="cs_banner_slide" style="background-image: url('assets/img-geral/banner-rotativo-3.webp')">
+        <!-- <div class="cs_banner_overlay"></div> -->
         <div class="container">
           <div class="cs_banner_content">
-            <h1 class="cs_banner_title">Assessoria jurídica e financeira para proteger e crescer</h1>
-            <p class="cs_banner_subtitle">Segurança jurídica e saúde financeira para que o seu negócio cresça com solidez, previsibilidade e sem surpresas no caminho.</p>
+            <h1 class="cs_banner_title">Proteção jurídica e financeira para o seu negócio</h1>
+            <p class="cs_banner_subtitle">Segurança e solidez para crescer sem surpresas.</p>
             <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn">Falar com Especialista</a>
           </div>
         </div>
@@ -794,52 +838,54 @@
     <section class="cs_features_section">
     <div class="cs_height_140 cs_height_lg_80"></div>
     <div class="container">
-      <div class="cs_section_heading cs_style_1 text-center">
-        <h2 class="cs_section_title cs_fs_50 cs_white_color mb-0 wow fadeInDown">Conheça nossos <br> serviços</h2>
+      <div class="text-center">
+        <p style="color:#8B6914; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2.5px; margin-bottom:12px;">O que fazemos</p>
+        <div style="width:50px; height:3px; background:#C9A96E; border-radius:4px; margin: 0 auto 24px;"></div>
+        <h2 style="color:#05111A !important; font-size:46px; font-weight:700; line-height:1.2; margin-bottom:0;">Conheça nossos <br> serviços</h2>
       </div>
       <div class="cs_height_74 cs_height_lg_50"></div>
       <div class="row cs_gap_y_24 justify-content-center">
-        <div class="col-lg-3 col-md-6 wow fadeInLeft">
+        <div class="col-lg-3 col-md-6">
           <div class="cs_iconbox cs_style_2 cs_type_1 cs_radius_15">
             <span class="cs_iconbox_icon cs_center cs_radius_100 cs_mb_25">
             <img src="assets/img/icons/megaphone.svg" alt="Show de Gestão icon">
             </span>
             <div class="cs_iconbox_info">
-              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Show de Gestão</h3>
-              <p class="mb-0">Transforme a gestão da sua empresa com metodologias modernas e resultados práticos.</p>
+              <h3 class="cs_fs_21 cs_normal cs_mb_13" style="color:#05111A;">Show de Gestão</h3>
+              <p class="mb-0" style="color:#555;">Transforme a gestão da sua empresa com metodologias modernas e resultados práticos.</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp">
+        <div class="col-lg-3 col-md-6">
           <div class="cs_iconbox cs_style_2 cs_type_1 cs_radius_15">
             <span class="cs_iconbox_icon cs_center cs_bg_2 cs_radius_100 cs_mb_25">
             <img src="assets/img/icons/magnet-user.svg" alt="Mentoria icon">
             </span>
             <div class="cs_iconbox_info">
-              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Mentoria</h3>
-              <p class="mb-0">Desenvolvimento personalizado para líderes e empreendedores que buscam evolução contínua.</p>
+              <h3 class="cs_fs_21 cs_normal cs_mb_13" style="color:#05111A;">Mentoria</h3>
+              <p class="mb-0" style="color:#555;">Desenvolvimento personalizado para líderes e empreendedores que buscam evolução contínua.</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInRight">
+        <div class="col-lg-3 col-md-6">
           <div class="cs_iconbox cs_style_2 cs_type_1 cs_radius_15">
             <span class="cs_iconbox_icon cs_center cs_bg_3 cs_radius_100 cs_mb_25">
             <img src="assets/img/icons/shield-keyhole.svg" alt="Juridico icon">
             </span>
             <div class="cs_iconbox_info">
-              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Jurídico</h3>
-              <p class="mb-0">Assessoria jurídica especializada para proteger e fortalecer o seu negócio.</p>
+              <h3 class="cs_fs_21 cs_normal cs_mb_13" style="color:#05111A;">Jurídico</h3>
+              <p class="mb-0" style="color:#555;">Assessoria jurídica especializada para proteger e fortalecer o seu negócio.</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp">
+        <div class="col-lg-3 col-md-6">
           <div class="cs_iconbox cs_style_2 cs_type_1 cs_radius_15">
             <span class="cs_iconbox_icon cs_center cs_bg_4 cs_radius_100 cs_mb_25">
             <img src="assets/img/icons/point-of-sale-bill.svg" alt="Financeiro icon">
             </span>
             <div class="cs_iconbox_info">
-              <h3 class="cs_fs_21 cs_white_color cs_normal cs_mb_13">Financeiro</h3>
-              <p class="mb-0">Planejamento e gestão financeira para garantir a saúde e o crescimento do seu negócio.</p>
+              <h3 class="cs_fs_21 cs_normal cs_mb_13" style="color:#05111A;">Financeiro</h3>
+              <p class="mb-0" style="color:#555;">Planejamento e gestão financeira para garantir a saúde e o crescimento do seu negócio.</p>
             </div>
           </div>
         </div>
@@ -849,143 +895,17 @@
     </section>
     <!-- End Features Section -->
     <!-- Start Features Card Section -->
-    <section class="cs_breath_section">
+    <section style="background-color:#05111A; padding: 80px 0;">
       <div class="container">
-        <div class="cs_card cs_style_1 cs_type_4">
-          <div class="row cs_gap_y_40 align-items-center">
-            <div class="col-xl-5 col-lg-5 offset-xl-1 order-lg-2">
-              <div class="cs_card_thumbnail cs_radius_15 position-relative wow fadeInRight">
-                <img src="assets/img/feature_5.jpg" alt="Feature image">
-                <div class="cs_illustration position-absolute">
-                  <img src="assets/img/Illustration_2.png" alt="Analytics chart image">
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6 col-lg-7 order-lg-1">
-              <div class="cs_card_content">
-                <div class="cs_section_heading cs_style_1 cs_mb_39">
-                  <p class="cs_body_color cs_mb_11">SHOW DE GESTÃO</p>
-                  <h2 class="cs_section_title cs_white_color cs_fs_50 cs_mb_24 wow fadeInDown">Transforme a gestão da sua empresa com resultados reais</h2>
-                  <p class="cs_section_text cs_fs_21 mb-0">Diagnóstico completo, implantação de processos e acompanhamento prático para que sua empresa funcione com eficiência, clareza e crescimento sustentável.</p>
-                </div>
-                <div class="row cs_gap_y_40">
-                  <div class="col-md-6 wow fadeInLeft">
-                    <div class="cs_iconbox">
-                      <span class="cs_iconbox_icon cs_accent_color cs_mb_24 d-inline-block">
-                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <g clip-path="url(#clip0_1792_588)">
-                            <path d="M26.875 22.5L23.75 19.375V3.125C23.75 1.40125 25.1513 0 26.875 0C28.5987 0 30 1.40125 30 3.125V19.375L26.875 22.5ZM17.5 0H3.75C1.67875 0 0 1.67875 0 3.75V26.6963C0 28.3313 1.17625 29.82 2.8025 29.9837C4.6725 30.1712 6.25 28.7075 6.25 26.875V22.5H21.25V3.75C21.25 1.67875 19.5712 0 17.5 0ZM8.4675 16.9175C8.08 17.305 7.57125 17.4987 7.0625 17.4987C6.55375 17.4987 6.045 17.305 5.6575 16.9175L3.59875 14.8588L5.36625 13.0912L7.0625 14.7875L10.2338 11.6163L12.0012 13.3837L8.4675 16.9175ZM8.4675 9.4175C8.08 9.805 7.57125 9.99875 7.0625 9.99875C6.55375 9.99875 6.045 9.805 5.6575 9.4175L3.59875 7.35875L5.36625 5.59125L7.0625 7.2875L10.2338 4.11625L12.0012 5.88375L8.4675 9.4175ZM25 26.25V25H8.75V26.875C8.75 28.03 8.4 29.105 7.8 30H21.25C23.3212 30 25 28.3212 25 26.25Z" fill="currentColor"/>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_1792_588">
-                              <rect width="30" height="30" fill="white"/>
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </span>
-                      <h3 class="cs_fs_21 cs_white_color cs_mb_15">Diagnóstico Empresarial</h3>
-                      <p class="mb-0">Identificamos os gargalos e oportunidades do seu negócio com uma análise profunda e personalizada.</p>
-                    </div>
-                  </div>
-                  <div class="col-md-6 wow fadeInRight">
-                    <div class="cs_iconbox">
-                      <span class="cs_iconbox_icon cs_accent_color cs_mb_24 d-inline-block">
-                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <g clip-path="url(#clip0_1792_594)">
-                            <path d="M6.8744 13.75C9.2869 13.75 11.2494 11.7875 11.2494 9.375C11.2494 6.9625 9.2869 5 6.8744 5C4.4619 5 2.4994 6.9625 2.4994 9.375C2.4994 11.7875 4.4619 13.75 6.8744 13.75ZM19.3744 8.75C21.7869 8.75 23.7494 6.7875 23.7494 4.375C23.7494 1.9625 21.7869 0 19.3744 0C16.9619 0 14.9994 1.9625 14.9994 4.375C14.9994 6.7875 16.9619 8.75 19.3744 8.75ZM22.4994 15C18.3569 15 14.9994 18.3575 14.9994 22.5C14.9994 26.6425 18.3569 30 22.4994 30C26.6419 30 29.9994 26.6425 29.9994 22.5C29.9994 18.3575 26.6419 15 22.4994 15ZM27.1032 22.14L23.7244 25.4075C23.1594 25.965 22.4094 26.2463 21.6581 26.2463C20.9069 26.2463 20.1544 25.965 19.5794 25.4037L17.8869 23.7387C17.3932 23.255 17.3869 22.4637 17.8694 21.9712C18.3519 21.4775 19.1432 21.47 19.6369 21.9538L21.3294 23.6175C21.5094 23.795 21.8044 23.7913 21.9819 23.615L25.3731 20.335C25.8694 19.8587 26.6619 19.8725 27.1406 20.3713C27.6181 20.8688 27.6019 21.66 27.1044 22.1388L27.1032 22.14ZM13.1269 19.0075C12.7219 20.095 12.4994 21.2712 12.4994 22.5C12.4882 22.5 12.4769 22.5 12.4656 22.5H1.28315C0.928151 22.5 0.588151 22.3487 0.351901 22.0837C0.115651 21.8188 0.00190056 21.4662 0.0406506 21.1125C0.426901 17.6287 3.3644 15 6.8744 15C9.6319 15 12.0357 16.6225 13.1269 19.0075ZM14.5319 16.4575C14.0494 15.7763 13.4794 15.1625 12.8382 14.635C13.7719 11.9113 16.3482 10 19.3406 10C21.5956 10 23.6132 11.085 24.8719 12.7838C24.1119 12.5988 23.3169 12.5 22.5006 12.5C19.2481 12.5 16.3582 14.0525 14.5319 16.4575Z" fill="currentColor"/>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_1792_594">
-                              <rect width="30" height="30" fill="white"/>
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </span>
-                      <h3 class="cs_fs_21 cs_white_color cs_mb_15">Implantação de Melhorias</h3>
-                      <p class="mb-0">Acompanhamos a execução das mudanças lado a lado com sua equipe, garantindo resultados concretos.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="row align-items-center cs_gap_y_40">
+          <div class="col-lg-6 wow fadeInLeft">
+            <img src="assets/img-geral/show-gestao-2.webp" alt="Show de Gestão" style="width:100%; border-radius:16px; display:block;">
           </div>
-        </div>
-        <div class="cs_height_136 cs_height_lg_80"></div>
-        <div class="cs_card cs_style_1">
-          <div class="row cs_gap_y_40 align-items-center">
-            <div class="col-xl-5 col-lg-5">
-              <div class="cs_card_thumbnail cs_radius_15 position-relative wow fadeInLeft">
-                <img src="assets/img/feature_6.jpg" alt="Feature image">
-                <div class="cs_active_users_badge position-absolute">
-                  <div style="background:#0d1f2d; border:1px solid rgba(201,169,110,0.4); border-radius:50px; padding:10px 18px; display:flex; align-items:center; gap:8px; white-space:nowrap;">
-                    <i class="fa-solid fa-user-tie" style="color:#C9A96E; font-size:14px;"></i>
-                    <span style="color:#fff; font-size:14px; font-weight:600;">Mentoria Online</span>
-                  </div>
-                </div>
-                <div class="cs_search_badge position-absolute">
-                  <div style="background:#0d1f2d; border:1px solid rgba(201,169,110,0.4); border-radius:50px; padding:10px 18px; display:flex; align-items:center; gap:8px; white-space:nowrap;">
-                    <i class="fa-solid fa-chart-line" style="color:#C9A96E; font-size:14px;"></i>
-                    <span style="color:#fff; font-size:14px; font-weight:600;">Resultados em 30 dias</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6 col-lg-7 offset-xl-1">
-              <div class="cs_card_content ms-auto">
-                <div class="cs_section_heading cs_style_1 cs_mb_42">
-                  <p class="cs_body_color cs_semibold cs_mb_11">MENTORIA</p>
-                  <h2 class="cs_section_title cs_fs_50 cs_white_color cs_mb_27 wow fadeInDown">Desenvolvimento personalizado para líderes e empreendedores</h2>
-                  <p class="cs_section_text mb-0">Nossa mentoria é um acompanhamento próximo e estratégico, <br> desenhado para acelerar o seu crescimento como empresário <br> e como pessoa.</p>
-                </div>
-                <ul class="cs_list cs_style_1 cs_mp_0 wow fadeInUp">
-                  <li>
-                    <span class="cs_list_icon cs_purple_color">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_1792_60911)">
-                          <path d="M27.803 6.59L23.4093 2.19625C21.9918 0.78 20.108 0 18.1055 0H11.8918C9.8893 0 8.00555 0.78 6.58805 2.19625L2.1943 6.59C0.778047 8.0075 -0.00195312 9.89125 -0.00195312 11.8938V18.1075C-0.00195312 20.11 0.778047 21.9937 2.1943 23.4113L6.58805 27.805C8.00555 29.2212 9.8893 30.0012 11.8918 30.0012H18.1055C20.108 30.0012 21.9918 29.2212 23.4093 27.805L27.803 23.4113C29.2193 21.9937 29.9993 20.11 29.9993 18.1075V11.8938C29.9993 9.89125 29.2193 8.0075 27.803 6.59ZM22.9155 12.2913L16.3755 18.8312C15.6093 19.5975 14.5905 20.02 13.5068 20.02C12.423 20.02 11.4043 19.5975 10.638 18.8312L7.1543 15.3475C6.66555 14.8587 6.66555 14.0688 7.1543 13.58C7.64305 13.0913 8.43305 13.0913 8.9218 13.58L12.4055 17.0637C12.9943 17.6525 14.0205 17.6513 14.608 17.0637L21.148 10.5237C21.6368 10.035 22.4268 10.035 22.9155 10.5237C23.4043 11.0125 23.4043 11.8025 22.9155 12.2913Z" fill="currentColor"/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_1792_60912">
-                            <rect width="30" height="30" fill="white"/>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </span>
-                    <span class="cs_fs_21 cs_white_color cs_semibold">Sessões Individuais Focadas</span>
-                  </li>
-                  <li>
-                    <span class="cs_list_icon cs_purple_color">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_1792_60913)">
-                          <path d="M27.803 6.59L23.4093 2.19625C21.9918 0.78 20.108 0 18.1055 0H11.8918C9.8893 0 8.00555 0.78 6.58805 2.19625L2.1943 6.59C0.778047 8.0075 -0.00195312 9.89125 -0.00195312 11.8938V18.1075C-0.00195312 20.11 0.778047 21.9937 2.1943 23.4113L6.58805 27.805C8.00555 29.2212 9.8893 30.0012 11.8918 30.0012H18.1055C20.108 30.0012 21.9918 29.2212 23.4093 27.805L27.803 23.4113C29.2193 21.9937 29.9993 20.11 29.9993 18.1075V11.8938C29.9993 9.89125 29.2193 8.0075 27.803 6.59ZM22.9155 12.2913L16.3755 18.8312C15.6093 19.5975 14.5905 20.02 13.5068 20.02C12.423 20.02 11.4043 19.5975 10.638 18.8312L7.1543 15.3475C6.66555 14.8587 6.66555 14.0688 7.1543 13.58C7.64305 13.0913 8.43305 13.0913 8.9218 13.58L12.4055 17.0637C12.9943 17.6525 14.0205 17.6513 14.608 17.0637L21.148 10.5237C21.6368 10.035 22.4268 10.035 22.9155 10.5237C23.4043 11.0125 23.4043 11.8025 22.9155 12.2913Z" fill="currentColor"/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_1792_60914">
-                            <rect width="30" height="30" fill="white"/>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </span>
-                    <span class="cs_fs_21 cs_white_color cs_semibold">Plano de Metas Personalizado</span>
-                  </li>
-                  <li>
-                    <span class="cs_list_icon cs_purple_color">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_1792_60915)">
-                          <path d="M27.803 6.59L23.4093 2.19625C21.9918 0.78 20.108 0 18.1055 0H11.8918C9.8893 0 8.00555 0.78 6.58805 2.19625L2.1943 6.59C0.778047 8.0075 -0.00195312 9.89125 -0.00195312 11.8938V18.1075C-0.00195312 20.11 0.778047 21.9937 2.1943 23.4113L6.58805 27.805C8.00555 29.2212 9.8893 30.0012 11.8918 30.0012H18.1055C20.108 30.0012 21.9918 29.2212 23.4093 27.805L27.803 23.4113C29.2193 21.9937 29.9993 20.11 29.9993 18.1075V11.8938C29.9993 9.89125 29.2193 8.0075 27.803 6.59ZM22.9155 12.2913L16.3755 18.8312C15.6093 19.5975 14.5905 20.02 13.5068 20.02C12.423 20.02 11.4043 19.5975 10.638 18.8312L7.1543 15.3475C6.66555 14.8587 6.66555 14.0688 7.1543 13.58C7.64305 13.0913 8.43305 13.0913 8.9218 13.58L12.4055 17.0637C12.9943 17.6525 14.0205 17.6513 14.608 17.0637L21.148 10.5237C21.6368 10.035 22.4268 10.035 22.9155 10.5237C23.4043 11.0125 23.4043 11.8025 22.9155 12.2913Z" fill="currentColor"/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_1792_60916">
-                            <rect width="30" height="30" fill="white"/>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </span>
-                    <span class="cs_fs_21 cs_white_color cs_semibold">Acompanhamento Contínuo</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <div class="col-lg-6 wow fadeInRight" style="padding-left: 48px;">
+            <p style="color:#C9A96E; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2.5px; margin-bottom:16px;">Show de Gestão</p>
+            <h2 class="cs_white_color" style="font-size:36px; font-weight:700; line-height:1.25; margin-bottom:20px;">A arte de inspirar pessoas<br>e organizações</h2>
+            <div style="width:50px; height:3px; background:#C9A96E; border-radius:4px; margin-bottom:24px;"></div>
+            <p style="color:rgba(255,255,255,0.7); font-size:16px; line-height:1.75; margin-bottom:0;"><em>Show de Gestão</em> une música e conteúdo humano. Cada palestra e evento mistura emoção, humor e aprendizado, inspirando pessoas e transformando organizações.</p>
           </div>
         </div>
       </div>
@@ -1038,8 +958,8 @@
       </div>
     </section>
     <!-- End Productivity Section -->
-    <!-- Start Integration Section -->
-    <section>
+    <!-- Integration Section removida -->
+    <section style="display:none;">
       <div class="cs_height_130 cs_height_lg_80"></div>
       <div class="container">
         <div class="cs_section_heading cs_style_1 text-center">
@@ -1223,79 +1143,42 @@
       <div class="cs_height_140 cs_height_lg_80"></div>
     </section>
     <!-- End Integration Section -->
-    <!-- Start Features Card Section -->
-    <section class="cs_breath_pricing_section cs_numbers_section">
+    <!-- Start Numbers Section -->
+    <section style="background-color:#05111A; padding: 80px 0;">
       <div class="container">
-       <div class="cs_card cs_style_1 cs_type_5">
-        <div class="row cs_gap_y_40 align-items-center">
-          <div class="col-lg-5 order-lg-2 offset-lg-1">
-            <div class="cs_card_thumbnail cs_radius_15 position-relative wow fadeInRight">
-              <img src="assets/img/feature_7.jpg" alt="Feature image">
-              <div class="cs_fast_managing_badge position-absolute">
-                <div style="background:#0d1f2d; border:1px solid rgba(201,169,110,0.4); border-radius:50px; padding:10px 18px; display:flex; align-items:center; gap:8px; white-space:nowrap;">
-                  <i class="fa-solid fa-briefcase" style="color:#C9A96E; font-size:14px;"></i>
-                  <span style="color:#fff; font-size:14px; font-weight:600;">Assessoria Completa</span>
-                </div>
-              </div>
-              <div class="cs_task_info_badge position-absolute">
-                <div style="background:#0d1f2d; border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:16px 20px; min-width:180px;">
-                  <p style="color:#C9A96E; font-size:12px; font-weight:700; margin:0 0 8px 0; text-transform:uppercase; letter-spacing:1px;">Nossos Resultados</p>
-                  <div style="display:flex; flex-direction:column; gap:6px;">
-                    <div style="display:flex; justify-content:space-between; color:#fff; font-size:13px;">
-                      <span>Empresas atendidas</span><span style="color:#C9A96E; font-weight:700;">200+</span>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; color:#fff; font-size:13px;">
-                      <span>Anos de experiência</span><span style="color:#C9A96E; font-weight:700;">10+</span>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; color:#fff; font-size:13px;">
-                      <span>Taxa de satisfação</span><span style="color:#C9A96E; font-weight:700;">98%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="cs_rating_badge position-absolute">
-                <div style="background:#0d1f2d; border:1px solid rgba(201,169,110,0.4); border-radius:50px; padding:10px 18px; display:flex; align-items:center; gap:8px; white-space:nowrap;">
-                  <i class="fa-solid fa-star" style="color:#C9A96E; font-size:14px;"></i>
-                  <span style="color:#fff; font-size:14px; font-weight:600;">200+ Empresas</span>
-                </div>
-              </div>
-            </div>
+        <div class="row align-items-center cs_gap_y_40">
+          <div class="col-lg-6 wow fadeInRight order-lg-2">
+            <img src="assets/img/feature_7.jpg" alt="Assessoria Lacerda" style="width:100%; border-radius:16px; display:block;">
           </div>
-          <div class="col-lg-6">
-            <div class="cs_card_content">
-              <div class="cs_section_heading cs_style_1 cs_mb_37">
-                <p class="cs_purple_color cs_semibold cs_mb_11">NOSSOS NÚMEROS</p>
-                <h2 class="cs_section_title cs_fs_50 cs_heading_color cs_mb_27 wow fadeInDown">Uma assessoria <span class="cs_gradient_color">completa e de resultado</span></h2>
-                <p class="cs_section_text mb-0">Combinamos gestão, mentoria, suporte jurídico e financeiro<br> para que você tenha tudo o que precisa para crescer<br> em um único lugar.</p>
+          <div class="col-lg-6 wow fadeInLeft order-lg-1" style="padding-right: 48px;">
+            <p style="color:#C9A96E; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2.5px; margin-bottom:16px;">Nossos Números</p>
+            <h2 class="cs_white_color" style="font-size:36px; font-weight:700; line-height:1.25; margin-bottom:20px;">Uma assessoria completa<br>e de resultado</h2>
+            <div style="width:50px; height:3px; background:#C9A96E; border-radius:4px; margin-bottom:24px;"></div>
+            <p style="color:rgba(255,255,255,0.7); font-size:16px; line-height:1.75; margin-bottom:36px;">Combinamos gestão, mentoria, suporte jurídico e financeiro para que você tenha tudo o que precisa para crescer em um único lugar.</p>
+            <div style="display:flex; gap:40px; margin-bottom:36px;">
+              <div>
+                <div style="font-size:38px; font-weight:700; color:#C9A96E; line-height:1;">+200</div>
+                <p style="color:rgba(255,255,255,0.6); font-size:14px; margin:6px 0 0;">Empresas atendidas</p>
               </div>
-              <div class="cs_mb_29 wow fadeInUp">
-                <a href="https://wa.me/5585991578001" target="_blank" class="cs_btn cs_style_1 cs_purple_bg cs_fs_16 cs_semibold cs_white_color cs_accent_hover">
-                <span>Fale com um especialista</span>
-                </a>
+              <div>
+                <div style="font-size:38px; font-weight:700; color:#C9A96E; line-height:1;">+10</div>
+                <p style="color:rgba(255,255,255,0.6); font-size:14px; margin:6px 0 0;">Anos de experiência</p>
               </div>
-              <div class="cs_funfact_wrapper">
-                <div class="cs_funfact cs_style_1">
-                  <div class="cs_funfact_number cs_fs_38 cs_bold cs_heading_color cs_mb_2">
-                    <span class="odometer" data-count-to="200"></span>+
-                  </div>
-                  <h3 class="cs_body_color cs_fs_16 cs_normal mb-0">Empresas atendidas</h3>
-                </div>
-                <div class="cs_funfact cs_style_1">
-                  <div class="cs_funfact_number cs_fs_38 cs_bold cs_heading_color cs_mb_2">
-                    <span class="odometer" data-count-to="10"></span>+
-                  </div>
-                  <h3 class="cs_body_color cs_fs_16 cs_normal mb-0">Anos de experiência</h3>
-                </div>
+              <div>
+                <div style="font-size:38px; font-weight:700; color:#C9A96E; line-height:1;">98%</div>
+                <p style="color:rgba(255,255,255,0.6); font-size:14px; margin:6px 0 0;">Taxa de satisfação</p>
               </div>
             </div>
+            <a href="https://wa.me/5585991578001" target="_blank" class="cs_btn cs_style_1 cs_white_color" style="background-color:#C9A96E; font-size:15px; font-weight:700; padding:14px 36px; border-radius:50px;">
+              <span>Fale com um especialista</span>
+            </a>
           </div>
         </div>
-       </div>
       </div>
     </section>
-    <!-- End Features Card Section -->
-    <!-- Start Pricing Section -->
-    <section class="cs_breath_pricing_section">
+    <!-- End Numbers Section -->
+    <!-- Pricing Section removida -->
+    <section class="cs_breath_pricing_section" style="display:none;">
       <div class="cs_height_140 cs_height_lg_80"></div>
       <div class="container">
         <div class="cs_section_heading cs_style_1 cs_mb_60 text-center">
@@ -1409,29 +1292,20 @@
     </section>
     <!-- End Pricing Section -->
     <!-- Start CTA Section -->
-    <section class="cs_final_cta_section">
+    <section style="background-color: #05111A; padding: 80px 0;">
       <div class="container">
-        <div class="cs_cta cs_style_2 cs_radius_40 position-relative overflow-hidden">
-          <div class="cs_cta_text text-center position-relative z-1">
-            <h2 class="cs_fs_50 cs_white_color cs_mb_30 wow fadeInDown">Pronto para transformar sua empresa?</h2>
-            <p class="cs_border_color cs_mb_37">Dê o primeiro passo agora. Uma conversa pode mudar <br> o rumo do seu negócio.</p>
-            <a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp" class="cs_btn cs_style_1 cs_purple_bg cs_fs_16 cs_white_color cs_semibold cs_accent_hover wow fadeInUp">
+        <div style="background: linear-gradient(135deg, #0d1e2e 0%, #091520 100%); border: 1px solid rgba(201,169,110,0.25); border-radius: 24px; padding: 80px 60px; text-align: center; position: relative; overflow: hidden;">
+          <p style="color:#C9A96E; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:2.5px; margin-bottom:12px;" class="wow fadeInDown">Dê o próximo passo</p>
+          <div style="width:80px; height:3px; background:#C9A96E; border-radius:4px; margin: 0 auto 28px;"></div>
+          <h2 class="cs_white_color wow fadeInUp" style="font-size:46px; font-weight:700; line-height:1.2; margin-bottom:20px;">
+            Pronto para transformar<br>sua empresa?
+          </h2>
+          <p style="color:rgba(255,255,255,0.65); font-size:17px; line-height:1.7; margin-bottom:40px; max-width:520px; margin-left:auto; margin-right:auto;" class="wow fadeInUp">
+            Dê o primeiro passo agora. Uma conversa pode mudar o rumo do seu negócio.
+          </p>
+          <a href="https://wa.me/5585991578001" target="_blank" class="cs_btn cs_style_1 cs_white_color wow fadeInUp" style="background-color:#C9A96E; font-size:15px; font-weight:700; padding:16px 40px;">
             <span>Fale Conosco no WhatsApp</span>
-            <span class="cs_btn_icon cs_center overflow-hidden">
-            <i class="fa-solid fa-arrow-right"></i>
-            </span>
-            </a>
-          </div>
-          <div class="cs_ellipse_1 position-absolute"></div>
-          <div class="cs_ellipse_2 position-absolute"></div>
-          <div class="cs_ellipse_3 position-absolute"></div>
-          <div class="cs_ellipse_4 position-absolute"></div>
-          <div class="cs_vector_1 position-absolute">
-            <img src="assets/img/vector_2.svg" alt="Vector shape">
-          </div>
-          <div class="cs_vector_2 position-absolute">
-            <img src="assets/img/vector_3.svg" alt="Vector shape">
-          </div>
+          </a>
         </div>
       </div>
     </section>
