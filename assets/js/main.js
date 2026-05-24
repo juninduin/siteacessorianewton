@@ -299,13 +299,16 @@
     $('.cs_accordian').children('.cs_accordian_body').hide();
     $('.cs_accordian.active').children('.cs_accordian_body').show();
     $('.cs_accordian_head').on('click', function () {
-      $(this).parent('.cs_accordian').siblings().children('.cs_accordian_body').slideUp(250);
-      $(this).siblings().slideDown(400);
-      $(this).parent().parent().siblings().find('.cs_accordian_body').slideUp(250);
-      /* Accordian Active Class */
-      $(this).parents('.cs_accordian').addClass('active');
-      $(this).parent('.cs_accordian').siblings().removeClass('active');
-      $(this).parents('.col-xl-6').siblings().find('.cs_accordian').removeClass('active');
+      const $accordian = $(this).parent('.cs_accordian');
+      const isActive = $accordian.hasClass('active');
+
+      $('.cs_accordian').not($accordian).removeClass('active').children('.cs_accordian_body').slideUp(250);
+
+      if (isActive) {
+        $accordian.removeClass('active').children('.cs_accordian_body').slideUp(250);
+      } else {
+        $accordian.addClass('active').children('.cs_accordian_body').slideDown(400);
+      }
     });
   }
 

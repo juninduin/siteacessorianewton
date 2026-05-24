@@ -57,11 +57,22 @@
         height: 72px !important;
       }
 
+      .cs_final_cta_section {
+        padding-top: 56px;
+      }
+
+      @media (max-width: 991px) {
+        .cs_final_cta_section {
+          padding-top: 40px;
+        }
+      }
+
       .cs_breath_pricing_section {
         background:
-          radial-gradient(circle at top left, rgba(16, 185, 129, 0.08), transparent 28%),
-          radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.08), transparent 30%),
-          #f8f8fc;
+          radial-gradient(circle at top left, rgba(201, 169, 110, 0.07), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(201, 169, 110, 0.04), transparent 30%),
+          #f5f4f0;
+        padding: 24px 0;
       }
 
       .cs_breath_pricing_section .cs_card.cs_style_1.cs_type_5,
@@ -77,25 +88,26 @@
         padding: 38px 40px !important;
       }
 
-      .cs_breath_pricing_section .cs_section_title,
-      .cs_breath_pricing_section .cs_fs_50,
-      .cs_breath_pricing_section .cs_fs_38,
-      .cs_breath_pricing_section .cs_fs_21,
-      .cs_breath_pricing_section .cs_white_color,
-      .cs_breath_pricing_section h2,
-      .cs_breath_pricing_section h3 {
+      .cs_task_management .cs_breath_pricing_section .cs_section_title,
+      .cs_task_management .cs_breath_pricing_section .cs_fs_50,
+      .cs_task_management .cs_breath_pricing_section .cs_fs_38,
+      .cs_task_management .cs_breath_pricing_section .cs_fs_21,
+      .cs_task_management .cs_breath_pricing_section .cs_white_color,
+      .cs_task_management .cs_breath_pricing_section .cs_heading_color,
+      .cs_task_management .cs_breath_pricing_section h2,
+      .cs_task_management .cs_breath_pricing_section h3 {
         color: #0f172a !important;
       }
 
-      .cs_breath_pricing_section p,
-      .cs_breath_pricing_section li,
-      .cs_breath_pricing_section span:not(.cs_btn_icon):not(.cs_switch) {
+      .cs_task_management .cs_breath_pricing_section p,
+      .cs_task_management .cs_breath_pricing_section li {
         color: #475569 !important;
       }
 
       .cs_breath_pricing_section .cs_section_subtitle {
-        border-color: rgba(139, 92, 246, 0.18) !important;
-        background-color: rgba(139, 92, 246, 0.08);
+        color: #9a7840 !important;
+        border-color: rgba(201, 169, 110, 0.4) !important;
+        background-color: rgba(201, 169, 110, 0.12);
       }
 
       .cs_breath_pricing_section .cs_newsletter_form.cs_type_2 .cs_newsletter_input {
@@ -116,9 +128,17 @@
 
       .cs_breath_pricing_section .cs_pricing_control li.active a,
       .cs_breath_pricing_section .cs_medium.cs_purple_color,
-      .cs_breath_pricing_section .cs_pricing_feature_list i.cs_purple_color,
-      .cs_breath_pricing_section .cs_gradient_color {
-        color: #8b5cf6 !important;
+      .cs_breath_pricing_section .cs_pricing_feature_list i.cs_purple_color {
+        color: #C9A96E !important;
+      }
+
+      /* especificidade 31 para vencer o seletor externo (21) do gradient */
+      .cs_breath_pricing_section .cs_section_heading.cs_style_1 .cs_gradient_color {
+        background: none !important;
+        background-clip: unset !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: #C9A96E !important;
+        color: #C9A96E !important;
       }
 
       .cs_breath_pricing_section .cs_pricing_btn {
@@ -127,14 +147,79 @@
         color: #0f172a !important;
       }
 
+      .cs_breath_pricing_section .cs_btn.cs_style_1.cs_purple_bg {
+        background-color: #C9A96E !important;
+        border-color: transparent !important;
+      }
+
+      .cs_breath_pricing_section .cs_fast_managing_badge span,
+      .cs_breath_pricing_section .cs_rating_badge span {
+        color: #C9A96E !important;
+      }
+
+      .cs_breath_pricing_section .cs_task_info_badge div > div {
+        color: #d1d5db !important;
+      }
+
       .cs_breath_pricing_section .cs_pricing_table.active .cs_pricing_btn {
-        background-color: #8b5cf6 !important;
-        border-color: #8b5cf6 !important;
+        background-color: #C9A96E !important;
+        border-color: #C9A96E !important;
         color: #ffffff !important;
       }
 
       .cs_breath_pricing_section .cs_pricing_badge {
-        background-color: #f97316 !important;
+        background-color: #C9A96E !important;
+      }
+
+      .cs_numbers_section {
+        padding-top: 72px;
+      }
+
+      /* Texto escuro no card de números (fundo branco) — alta especificidade */
+      .cs_task_management .cs_numbers_section .cs_card.cs_style_1 h2,
+      .cs_task_management .cs_numbers_section .cs_card.cs_style_1 h3,
+      .cs_task_management .cs_numbers_section .cs_card.cs_style_1 .cs_heading_color,
+      .cs_task_management .cs_numbers_section .cs_card.cs_style_1 .cs_section_title,
+      .cs_task_management .cs_numbers_section .cs_card.cs_style_1 .cs_white_color,
+      .cs_task_management .cs_numbers_section .cs_card.cs_style_1 .cs_funfact_number {
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
+      }
+
+      .cs_task_management .cs_numbers_section .cs_card.cs_style_1 p,
+      .cs_task_management .cs_numbers_section .cs_card.cs_style_1 .cs_body_color,
+      .cs_task_management .cs_numbers_section .cs_card.cs_style_1 .cs_section_text,
+      .cs_task_management .cs_numbers_section .cs_funfact h3 {
+        color: #475569 !important;
+        -webkit-text-fill-color: #475569 !important;
+      }
+
+      .cs_task_management .cs_numbers_section .cs_card.cs_style_1 .cs_purple_color {
+        color: #9a7840 !important;
+        -webkit-text-fill-color: #9a7840 !important;
+      }
+
+      /* Gradient color: dourado da marca */
+      .cs_task_management .cs_numbers_section .cs_gradient_color {
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        background-clip: unset !important;
+        -webkit-text-fill-color: #C9A96E !important;
+        color: #C9A96E !important;
+      }
+
+      .cs_numbers_section .cs_btn span {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+      }
+
+      .cs_numbers_section .cs_funfact_number span {
+        color: inherit !important;
+        -webkit-text-fill-color: inherit !important;
+      }
+
+      @media (max-width: 991px) {
+        .cs_numbers_section { padding-top: 48px; }
       }
 
       .cs_task_management .cs_card.cs_style_1,
@@ -209,17 +294,22 @@
       }
 
       /* Hero Banner Slider */
-      .cs_hero_banner { position: relative; overflow: hidden; }
+      .cs_hero_banner { position: relative; overflow: hidden; height: clamp(700px, 90vh, 860px); min-height: clamp(700px, 90vh, 860px); }
       .cs_banner_slide {
-        display: none;
-        position: relative;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        display: flex;
+        align-items: center;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        min-height: 620px;
+        transform: translateX(100%);
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: transform;
       }
       .cs_banner_slide.cs_banner_active {
-        display: block;
+        transform: translateX(0);
       }
       .cs_banner_overlay {
         position: absolute;
@@ -230,20 +320,21 @@
         position: relative;
         z-index: 1;
         max-width: 620px;
-        padding: 130px 0 110px;
+        padding: 80px 0;
+        margin-top: 80px;
       }
       .cs_banner_title {
         font-size: 46px;
         font-weight: 700;
         color: #ffffff;
-        line-height: 1.2;
-        margin-bottom: 22px;
+        line-height: 1.15;
+        margin-bottom: 28px;
       }
       .cs_banner_subtitle {
         font-size: 18px;
         color: rgba(255,255,255,0.82);
         line-height: 1.75;
-        margin-bottom: 36px;
+        margin-bottom: 44px;
       }
       .cs_banner_btn {
         display: inline-block;
@@ -282,8 +373,8 @@
         align-items: center;
         justify-content: center;
       }
-      .cs_banner_prev { left: 24px; }
-      .cs_banner_next { right: 24px; }
+      .cs_banner_prev { left: 64px; }
+      .cs_banner_next { right: 64px; }
       .cs_banner_prev:hover,
       .cs_banner_next:hover { background: rgba(201,169,110,0.7); border-color: #C9A96E; }
       .cs_banner_dots {
@@ -312,13 +403,19 @@
       @media (max-width: 768px) {
         .cs_banner_title { font-size: 28px; }
         .cs_banner_subtitle { font-size: 15px; }
-        .cs_banner_slide { min-height: 480px; }
-        .cs_banner_content { padding: 90px 0 80px; }
-        .cs_banner_prev { left: 10px; }
-        .cs_banner_next { right: 10px; }
+        .cs_hero_banner { height: 100svh; min-height: 100svh; }
+        .cs_banner_content { padding: 60px 0; }
+        .cs_banner_prev { left: 16px; }
+        .cs_banner_next { right: 16px; }
       }
 
       /* Video Depoimentos Section */
+      /* Redução global de espaçadores entre seções */
+      .cs_height_140, .cs_height_136, .cs_height_134,
+      .cs_height_130, .cs_height_123 { height: 65px; }
+
+      /* Corrige accordion: permite fechar clicando no header aberto */
+      .cs_accordian.active .cs_accordian_head { pointer-events: auto; }
       .cs_video_testimonials {
         background-color: #0d1a24;
         background-image: repeating-linear-gradient(
@@ -489,6 +586,23 @@
       .cs_footer.cs_style_1 .cs_support_link .cs_support_icon,
       .cs_footer.cs_style_1 .cs_support_link.cs_phone .cs_support_icon {
         background-color: #C9A96E;
+      }
+      /* Container lateral padding override */
+      .container {
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      @media (max-width: 1199px) {
+        .container {
+          padding-left: 48px;
+          padding-right: 48px;
+        }
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
       }
     </style>
   </head>
@@ -677,7 +791,7 @@
     </section>
     <!-- End Video Depoimentos -->
     <!-- Start Features Section -->
-    <section>
+    <section class="cs_features_section">
     <div class="cs_height_140 cs_height_lg_80"></div>
     <div class="container">
       <div class="cs_section_heading cs_style_1 text-center">
@@ -878,7 +992,7 @@
     </section>
     <!-- End Features Card Section -->
     <!-- Start Productivity Section -->
-    <section>
+    <section class="cs_productivity_section">
       <div class="cs_height_123 cs_height_lg_80"></div>
       <div class="container">
         <div class="cs_section_heading cs_style_1 text-center">
@@ -1110,7 +1224,7 @@
     </section>
     <!-- End Integration Section -->
     <!-- Start Features Card Section -->
-    <section class="cs_breath_pricing_section">
+    <section class="cs_breath_pricing_section cs_numbers_section">
       <div class="container">
        <div class="cs_card cs_style_1 cs_type_5">
         <div class="row cs_gap_y_40 align-items-center">
@@ -1150,8 +1264,8 @@
           <div class="col-lg-6">
             <div class="cs_card_content">
               <div class="cs_section_heading cs_style_1 cs_mb_37">
-                <p class="cs_body_color cs_semibold cs_mb_11">NOSSOS NÚMEROS</p>
-                <h2 class="cs_section_title cs_fs_50 cs_white_color cs_mb_27 wow fadeInDown">Uma assessoria <span class="cs_gradient_color">completa e de resultado</span></h2>
+                <p class="cs_purple_color cs_semibold cs_mb_11">NOSSOS NÚMEROS</p>
+                <h2 class="cs_section_title cs_fs_50 cs_heading_color cs_mb_27 wow fadeInDown">Uma assessoria <span class="cs_gradient_color">completa e de resultado</span></h2>
                 <p class="cs_section_text mb-0">Combinamos gestão, mentoria, suporte jurídico e financeiro<br> para que você tenha tudo o que precisa para crescer<br> em um único lugar.</p>
               </div>
               <div class="cs_mb_29 wow fadeInUp">
@@ -1161,16 +1275,16 @@
               </div>
               <div class="cs_funfact_wrapper">
                 <div class="cs_funfact cs_style_1">
-                  <div class="cs_funfact_number cs_fs_38 cs_bold cs_white_color cs_mb_2">
+                  <div class="cs_funfact_number cs_fs_38 cs_bold cs_heading_color cs_mb_2">
                     <span class="odometer" data-count-to="200"></span>+
                   </div>
-                  <h3 class="cs_border_color cs_fs_16 cs_normal mb-0">Empresas atendidas</h3>
+                  <h3 class="cs_body_color cs_fs_16 cs_normal mb-0">Empresas atendidas</h3>
                 </div>
                 <div class="cs_funfact cs_style_1">
-                  <div class="cs_funfact_number cs_fs_38 cs_bold cs_white_color cs_mb_2">
+                  <div class="cs_funfact_number cs_fs_38 cs_bold cs_heading_color cs_mb_2">
                     <span class="odometer" data-count-to="10"></span>+
                   </div>
-                  <h3 class="cs_border_color cs_fs_16 cs_normal mb-0">Anos de experiência</h3>
+                  <h3 class="cs_body_color cs_fs_16 cs_normal mb-0">Anos de experiência</h3>
                 </div>
               </div>
             </div>
@@ -1295,7 +1409,7 @@
     </section>
     <!-- End Pricing Section -->
     <!-- Start CTA Section -->
-    <section>
+    <section class="cs_final_cta_section">
       <div class="container">
         <div class="cs_cta cs_style_2 cs_radius_40 position-relative overflow-hidden">
           <div class="cs_cta_text text-center position-relative z-1">
@@ -1521,36 +1635,76 @@
     <script src="assets/js/main.js"></script>
     <script>
       (function () {
-        var slides = document.querySelectorAll('.cs_banner_slide');
-        var dots = document.querySelectorAll('.cs_dot');
-        var current = 0;
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.cs_banner_slide'));
+        var dots   = Array.prototype.slice.call(document.querySelectorAll('.cs_dot'));
+        if (!slides.length) return;
+
+        var current  = 0;
+        var animating = false;
         var timer;
+        var DURATION = 620;
+
+        // Posição inicial: slide 0 visível, demais à direita
+        slides.forEach(function (s, i) {
+          s.style.transition = 'none';
+          s.style.transform  = i === 0 ? 'translateX(0)' : 'translateX(100%)';
+        });
+        slides[0].classList.add('cs_banner_active');
+        dots[0].classList.add('cs_dot_active');
+
+        function goTo(next, dir) {
+          if (animating || next === current) return;
+          animating = true;
+
+          var outSlide = slides[current];
+          var inSlide  = slides[next];
+
+          // Posiciona o incoming sem transição
+          inSlide.style.transition = 'none';
+          inSlide.style.transform  = dir > 0 ? 'translateX(100%)' : 'translateX(-100%)';
+          inSlide.offsetHeight; // força reflow
+
+          // Liga transição nos dois slides
+          var ease = 'transform ' + DURATION + 'ms cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          inSlide.style.transition  = ease;
+          outSlide.style.transition = ease;
+
+          // Dispara animação
+          inSlide.style.transform  = 'translateX(0)';
+          outSlide.style.transform = dir > 0 ? 'translateX(-100%)' : 'translateX(100%)';
+
+          // Dots
+          dots[current].classList.remove('cs_dot_active');
+          dots[next].classList.add('cs_dot_active');
+
+          // Limpeza pós-animação
+          setTimeout(function () {
+            outSlide.classList.remove('cs_banner_active');
+            inSlide.classList.add('cs_banner_active');
+            current   = next;
+            animating = false;
+          }, DURATION);
+        }
 
         function showSlide(n) {
-          slides[current].classList.remove('cs_banner_active');
-          dots[current].classList.remove('cs_dot_active');
-          current = (n + slides.length) % slides.length;
-          slides[current].classList.add('cs_banner_active');
-          dots[current].classList.add('cs_dot_active');
+          var next = (n + slides.length) % slides.length;
+          var dir  = n < 0 ? -1 : 1;
+          if (n >= 0 && n < slides.length) dir = next > current ? 1 : -1;
+          goTo(next, dir);
         }
 
         function startTimer() {
           timer = setInterval(function () { showSlide(current + 1); }, 5000);
         }
 
-        function resetTimer() {
-          clearInterval(timer);
-          startTimer();
-        }
-
         document.querySelector('.cs_banner_prev').addEventListener('click', function () {
-          showSlide(current - 1); resetTimer();
+          clearInterval(timer); showSlide(current - 1); startTimer();
         });
         document.querySelector('.cs_banner_next').addEventListener('click', function () {
-          showSlide(current + 1); resetTimer();
+          clearInterval(timer); showSlide(current + 1); startTimer();
         });
         dots.forEach(function (d, i) {
-          d.addEventListener('click', function () { showSlide(i); resetTimer(); });
+          d.addEventListener('click', function () { clearInterval(timer); showSlide(i); startTimer(); });
         });
 
         startTimer();
