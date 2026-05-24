@@ -1,13 +1,934 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=index.html">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Redirecting...</title>
-    <script>window.location.replace('index.html');</script>
-  </head>
-  <body>
-    <p>Redirecting to <a href="index.html">index.html</a>...</p>
-  </body>
+<!DOCTYPE html>
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="assets/img/favicon.png">
+  <title>Quem Somos | Lacerda Assessoria</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .container { padding-left: 80px; padding-right: 80px; }
+    @media (max-width: 1199px) { .container { padding-left: 48px; padding-right: 48px; } }
+    @media (max-width: 768px) { .container { padding-left: 24px; padding-right: 24px; } }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .au_hero {
+      background-color: #05111a;
+      background-image: radial-gradient(circle, rgba(201,169,110,0.18) 1px, transparent 1px);
+      background-size: 32px 32px;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      padding: 110px 0 80px;
+    }
+    .au_hero_label {
+      display: inline-block;
+      color: #C9A96E;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: 1px solid rgba(201,169,110,0.35);
+      border-radius: 100px;
+      padding: 6px 18px;
+      margin-bottom: 28px;
+    }
+    .au_hero_title {
+      color: #ffffff;
+      font-size: clamp(36px, 4.5vw, 60px);
+      font-weight: 800;
+      line-height: 1.13;
+      margin-bottom: 22px;
+    }
+    .au_hero_title span { color: #C9A96E; }
+    .au_hero_text {
+      color: rgba(255,255,255,0.72);
+      font-size: 17px;
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+    .au_hero_stats {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      margin-bottom: 42px;
+    }
+    .au_hero_stat_num {
+      color: #C9A96E;
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .au_hero_stat_label {
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .au_hero_stat_divider {
+      width: 1px;
+      background: rgba(201,169,110,0.25);
+      align-self: stretch;
+    }
+    .au_btn_primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #C9A96E;
+      color: #05111a;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .au_btn_primary:hover { background: #b8934e; color: #05111a; transform: translateY(-2px); }
+    .au_hero_img_wrap {
+      position: relative;
+      border-radius: 28px;
+      border: 1.5px solid rgba(201,169,110,0.35);
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+    .au_hero_img_wrap img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+    .au_hero_badge {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(5,17,26,0.88);
+      border: 1px solid rgba(201,169,110,0.55);
+      backdrop-filter: blur(10px);
+      border-radius: 100px;
+      padding: 10px 24px;
+      white-space: nowrap;
+      color: #C9A96E;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* ── MVV ──────────────────────────────────────────────── */
+    .au_mvv {
+      background: #f8f7f3;
+      padding: 96px 0;
+    }
+    .au_mvv_label {
+      color: #C9A96E;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .au_mvv_title {
+      color: #0d1a24;
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 800;
+      margin-bottom: 56px;
+      line-height: 1.18;
+    }
+    .au_mvv_card {
+      background: #ffffff;
+      border: 1.5px solid rgba(201,169,110,0.25);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 12px 40px rgba(13,26,36,0.07);
+      height: 100%;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+    .au_mvv_card:hover {
+      border-color: rgba(201,169,110,0.65);
+      box-shadow: 0 20px 56px rgba(201,169,110,0.12);
+      transform: translateY(-4px);
+    }
+    .au_mvv_icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(201,169,110,0.12);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #C9A96E;
+      margin-bottom: 24px;
+    }
+    .au_mvv_card_title {
+      color: #0d1a24;
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .au_mvv_card_text {
+      color: #4a5568;
+      font-size: 15px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* ── HISTÓRIA ─────────────────────────────────────────── */
+    .au_history {
+      background: #05111a;
+      padding: 96px 0;
+    }
+    .au_history_img_wrap img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      border-radius: 24px;
+    }
+    .au_history_img_frame {
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      border: 2px solid rgba(201,169,110,0.35);
+      pointer-events: none;
+    }
+    .au_history_img_decor {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      width: 120px;
+      height: 120px;
+      border: 2px solid rgba(201,169,110,0.3);
+      border-radius: 16px;
+    }
+    .au_history_label {
+      color: #C9A96E;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .au_history_title {
+      color: #ffffff;
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 800;
+      margin-bottom: 44px;
+      line-height: 1.18;
+    }
+    .au_history_title span { color: #C9A96E; }
+    .au_timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .au_timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, #C9A96E, rgba(201,169,110,0.15));
+    }
+    .au_timeline_item {
+      position: relative;
+      margin-bottom: 36px;
+    }
+    .au_timeline_item:last-child { margin-bottom: 0; }
+    .au_timeline_dot {
+      position: absolute;
+      left: -28px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      background: #C9A96E;
+      border-radius: 50%;
+      border: 3px solid #05111a;
+      box-shadow: 0 0 0 2px rgba(201,169,110,0.4);
+    }
+    .au_timeline_year {
+      color: #C9A96E;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+    .au_timeline_heading {
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .au_timeline_text {
+      color: rgba(255,255,255,0.65);
+      font-size: 14.5px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── DIFERENCIAIS ─────────────────────────────────────── */
+    .au_diff {
+      background: #0d1a24;
+      padding: 96px 0;
+    }
+    .au_diff_label {
+      color: #C9A96E;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .au_diff_title {
+      color: #ffffff;
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.18;
+    }
+    .au_diff_subtitle {
+      color: rgba(255,255,255,0.65);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 56px;
+      max-width: 560px;
+    }
+    .au_diff_card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,169,110,0.18);
+      border-radius: 20px;
+      padding: 36px 32px;
+      height: 100%;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s;
+    }
+    .au_diff_card:hover {
+      background: rgba(201,169,110,0.07);
+      border-color: rgba(201,169,110,0.5);
+      transform: translateY(-4px);
+    }
+    .au_diff_icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(201,169,110,0.12);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #C9A96E;
+      margin-bottom: 22px;
+    }
+    .au_diff_card_title {
+      color: #ffffff;
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .au_diff_card_text {
+      color: rgba(255,255,255,0.65);
+      font-size: 14.5px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* ── EQUIPE ───────────────────────────────────────────── */
+    .au_team {
+      background: #0a1520;
+      padding: 96px 0;
+    }
+    .au_team_label {
+      color: #C9A96E;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .au_team_title {
+      color: #ffffff;
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.18;
+    }
+    .au_team_subtitle {
+      color: rgba(255,255,255,0.65);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 56px;
+    }
+    .au_team_card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,169,110,0.15);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .au_team_card:hover {
+      border-color: rgba(201,169,110,0.6);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(201,169,110,0.1);
+    }
+    .au_team_img_wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .au_team_img_wrap img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .au_team_card:hover .au_team_img_wrap img { transform: scale(1.04); }
+    .au_team_overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5,17,26,0.65) 0%, transparent 55%);
+    }
+    .au_team_body { padding: 26px 28px 30px; }
+    .au_team_name {
+      color: #ffffff;
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .au_team_role {
+      color: #C9A96E;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .au_team_bio {
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── CTA ──────────────────────────────────────────────── */
+    .au_cta {
+      background: linear-gradient(135deg, #05111a 0%, #0d1a24 50%, #05111a 100%);
+      border-top: 1px solid rgba(201,169,110,0.2);
+      padding: 80px 0;
+    }
+    .au_cta_decor {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(201,169,110,0.1) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .au_cta_label {
+      color: #C9A96E;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .au_cta_title {
+      color: #ffffff;
+      font-size: clamp(26px, 3.2vw, 42px);
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.18;
+    }
+    .au_cta_text {
+      color: rgba(255,255,255,0.68);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+    .au_cta_secondary_link {
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .au_cta_secondary_link:hover { color: rgba(255,255,255,0.85); }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 991px) {
+      .au_hero { padding: 120px 0 64px; min-height: auto; }
+      .au_hero_img_wrap { margin-top: 48px; }
+      .au_hero_img_wrap img { height: 360px; }
+      .au_history_img_wrap img { height: 360px; margin-bottom: 48px; }
+      .au_history_img_decor { display: none; }
+    }
+    @media (max-width: 575px) {
+      .au_hero_stats { gap: 20px; }
+      .au_hero_stat_divider { display: none; }
+    }
+  </style>
+</head>
+<body class="cs_task_management">
+  <div class="cs_preloader cs_white_bg"><div class="cs_preloader_in position-relative"><span></span><span></span></div></div>
+  <header class="cs_site_header cs_style_1 cs_type_1 cs_sticky_header">
+    <div class="cs_main_header cs_white_color cs_semibold">
+      <div class="container">
+        <div class="cs_main_header_in">
+          <div class="cs_main_header_left">
+            <a class="cs_site_branding" href="index.html">
+              <img src="assets/img/LOGO-LACERDA-2.gif" alt="Logo" style="height:70px;">
+            </a>
+          </div>
+          <div class="cs_main_header_center">
+            <div class="cs_nav">
+              <ul class="cs_nav_list">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="menu-item-has-children"><a href="services.html">Serviços</a>
+                  <ul>
+                    <li><a href="services.html">Show de Gestão</a></li>
+                    <li><a href="services.html">Mentoria</a></li>
+                    <li><a href="services.html">Juridico</a></li>
+                    <li><a href="services.html">Financeiro</a></li>
+                  </ul>
+                </li>
+                <li><a href="about-us.html">Quem somos</a></li>
+                <li><a href="contact.html">Contatos</a></li>
+              </ul>
+            </div>
+            <div class="cs_main_header_right">
+              <a href="https://wa.me/5585991578001" target="_blank" class="cs_btn cs_style_1 cs_fs_16 cs_semibold cs_purple_bg cs_white_color cs_accent_hover" style="padding:13px 28px;font-size:15px;"><span>WhatsApp</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ 1. HERO DIVIDIDO ════════════════════════════════════════════════════ -->
+  <section class="au_hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Coluna esquerda (60%) -->
+        <div class="col-lg-7">
+          <div class="au_hero_label">Quem Somos</div>
+          <h1 class="au_hero_title">Mais de 10 anos<br><span>transformando empresas</span></h1>
+          <p class="au_hero_text">
+            A Lacerda Assessoria nasceu da crença de que toda empresa merece uma gestão de excelência.
+            Com profissionais experientes nas áreas jurídica, financeira e de gestão, entregamos
+            resultados concretos, mensuráveis e duradouros para nossos clientes em todo o Brasil.
+          </p>
+
+          <!-- 3 números inline -->
+          <div class="au_hero_stats">
+            <div>
+              <div class="au_hero_stat_num">200+</div>
+              <div class="au_hero_stat_label">Clientes Atendidos</div>
+            </div>
+            <div class="au_hero_stat_divider"></div>
+            <div>
+              <div class="au_hero_stat_num">10+</div>
+              <div class="au_hero_stat_label">Anos de Experiência</div>
+            </div>
+            <div class="au_hero_stat_divider"></div>
+            <div>
+              <div class="au_hero_stat_num">98%</div>
+              <div class="au_hero_stat_label">Índice de Satisfação</div>
+            </div>
+          </div>
+
+          <a href="#historia" class="au_btn_primary">
+            <i class="fa-solid fa-arrow-down"></i>
+            Conheça nossa história
+          </a>
+        </div>
+
+        <!-- Coluna direita (40%) — card com borda dourada e badge flutuante -->
+        <div class="col-lg-5">
+          <div class="au_hero_img_wrap">
+            <img src="assets/img/feature_7.jpg" alt="Lacerda Assessoria — equipe">
+            <div class="au_hero_badge">
+              <i class="fa-solid fa-star" style="margin-right:6px;font-size:11px;"></i>
+              Lacerda Assessoria
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 2. MISSÃO, VISÃO E VALORES ════════════════════════════════════════ -->
+  <section class="au_mvv">
+    <div class="container">
+      <div class="text-center mb-2">
+        <div class="au_mvv_label">Nossa Essência</div>
+        <h2 class="au_mvv_title">O que nos move<br>todos os dias</h2>
+      </div>
+      <div class="row g-4">
+
+        <!-- Missão -->
+        <div class="col-lg-4 col-md-6">
+          <div class="au_mvv_card">
+            <div class="au_mvv_icon">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <div class="au_mvv_card_title">Nossa Missão</div>
+            <p class="au_mvv_card_text">
+              Oferecer assessoria especializada e personalizada que impulsione o crescimento sustentável
+              das empresas, apoiando gestores a tomarem decisões mais seguras, estratégicas e lucrativas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Visão -->
+        <div class="col-lg-4 col-md-6">
+          <div class="au_mvv_card">
+            <div class="au_mvv_icon">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="au_mvv_card_title">Nossa Visão</div>
+            <p class="au_mvv_card_text">
+              Ser referência nacional em assessoria empresarial integrada, reconhecida pela excelência
+              dos resultados entregues e pelo compromisso genuíno com o sucesso de cada cliente.
+            </p>
+          </div>
+        </div>
+
+        <!-- Valores -->
+        <div class="col-lg-4 col-md-6">
+          <div class="au_mvv_card">
+            <div class="au_mvv_icon">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <div class="au_mvv_card_title">Nossos Valores</div>
+            <p class="au_mvv_card_text">
+              Ética, transparência e responsabilidade guiam cada decisão. Acreditamos em parcerias
+              de longo prazo, construídas com confiança, respeito e entrega consistente de valor.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 3. NOSSA HISTÓRIA ══════════════════════════════════════════════════ -->
+  <section class="au_history" id="historia">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Imagem com frame decorativo dourado -->
+        <div class="col-lg-5">
+          <div class="au_history_img_wrap position-relative">
+            <img src="assets/img/feature_4.jpg" alt="Nossa História">
+            <div class="au_history_img_frame"></div>
+            <div class="au_history_img_decor"></div>
+          </div>
+        </div>
+
+        <!-- Linha do tempo -->
+        <div class="col-lg-7">
+          <div class="au_history_label">Nossa Trajetória</div>
+          <h2 class="au_history_title">Uma história construída<br>com <span>propósito</span></h2>
+
+          <div class="au_timeline">
+
+            <div class="au_timeline_item">
+              <div class="au_timeline_dot"></div>
+              <div class="au_timeline_year">2014</div>
+              <div class="au_timeline_heading">Fundação da Lacerda Assessoria</div>
+              <p class="au_timeline_text">
+                Nascemos com a missão de democratizar o acesso à assessoria empresarial de qualidade,
+                oferecendo serviços jurídicos e de gestão para pequenas e médias empresas no Ceará.
+              </p>
+            </div>
+
+            <div class="au_timeline_item">
+              <div class="au_timeline_dot"></div>
+              <div class="au_timeline_year">2017</div>
+              <div class="au_timeline_heading">Expansão dos Serviços</div>
+              <p class="au_timeline_text">
+                Ampliamos nossa atuação com a área financeira e o programa de mentoria, consolidando
+                um portfólio completo de assessoria integrada para gestores de todo o Brasil.
+              </p>
+            </div>
+
+            <div class="au_timeline_item">
+              <div class="au_timeline_dot"></div>
+              <div class="au_timeline_year">2020</div>
+              <div class="au_timeline_heading">Marco de 100 Clientes</div>
+              <p class="au_timeline_text">
+                Atingimos a marca de 100 empresas atendidas, reafirmando nosso compromisso com
+                resultados reais mesmo diante dos desafios do período pandêmico no mercado nacional.
+              </p>
+            </div>
+
+            <div class="au_timeline_item">
+              <div class="au_timeline_dot"></div>
+              <div class="au_timeline_year">2024</div>
+              <div class="au_timeline_heading">Nova Fase — Show de Gestão</div>
+              <p class="au_timeline_text">
+                Lançamos o programa Show de Gestão, nossa metodologia proprietária que combina
+                tecnologia, mentoria e assessoria para transformar a performance empresarial em escala.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4. NOSSOS DIFERENCIAIS ════════════════════════════════════════════ -->
+  <section class="au_diff">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="au_diff_label">Por que nos escolher</div>
+          <h2 class="au_diff_title">O que nos<br>diferencia no mercado</h2>
+          <p class="au_diff_subtitle">
+            Não somos apenas consultores — somos parceiros estratégicos comprometidos com o
+            crescimento real da sua empresa, do planejamento à execução.
+          </p>
+        </div>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-lg-6 col-md-6">
+          <div class="au_diff_card">
+            <div class="au_diff_icon">
+              <i class="fa-solid fa-medal"></i>
+            </div>
+            <div class="au_diff_card_title">Experiência Comprovada</div>
+            <p class="au_diff_card_text">
+              Mais de uma década de atuação no mercado com cases reais de transformação empresarial
+              em segmentos variados, do varejo ao setor de serviços profissionais.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="au_diff_card">
+            <div class="au_diff_icon">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div class="au_diff_card_title">Método Próprio</div>
+            <p class="au_diff_card_text">
+              O Show de Gestão é nossa metodologia exclusiva, desenvolvida a partir de centenas
+              de atendimentos para entregar diagnósticos precisos e planos de ação efetivos.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="au_diff_card">
+            <div class="au_diff_icon">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <div class="au_diff_card_title">Atendimento Personalizado</div>
+            <p class="au_diff_card_text">
+              Cada empresa é única. Desenvolvemos soluções sob medida para a realidade do seu
+              negócio, sem fórmulas genéricas ou pacotes engessados.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="au_diff_card">
+            <div class="au_diff_icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="au_diff_card_title">Resultados Mensuráveis</div>
+            <p class="au_diff_card_text">
+              Definimos indicadores claros desde o início do projeto, acompanhamos a evolução de perto
+              e garantimos que cada ação gere impacto real no seu faturamento e margens.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 5. EQUIPE ══════════════════════════════════════════════════════════ -->
+  <section class="au_team">
+    <div class="container">
+      <div class="text-center">
+        <div class="au_team_label">Pessoas que fazem acontecer</div>
+        <h2 class="au_team_title">Conheça nossa equipe</h2>
+        <p class="au_team_subtitle">
+          Profissionais apaixonados por resultados, unidos pelo propósito de transformar negócios.
+        </p>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="au_team_card">
+            <div class="au_team_img_wrap">
+              <img src="assets/img/avatar-1.jpg" alt="Newton Lacerda">
+              <div class="au_team_overlay"></div>
+            </div>
+            <div class="au_team_body">
+              <div class="au_team_name">Newton Lacerda</div>
+              <div class="au_team_role">Fundador &amp; CEO</div>
+              <p class="au_team_bio">
+                Especialista em gestão empresarial com mais de 10 anos de experiência transformando
+                empresas de pequeno e médio porte em negócios sólidos e lucrativos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="au_team_card">
+            <div class="au_team_img_wrap">
+              <img src="assets/img/avatar-2.jpg" alt="Consultora Jurídica">
+              <div class="au_team_overlay"></div>
+            </div>
+            <div class="au_team_body">
+              <div class="au_team_name">Ana Carolina Silva</div>
+              <div class="au_team_role">Consultora Jurídica</div>
+              <p class="au_team_bio">
+                Advogada especializada em direito empresarial e trabalhista, com ampla experiência
+                em conformidade regulatória, contratos e proteção patrimonial para empresas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="au_team_card">
+            <div class="au_team_img_wrap">
+              <img src="assets/img/avatar-3.jpg" alt="Consultor Financeiro">
+              <div class="au_team_overlay"></div>
+            </div>
+            <div class="au_team_body">
+              <div class="au_team_name">Rafael Mendonça</div>
+              <div class="au_team_role">Consultor Financeiro</div>
+              <p class="au_team_bio">
+                Economista e especialista em finanças corporativas, focado em estruturação financeira,
+                fluxo de caixa, captação de crédito e maximização da rentabilidade empresarial.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6. CTA FINAL ═══════════════════════════════════════════════════════ -->
+  <section class="au_cta position-relative overflow-hidden">
+    <div class="au_cta_decor"></div>
+    <div class="container position-relative" style="z-index:1;">
+      <div class="row align-items-center g-4">
+
+        <div class="col-lg-8">
+          <div class="au_cta_label">Pronto para dar o próximo passo?</div>
+          <h2 class="au_cta_title">Transforme sua empresa<br>com quem entende do assunto</h2>
+          <p class="au_cta_text">
+            Fale agora com um de nossos especialistas e descubra como a Lacerda Assessoria
+            pode acelerar os resultados do seu negócio.
+          </p>
+        </div>
+
+        <div class="col-lg-4 text-lg-end">
+          <a href="https://wa.me/5585991578001" target="_blank"
+             class="cs_btn cs_style_1 cs_semibold cs_purple_bg cs_white_color cs_accent_hover"
+             style="padding:16px 36px;font-size:16px;display:inline-flex;align-items:center;gap:10px;">
+            <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
+            <span>Falar no WhatsApp</span>
+          </a>
+          <div style="margin-top:16px;">
+            <a href="contact.html" class="au_cta_secondary_link">
+              ou envie uma mensagem &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="cs_footer cs_style_1 position-relative overflow-hidden">
+    <div style="height:65px;"></div>
+    <div class="container">
+      <div class="cs_footer_main position-relative z-1">
+        <div class="row cs_gap_y_30">
+          <div class="col-xl-5 col-lg-4 col-md-7">
+            <div class="cs_footer_widget cs_text_widget">
+              <div class="cs_brand cs_mb_13"><img src="assets/img/LOGO-LACERDA-2.gif" alt="Lacerda Assessoria" style="height:65px;"></div>
+              <p class="cs_mb_27">Assessoria especializada em gestão empresarial, mentoria, jurídico e financeiro.</p>
+              <div class="d-flex flex-column">
+                <a href="mailto:contato@lacerdaassessoria.com.br" class="cs_support_link cs_white_color cs_semibold cs_mb_23">
+                  <span class="cs_support_icon cs_center cs_radius_100" style="background:#C9A96E;"><img src="assets/img/icons/envelopes.svg" alt="Email"></span>
+                  <span class="cs_support_text">contato@lacerdaassessoria.com.br</span>
+                </a>
+                <a href="https://wa.me/5585991578001" target="_blank" class="cs_support_link cs_white_color cs_semibold cs_phone">
+                  <span class="cs_support_icon cs_center cs_radius_100" style="background:#C9A96E;"><img src="assets/img/icons/phone-rotary.svg" alt="Phone"></span>
+                  <span class="cs_support_text">(85) 99157-8001</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-4">
+            <div class="cs_footer_widget cs_links_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Links Rápidos</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="about-us.html">Quem Somos</a></li>
+                <li><a href="contact.html">Contato</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-7">
+            <div class="cs_footer_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Nossos Serviços</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li>Show de Gestão</li><li>Mentoria</li><li>Jurídico</li><li>Financeiro</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-4">
+            <div class="cs_footer_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Atendimento</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li><a href="contact.html">Fale Conosco</a></li>
+                <li><a href="https://wa.me/5585991578001" target="_blank">WhatsApp</a></li>
+                <li><a href="term-condition.html">Termos de Uso</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height:40px;"></div>
+    <hr>
+    <div class="container">
+      <div class="cs_footer_bottom position-relative z-1">
+        <div class="cs_footer_text cs_white_color">Copyright &copy; <span class="cs_getting_year"></span> Lacerda Assessoria. Todos os direitos reservados.</div>
+        <div class="cs_social_links cs_style_1 cs_white_color">
+          <a href="#"><span class="cs_social_icon"><i class="fa-brands fa-facebook"></i></span><span>Facebook</span></a>
+          <a href="#"><span class="cs_social_icon"><i class="fa-brands fa-instagram"></i></span><span>Instagram</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button type="button" class="cs_scrollup cs_purple_bg cs_white_color cs_radius_100">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z" fill="currentColor"/></svg>
+  </button>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    var y = document.querySelector('.cs_getting_year');
+    if(y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>

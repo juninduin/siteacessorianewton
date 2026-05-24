@@ -1,13 +1,458 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=index.html">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Redirecting...</title>
-    <script>window.location.replace('index.html');</script>
-  </head>
-  <body>
-    <p>Redirecting to <a href="index.html">index.html</a>...</p>
-  </body>
+<!DOCTYPE html>
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Entre em contato com a Lacerda Assessoria. Estamos prontos para transformar sua empresa.">
+  <link rel="icon" href="assets/img/favicon.png">
+  <title>Contato | Lacerda Assessoria</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ── Layout geral ── */
+    body { background: #05111a; }
+    .container { padding-left: 80px; padding-right: 80px; }
+    @media (max-width: 1199px) { .container { padding-left: 48px; padding-right: 48px; } }
+    @media (max-width: 768px)  { .container { padding-left: 24px; padding-right: 24px; } }
+
+    /* ── Hero ── */
+    .page-hero {
+      background: linear-gradient(135deg, #030c13 0%, #05111a 60%, #0a1e2e 100%);
+      padding: 160px 0 90px;
+    }
+    .breadcrumb-nav { color: rgba(255,255,255,0.45); font-size: 14px; margin-bottom: 20px; }
+    .breadcrumb-nav a { color: #C9A96E; text-decoration: none; }
+    .breadcrumb-nav a:hover { text-decoration: underline; }
+    .page-hero-label {
+      color: #C9A96E; font-size: 11px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase; margin-bottom: 18px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .page-hero-label::before {
+      content: ''; display: inline-block;
+      width: 32px; height: 2px; background: #C9A96E;
+    }
+    .page-hero h1 {
+      color: #fff; font-size: 54px; font-weight: 800;
+      line-height: 1.12; margin-bottom: 20px;
+    }
+    .page-hero h1 span { color: #C9A96E; }
+    .page-hero > .container > p {
+      color: rgba(255,255,255,0.68); font-size: 18px; max-width: 540px; line-height: 1.7;
+    }
+    .hero-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px; }
+    .hero-badge {
+      background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.25);
+      color: #C9A96E; border-radius: 30px; padding: 8px 18px; font-size: 13px; font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 34px; }
+      .page-hero { padding: 130px 0 60px; }
+    }
+
+    /* ── Secao principal ── */
+    .contact-main-section { background: #05111a; padding: 80px 0 96px; }
+
+    /* Divisor dourado */
+    .divider-gold { width: 48px; height: 3px; background: #C9A96E; border-radius: 2px; margin-bottom: 32px; }
+
+    /* ── Card do formulario ── */
+    .contact-form-card {
+      background: #0d1a24; border: 1px solid rgba(201,169,110,0.18);
+      border-radius: 20px; padding: 48px;
+    }
+    .contact-form-card h2 { color: #fff; font-size: 26px; font-weight: 700; margin-bottom: 10px; }
+
+    /* Inputs */
+    .contact-input {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px; color: #fff; padding: 14px 18px; width: 100%;
+      font-size: 15px; margin-bottom: 16px; outline: none; transition: border 0.3s;
+      display: block; font-family: inherit;
+    }
+    .contact-input:focus { border-color: #C9A96E; background: rgba(255,255,255,0.07); }
+    .contact-input::placeholder { color: rgba(255,255,255,0.38); }
+    textarea.contact-input { resize: vertical; min-height: 140px; }
+    select.contact-input option { background: #0d1a24; color: #fff; }
+    .input-label {
+      color: rgba(255,255,255,0.55); font-size: 12px; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; display: block;
+    }
+    .contact-submit {
+      background: #C9A96E; color: #fff; border: none; padding: 17px 40px;
+      border-radius: 10px; font-weight: 700; font-size: 15px; letter-spacing: 1px;
+      text-transform: uppercase; cursor: pointer; transition: background 0.3s, transform 0.2s;
+      width: 100%; font-family: inherit;
+    }
+    .contact-submit:hover { background: #b8944e; transform: translateY(-2px); }
+
+    /* ── Card de informacoes ── */
+    .contact-info-card {
+      background: #0d1a24; border: 1px solid rgba(201,169,110,0.15);
+      border-radius: 20px; padding: 48px; height: 100%;
+    }
+    .contact-info-card h2 { color: #fff; font-size: 26px; font-weight: 700; margin-bottom: 10px; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+    .contact-info-icon {
+      width: 50px; height: 50px; background: rgba(201,169,110,0.12);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      color: #C9A96E; font-size: 19px; flex-shrink: 0;
+    }
+    .contact-info-text h4 { color: #fff; font-size: 15px; font-weight: 700; margin: 0 0 5px; }
+    .contact-info-text p,
+    .contact-info-text a { color: rgba(255,255,255,0.62); font-size: 14px; text-decoration: none; margin: 0; line-height: 1.65; }
+    .contact-info-text a:hover { color: #C9A96E; }
+    .hours-grid { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin-top: 4px; }
+    .hours-day { color: rgba(255,255,255,0.45); font-size: 13px; }
+    .hours-time { color: #C9A96E; font-size: 13px; font-weight: 600; }
+    .contact-wa-btn {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      background: #25D366; color: #fff; padding: 17px 28px; border-radius: 12px;
+      text-decoration: none; font-weight: 700; font-size: 16px;
+      margin-top: 36px; transition: background 0.3s, transform 0.2s;
+    }
+    .contact-wa-btn:hover { background: #1fb954; color: #fff; transform: translateY(-2px); }
+    .contact-wa-btn i { font-size: 22px; }
+
+    /* ── Strip CTA ── */
+    .cta-strip { background: #C9A96E; padding: 52px 0; }
+    .cta-strip-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .cta-strip-text h3 { color: #05111a; font-size: 24px; font-weight: 800; margin: 0 0 6px; }
+    .cta-strip-text p { color: rgba(5,17,26,0.72); font-size: 16px; margin: 0; }
+    .cta-strip-btn {
+      background: #05111a; color: #C9A96E; padding: 16px 36px; border-radius: 10px;
+      font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap;
+      transition: background 0.3s; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .cta-strip-btn:hover { background: #0d1a24; color: #C9A96E; }
+    @media (max-width: 768px) {
+      .contact-form-card, .contact-info-card { padding: 28px 22px; }
+      .cta-strip-inner { flex-direction: column; text-align: center; }
+    }
+
+    /* ── Footer overrides ── */
+    .cs_footer.cs_style_1.cs_type_2 { background: #030c13; }
+  </style>
+</head>
+<body class="cs_task_management">
+
+  <!-- Preloader -->
+  <div class="cs_preloader cs_white_bg">
+    <div class="cs_preloader_in position-relative"><span></span><span></span></div>
+  </div>
+
+  <!-- ══ HEADER ══ -->
+  <header class="cs_site_header cs_style_1 cs_type_1 cs_sticky_header">
+    <div class="cs_main_header cs_white_color cs_semibold">
+      <div class="container">
+        <div class="cs_main_header_in">
+          <div class="cs_main_header_left">
+            <a class="cs_site_branding" href="index.html" aria-label="Home page link">
+              <img src="assets/img/LOGO-LACERDA-2.gif" alt="Logo" style="height: 70px;">
+            </a>
+          </div>
+          <div class="cs_main_header_center">
+            <div class="cs_nav">
+              <ul class="cs_nav_list">
+                <li><a href="index.html" aria-label="Menu link">Inicio</a></li>
+                <li class="menu-item-has-children">
+                  <a href="services.html" aria-label="Menu link">Servicos</a>
+                  <ul>
+                    <li><a href="services.html" aria-label="Menu link">Show de Gestao</a></li>
+                    <li><a href="services.html" aria-label="Menu link">Mentoria</a></li>
+                    <li><a href="services.html" aria-label="Menu link">Juridico</a></li>
+                    <li><a href="services.html" aria-label="Menu link">Financeiro</a></li>
+                  </ul>
+                </li>
+                <li><a href="about-us.html" aria-label="Menu link">Quem somos</a></li>
+                <li><a href="contact.html" aria-label="Menu link">Contatos</a></li>
+              </ul>
+            </div>
+            <div class="cs_main_header_right">
+              <a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp"
+                 class="cs_btn cs_style_1 cs_fs_16 cs_semibold cs_purple_bg cs_white_color cs_accent_hover"
+                 style="padding: 13px 28px; font-size: 15px;">
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ══ END HEADER ══ -->
+
+  <!-- ══ PAGE HERO ══ -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb-nav">
+        <a href="index.html">Inicio</a>
+        <span style="margin: 0 8px; opacity:.5;">&#8250;</span>
+        <span style="color: rgba(255,255,255,0.6);">Contato</span>
+      </nav>
+      <p class="page-hero-label">Fale Conosco</p>
+      <h1>Entre em contato com<br><span>a nossa equipe</span></h1>
+      <p>Estamos prontos para entender o momento da sua empresa e apresentar as melhores solucoes para o seu crescimento.</p>
+      <div class="hero-badges">
+        <span class="hero-badge"><i class="fa-regular fa-clock" style="margin-right:6px;"></i>Resposta em ate 24h</span>
+        <span class="hero-badge"><i class="fa-solid fa-shield-halved" style="margin-right:6px;"></i>Primeira consulta gratuita</span>
+        <span class="hero-badge"><i class="fa-brands fa-whatsapp" style="margin-right:6px;"></i>Atendimento via WhatsApp</span>
+      </div>
+    </div>
+  </section>
+  <!-- ══ END PAGE HERO ══ -->
+
+  <!-- ══ SECAO PRINCIPAL ══ -->
+  <section class="contact-main-section">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+
+        <!-- Coluna esquerda: Formulario -->
+        <div class="col-lg-7">
+          <div class="contact-form-card h-100">
+            <h2>Envie sua mensagem</h2>
+            <div class="divider-gold"></div>
+            <form id="contactForm" novalidate>
+              <div class="row g-0">
+                <div class="col-md-6 pe-md-2">
+                  <label class="input-label" for="cf-name">Nome completo</label>
+                  <input id="cf-name" type="text" class="contact-input" placeholder="Ex.: Joao Silva" required>
+                </div>
+                <div class="col-md-6 ps-md-2">
+                  <label class="input-label" for="cf-email">E-mail</label>
+                  <input id="cf-email" type="email" class="contact-input" placeholder="seu@email.com.br" required>
+                </div>
+              </div>
+              <div class="row g-0">
+                <div class="col-md-6 pe-md-2">
+                  <label class="input-label" for="cf-phone">Telefone / WhatsApp</label>
+                  <input id="cf-phone" type="tel" class="contact-input" placeholder="(00) 00000-0000">
+                </div>
+                <div class="col-md-6 ps-md-2">
+                  <label class="input-label" for="cf-company">Nome da empresa</label>
+                  <input id="cf-company" type="text" class="contact-input" placeholder="Nome do seu negocio">
+                </div>
+              </div>
+              <label class="input-label" for="cf-service">Servico de interesse</label>
+              <select id="cf-service" class="contact-input">
+                <option value="" disabled selected>Selecione uma opcao</option>
+                <option value="gestao">Show de Gestao</option>
+                <option value="mentoria">Mentoria</option>
+                <option value="juridico">Juridico</option>
+                <option value="financeiro">Financeiro</option>
+                <option value="completo">Assessoria Completa</option>
+              </select>
+              <label class="input-label" for="cf-message">Mensagem</label>
+              <textarea id="cf-message" class="contact-input" placeholder="Conte-nos sobre o momento atual da sua empresa e o que voce espera alcancar..."></textarea>
+              <button type="submit" class="contact-submit">
+                <i class="fa-solid fa-paper-plane" style="margin-right: 10px;"></i>Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Coluna direita: Informacoes -->
+        <div class="col-lg-5">
+          <div class="contact-info-card">
+            <h2>Informacoes de contato</h2>
+            <div class="divider-gold"></div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div class="contact-info-text">
+                <h4>E-mail</h4>
+                <a href="mailto:contato@lacerdaassessoria.com.br">contato@lacerdaassessoria.com.br</a>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="contact-info-text">
+                <h4>WhatsApp</h4>
+                <a href="https://wa.me/5585991578001" target="_blank">(85) 99157-8001</a>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fa-regular fa-clock"></i></div>
+              <div class="contact-info-text">
+                <h4>Horario de Atendimento</h4>
+                <div class="hours-grid">
+                  <span class="hours-day">Segunda a Sexta</span>
+                  <span class="hours-time">08h as 18h</span>
+                  <span class="hours-day">Sabado</span>
+                  <span class="hours-time">08h as 12h</span>
+                  <span class="hours-day">Domingo</span>
+                  <span class="hours-time" style="color:rgba(255,255,255,0.35);">Fechado</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-info-text">
+                <h4>Localizacao</h4>
+                <p>Fortaleza, Ceara - Brasil</p>
+              </div>
+            </div>
+
+            <a href="https://wa.me/5585991578001" target="_blank" class="contact-wa-btn">
+              <i class="fa-brands fa-whatsapp"></i>
+              Chamar no WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ══ END SECAO PRINCIPAL ══ -->
+
+  <!-- ══ STRIP CTA ══ -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div class="cta-strip-text">
+          <h3>Resposta garantida em ate 24 horas uteis</h3>
+          <p>Sem compromisso na primeira conversa. Nossa equipe esta pronta para te ouvir e orientar.</p>
+        </div>
+        <a href="https://wa.me/5585991578001" target="_blank" class="cta-strip-btn">
+          <i class="fa-brands fa-whatsapp"></i>Falar agora no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ══ END STRIP CTA ══ -->
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="cs_footer cs_style_1 cs_type_2 position-relative overflow-hidden">
+    <div class="cs_height_130 cs_height_lg_80"></div>
+    <div class="container">
+      <div class="cs_footer_main position-relative z-1">
+        <div class="row cs_gap_y_30">
+          <div class="col-xl-5 col-lg-4 col-md-7">
+            <div class="cs_footer_widget cs_text_widget">
+              <div class="cs_brand cs_mb_13 wow fadeInUp">
+                <img src="assets/img/LOGO-LACERDA-2.gif" alt="Lacerda Assessoria" style="height: 65px;">
+              </div>
+              <p class="cs_mb_27">Assessoria especializada em gestao empresarial, mentoria, juridico e financeiro. Transformamos negocios com estrategia, metodo e comprometimento real com os seus resultados.</p>
+              <div class="d-flex flex-column">
+                <a href="mailto:contato@lacerdaassessoria.com.br" aria-label="Email" class="cs_support_link cs_white_color cs_semibold cs_mb_23">
+                  <span class="cs_support_icon cs_center cs_radius_100">
+                    <img src="assets/img/icons/envelopes.svg" alt="Email icon">
+                  </span>
+                  <span class="cs_support_text">contato@lacerdaassessoria.com.br</span>
+                </a>
+                <a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp" class="cs_support_link cs_white_color cs_semibold cs_phone">
+                  <span class="cs_support_icon cs_center cs_radius_100">
+                    <img src="assets/img/icons/phone-rotary.svg" alt="Phone icon">
+                  </span>
+                  <span class="cs_support_text">(85) 99157-8001</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-4 offset-lg-0 offset-md-1">
+            <div class="cs_footer_widget cs_links_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Links Rapidos</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li><a href="index.html" aria-label="Inicio">Inicio</a></li>
+                <li><a href="services.html" aria-label="Servicos">Servicos</a></li>
+                <li><a href="about-us.html" aria-label="Quem somos">Quem Somos</a></li>
+                <li><a href="contact.html" aria-label="Contato">Contato</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-7">
+            <div class="cs_footer_widget cs_help_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Nossos Servicos</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li>Show de Gestao</li>
+                <li>Mentoria</li>
+                <li>Juridico</li>
+                <li>Financeiro</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-4 offset-md-1 offset-lg-0">
+            <div class="cs_footer_widget cs_contact_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Atendimento</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li><a href="contact.html" aria-label="Fale Conosco">Fale Conosco</a></li>
+                <li><a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp">WhatsApp</a></li>
+                <li><a href="#" aria-label="Politica de privacidade">Politica de Privacidade</a></li>
+                <li><a href="term-condition.html" aria-label="Termos de Uso">Termos de Uso</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cs_height_62 cs_height_lg_40"></div>
+    <hr>
+    <div class="container">
+      <div class="cs_footer_bottom position-relative z-1">
+        <div class="cs_footer_text cs_white_color">Copyright &copy; <span class="cs_getting_year"></span> Lacerda Assessoria. Todos os direitos reservados.</div>
+        <div class="cs_social_links cs_style_1 cs_white_color">
+          <a href="#" aria-label="Social link">
+            <span class="cs_social_icon"><i class="fa-brands fa-facebook"></i></span>
+            <span>Facebook</span>
+          </a>
+          <a href="#" aria-label="Social link">
+            <span class="cs_social_icon"><i class="fa-brands fa-youtube"></i></span>
+            <span>YouTube</span>
+          </a>
+          <a href="#" aria-label="Social link">
+            <span class="cs_social_icon"><i class="fa-brands fa-square-instagram"></i></span>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="cs_ellipse_1 position-absolute"></div>
+    <div class="cs_ellipse_2 position-absolute"></div>
+    <div class="cs_ellipse_3 position-absolute"></div>
+    <div class="cs_ellipse_4 position-absolute"></div>
+    <div class="cs_vector_1 position-absolute">
+      <img src="assets/img/vector_4.svg" alt="Vector shape">
+    </div>
+  </footer>
+  <!-- ══ END FOOTER ══ -->
+
+  <!-- Scroll Up -->
+  <button type="button" aria-label="Scroll to top button" class="cs_scrollup cs_purple_bg cs_white_color cs_radius_100">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z" fill="currentColor"/>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Formulario: feedback visual simples
+    (function () {
+      var form = document.getElementById('contactForm');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('.contact-submit');
+        var orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check" style="margin-right:10px;"></i>Mensagem enviada!';
+        btn.style.background = '#25D366';
+        btn.disabled = true;
+        setTimeout(function () {
+          btn.innerHTML = orig;
+          btn.style.background = '';
+          btn.disabled = false;
+          form.reset();
+        }, 3500);
+      });
+    })();
+  </script>
+</body>
 </html>

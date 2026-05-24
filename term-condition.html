@@ -1,13 +1,499 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=index.html">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Redirecting...</title>
-    <script>window.location.replace('index.html');</script>
-  </head>
-  <body>
-    <p>Redirecting to <a href="index.html">index.html</a>...</p>
-  </body>
+<!DOCTYPE html>
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Termos de Uso da Lacerda Assessoria. Leia com atencao antes de contratar nossos servicos.">
+  <link rel="icon" href="assets/img/favicon.png">
+  <title>Termos de Uso | Lacerda Assessoria</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ── Base ── */
+    body { background: #05111a; }
+    .container { padding-left: 80px; padding-right: 80px; }
+    @media (max-width: 1199px) { .container { padding-left: 48px; padding-right: 48px; } }
+    @media (max-width: 768px)  { .container { padding-left: 24px; padding-right: 24px; } }
+
+    /* ── Hero simples ── */
+    .terms-hero {
+      background: linear-gradient(180deg, #030c13 0%, #05111a 100%);
+      padding: 148px 0 64px;
+      text-align: center;
+      border-bottom: 1px solid rgba(201,169,110,0.12);
+    }
+    .terms-hero-tag {
+      display: inline-block;
+      background: rgba(201,169,110,0.12); border: 1px solid rgba(201,169,110,0.25);
+      color: #C9A96E; font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; padding: 6px 18px; border-radius: 20px; margin-bottom: 24px;
+    }
+    .terms-hero h1 {
+      color: #fff; font-size: 46px; font-weight: 800; margin-bottom: 14px; line-height: 1.1;
+    }
+    .terms-hero p {
+      color: rgba(255,255,255,0.5); font-size: 15px; margin: 0;
+    }
+
+    /* ── Layout de conteudo ── */
+    .terms-body { background: #05111a; padding: 72px 0 100px; }
+
+    /* ── Sidebar ── */
+    .terms-sidebar {
+      position: sticky; top: 100px;
+    }
+    .sidebar-title {
+      color: rgba(255,255,255,0.4); font-size: 10px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .sidebar-nav { list-style: none; padding: 0; margin: 0; }
+    .sidebar-nav li { margin-bottom: 4px; }
+    .sidebar-nav a {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.55); font-size: 14px; text-decoration: none;
+      padding: 9px 14px; border-radius: 8px; transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+      background: rgba(201,169,110,0.1); color: #C9A96E;
+      border-color: rgba(201,169,110,0.2);
+    }
+    .sidebar-nav a .nav-num {
+      width: 22px; height: 22px; background: rgba(201,169,110,0.15);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: #C9A96E; flex-shrink: 0;
+    }
+    .sidebar-cta {
+      margin-top: 32px; background: rgba(201,169,110,0.08);
+      border: 1px solid rgba(201,169,110,0.18); border-radius: 14px; padding: 22px 18px;
+    }
+    .sidebar-cta p { color: rgba(255,255,255,0.55); font-size: 13px; margin-bottom: 14px; line-height: 1.6; }
+    .sidebar-cta a {
+      display: flex; align-items: center; gap: 8px;
+      background: #C9A96E; color: #05111a; padding: 11px 18px;
+      border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none;
+      transition: background 0.3s;
+    }
+    .sidebar-cta a:hover { background: #b8944e; color: #05111a; }
+
+    /* ── Conteudo principal ── */
+    .terms-content { }
+    .terms-section { margin-bottom: 60px; scroll-margin-top: 110px; }
+    .terms-section h3 {
+      color: #fff; font-size: 22px; font-weight: 700; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .terms-section h3 .section-num {
+      width: 34px; height: 34px; background: rgba(201,169,110,0.15);
+      border: 1px solid rgba(201,169,110,0.3); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800; color: #C9A96E; flex-shrink: 0;
+    }
+    .terms-divider { width: 40px; height: 2px; background: rgba(201,169,110,0.4); border-radius: 2px; margin-bottom: 20px; }
+    .terms-section p {
+      color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .terms-section p:last-child { margin-bottom: 0; }
+    .terms-section ul {
+      color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.8;
+      padding-left: 0; list-style: none; margin-bottom: 14px;
+    }
+    .terms-section ul li { padding: 4px 0 4px 22px; position: relative; }
+    .terms-section ul li::before {
+      content: ''; position: absolute; left: 0; top: 14px;
+      width: 7px; height: 7px; background: #C9A96E; border-radius: 50%;
+    }
+    .terms-section a { color: #C9A96E; text-decoration: none; }
+    .terms-section a:hover { text-decoration: underline; }
+
+    /* Separador entre secoes */
+    .terms-section-sep {
+      border: none; border-top: 1px solid rgba(255,255,255,0.07); margin-bottom: 60px;
+    }
+
+    /* Destaque de aviso */
+    .terms-notice {
+      background: rgba(201,169,110,0.08); border-left: 3px solid #C9A96E;
+      border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 14px;
+    }
+    .terms-notice p { margin: 0; }
+
+    /* ── Footer override ── */
+    .cs_footer.cs_style_1.cs_type_2 { background: #030c13; }
+
+    @media (max-width: 991px) {
+      .terms-sidebar { position: static; margin-bottom: 48px; }
+      .terms-hero h1 { font-size: 32px; }
+      .terms-hero { padding: 120px 0 48px; }
+    }
+  </style>
+</head>
+<body class="cs_task_management">
+
+  <!-- Preloader -->
+  <div class="cs_preloader cs_white_bg">
+    <div class="cs_preloader_in position-relative"><span></span><span></span></div>
+  </div>
+
+  <!-- ══ HEADER ══ -->
+  <header class="cs_site_header cs_style_1 cs_type_1 cs_sticky_header">
+    <div class="cs_main_header cs_white_color cs_semibold">
+      <div class="container">
+        <div class="cs_main_header_in">
+          <div class="cs_main_header_left">
+            <a class="cs_site_branding" href="index.html" aria-label="Home page link">
+              <img src="assets/img/LOGO-LACERDA-2.gif" alt="Logo" style="height: 70px;">
+            </a>
+          </div>
+          <div class="cs_main_header_center">
+            <div class="cs_nav">
+              <ul class="cs_nav_list">
+                <li><a href="index.html" aria-label="Menu link">Inicio</a></li>
+                <li class="menu-item-has-children">
+                  <a href="services.html" aria-label="Menu link">Servicos</a>
+                  <ul>
+                    <li><a href="services.html" aria-label="Menu link">Show de Gestao</a></li>
+                    <li><a href="services.html" aria-label="Menu link">Mentoria</a></li>
+                    <li><a href="services.html" aria-label="Menu link">Juridico</a></li>
+                    <li><a href="services.html" aria-label="Menu link">Financeiro</a></li>
+                  </ul>
+                </li>
+                <li><a href="about-us.html" aria-label="Menu link">Quem somos</a></li>
+                <li><a href="contact.html" aria-label="Menu link">Contatos</a></li>
+              </ul>
+            </div>
+            <div class="cs_main_header_right">
+              <a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp"
+                 class="cs_btn cs_style_1 cs_fs_16 cs_semibold cs_purple_bg cs_white_color cs_accent_hover"
+                 style="padding: 13px 28px; font-size: 15px;">
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ══ END HEADER ══ -->
+
+  <!-- ══ HERO SIMPLES ══ -->
+  <section class="terms-hero">
+    <div class="container">
+      <span class="terms-hero-tag">Documentos Legais</span>
+      <h1>Termos de Uso</h1>
+      <p>Ultima atualizacao: Janeiro de 2025</p>
+    </div>
+  </section>
+  <!-- ══ END HERO ══ -->
+
+  <!-- ══ CORPO DOS TERMOS ══ -->
+  <section class="terms-body">
+    <div class="container">
+      <div class="row">
+
+        <!-- Sidebar de navegacao -->
+        <div class="col-lg-3">
+          <div class="terms-sidebar">
+            <p class="sidebar-title">Secoes</p>
+            <ul class="sidebar-nav">
+              <li>
+                <a href="#section-1">
+                  <span class="nav-num">1</span>Aceitacao dos Termos
+                </a>
+              </li>
+              <li>
+                <a href="#section-2">
+                  <span class="nav-num">2</span>Descricao dos Servicos
+                </a>
+              </li>
+              <li>
+                <a href="#section-3">
+                  <span class="nav-num">3</span>Responsabilidades
+                </a>
+              </li>
+              <li>
+                <a href="#section-4">
+                  <span class="nav-num">4</span>Privacidade de Dados
+                </a>
+              </li>
+              <li>
+                <a href="#section-5">
+                  <span class="nav-num">5</span>Condicoes de Pagamento
+                </a>
+              </li>
+              <li>
+                <a href="#section-6">
+                  <span class="nav-num">6</span>Cancelamento e Rescisao
+                </a>
+              </li>
+              <li>
+                <a href="#section-7">
+                  <span class="nav-num">7</span>Contato e Suporte
+                </a>
+              </li>
+            </ul>
+            <div class="sidebar-cta">
+              <p>Tem duvidas sobre nossos termos? Nossa equipe esclarece tudo.</p>
+              <a href="contact.html">
+                <i class="fa-regular fa-envelope"></i>Falar com a equipe
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteudo principal -->
+        <div class="col-lg-9">
+          <div class="terms-content">
+
+            <!-- Aviso inicial -->
+            <div class="terms-notice" style="margin-bottom: 52px;">
+              <p>Ao contratar qualquer servico da Lacerda Assessoria, voce declara ter lido, compreendido e concordado com todos os termos e condicoes descritos neste documento. Caso nao concorde com qualquer clausula, nao utilize nossos servicos.</p>
+            </div>
+
+            <!-- 1. Aceitacao dos Termos -->
+            <div class="terms-section" id="section-1">
+              <h3><span class="section-num">1</span>Aceitacao dos Termos</h3>
+              <div class="terms-divider"></div>
+              <p>Estes Termos de Uso regem a relacao entre a Lacerda Assessoria (doravante denominada "Lacerda" ou "nos") e qualquer pessoa fisica ou juridica (doravante "cliente" ou "voce") que utilize, contrate ou acesse nossos servicos de assessoria empresarial, mentoria, consultoria juridica ou financeira.</p>
+              <p>A aceitacao destes termos ocorre no momento da assinatura do contrato de servicos, do pagamento de qualquer valor, ou do inicio do uso dos servicos prestados, o que ocorrer primeiro. Esta aceitacao e valida e vinculante para todas as finalidades legais.</p>
+              <p>A Lacerda Assessoria reserva-se o direito de atualizar estes termos periodicamente. Alteracoes substanciais serao comunicadas por e-mail ou WhatsApp com antecedencia minima de 30 dias. A continuidade no uso dos servicos apos a notificacao constitui aceitacao tacita dos novos termos.</p>
+            </div>
+
+            <hr class="terms-section-sep">
+
+            <!-- 2. Descricao dos Servicos -->
+            <div class="terms-section" id="section-2">
+              <h3><span class="section-num">2</span>Descricao dos Servicos</h3>
+              <div class="terms-divider"></div>
+              <p>A Lacerda Assessoria oferece as seguintes linhas de servico, cada qual com escopo, metodologia e entregaveis definidos em proposta comercial especifica celebrada com o cliente:</p>
+              <ul>
+                <li><strong style="color:#fff;">Show de Gestao:</strong> programa estruturado de implementacao de processos, indicadores e cultura de alta performance para empresas em crescimento.</li>
+                <li><strong style="color:#fff;">Mentoria Empresarial:</strong> acompanhamento individualizado do empresario com sessoes periodicas, plano de acao e monitoramento de resultados.</li>
+                <li><strong style="color:#fff;">Consultoria Juridica:</strong> analise e orientacao em contratos, regularizacao societaria, trabalhista e compliance, em parceria com profissionais habilitados.</li>
+                <li><strong style="color:#fff;">Consultoria Financeira:</strong> diagnostico, planejamento orcamentario, fluxo de caixa, estruturacao financeira e estrategias de rentabilidade.</li>
+              </ul>
+              <p>O escopo exato dos servicos contratados, prazos e entregaveis serao formalizados em proposta ou contrato especifico assinado pelas partes, prevalecendo este documento sobre os presentes Termos em caso de conflito.</p>
+            </div>
+
+            <hr class="terms-section-sep">
+
+            <!-- 3. Responsabilidades -->
+            <div class="terms-section" id="section-3">
+              <h3><span class="section-num">3</span>Responsabilidades das Partes</h3>
+              <div class="terms-divider"></div>
+              <p><strong style="color:#C9A96E;">Responsabilidades da Lacerda Assessoria:</strong> comprometemo-nos a prestar os servicos contratados com diligencia, competencia e boa-fe, disponibilizando profissionais qualificados, cumprindo os prazos acordados e mantendo sigilo absoluto sobre as informacoes recebidas do cliente.</p>
+              <p><strong style="color:#C9A96E;">Responsabilidades do Cliente:</strong> o cliente compromete-se a fornecer informacoes verdadeiras e completas necessarias a prestacao dos servicos, efetuar os pagamentos nos prazos acordados, participar ativamente das reunioes e entregas definidas e implementar as recomendacoes tecnicas dentro do seu poder decisorio.</p>
+              <p>A Lacerda Assessoria nao se responsabiliza por resultados especificos de negocio, uma vez que a efetividade das estrategias depende de fatores externos ao controle da assessoria, incluindo condicoes de mercado, decisoes do cliente e contexto macroeconomico. Nossas orientacoes sao tecnicas e consultivas, nao garantindo resultados financeiros determinados.</p>
+            </div>
+
+            <hr class="terms-section-sep">
+
+            <!-- 4. Privacidade de Dados -->
+            <div class="terms-section" id="section-4">
+              <h3><span class="section-num">4</span>Privacidade e Protecao de Dados</h3>
+              <div class="terms-divider"></div>
+              <p>A Lacerda Assessoria trata os dados pessoais e empresariais dos clientes em conformidade com a Lei Geral de Protecao de Dados Pessoais (LGPD - Lei n.o 13.709/2018). Os dados coletados sao utilizados exclusivamente para prestacao dos servicos contratados, comunicacoes relacionadas ao contrato e aprimoramento da qualidade do atendimento.</p>
+              <p>Todas as informacoes confidenciais compartilhadas pelo cliente - incluindo dados financeiros, estrategicos, societarios e operacionais - sao protegidas por acordo de confidencialidade tacito e nao serao divulgadas a terceiros sem autorizacao expressa, exceto quando exigido por determinacao judicial ou obrigacao legal.</p>
+              <p>O cliente pode, a qualquer momento, solicitar acesso, correcao, portabilidade ou exclusao de seus dados pessoais armazenados pela Lacerda Assessoria, mediante contato pelo e-mail contato@lacerdaassessoria.com.br. O prazo para resposta e de ate 15 dias uteis.</p>
+            </div>
+
+            <hr class="terms-section-sep">
+
+            <!-- 5. Pagamentos -->
+            <div class="terms-section" id="section-5">
+              <h3><span class="section-num">5</span>Condicoes de Pagamento</h3>
+              <div class="terms-divider"></div>
+              <p>Os valores, formas e prazos de pagamento serao definidos na proposta comercial ou contrato de servico assinado entre as partes. Em geral, os servicos sao faturados mensalmente ou por etapa de entrega, conforme acordado.</p>
+              <p>O nao pagamento na data acordada enseja a cobranca de multa de 2% sobre o valor em atraso, acrescida de juros de mora de 1% ao mes e correcao monetaria pelo IPCA. Atrasos superiores a 15 dias uteis podem resultar na suspensao temporaria dos servicos, sem prejuizo das obrigacoes contratuais do cliente.</p>
+              <div class="terms-notice">
+                <p>Os pagamentos realizados nao sao reembolsaveis por periodos de servico ja iniciados, exceto em casos de descumprimento comprovado por parte da Lacerda Assessoria.</p>
+              </div>
+            </div>
+
+            <hr class="terms-section-sep">
+
+            <!-- 6. Cancelamento e Rescisao -->
+            <div class="terms-section" id="section-6">
+              <h3><span class="section-num">6</span>Cancelamento e Rescisao</h3>
+              <div class="terms-divider"></div>
+              <p>Qualquer das partes pode rescindir o contrato de servicos mediante notificacao por escrito (e-mail ou carta) com antecedencia minima de 30 dias corridos. Durante este periodo de aviso, ambas as partes mantem suas obrigacoes reciprocas integralmente.</p>
+              <p>A rescisao imotivada pelo cliente durante vigencia de contrato com prazo determinado podera implicar no pagamento de multa rescisoria proporcional ao periodo restante, conforme estabelecido no contrato especifico. A rescisao motivada por descumprimento da Lacerda nao implica qualquer onus ao cliente.</p>
+              <p>Independentemente do motivo da rescisao, todas as obrigacoes de confidencialidade e nao divulgacao de informacoes permanecem vigentes pelo prazo de 5 anos apos o encerramento da relacao contratual.</p>
+            </div>
+
+            <hr class="terms-section-sep">
+
+            <!-- 7. Contato e Suporte -->
+            <div class="terms-section" id="section-7">
+              <h3><span class="section-num">7</span>Contato e Suporte</h3>
+              <div class="terms-divider"></div>
+              <p>Para duvidas, solicitacoes, reclamacoes ou comunicacoes relacionadas a estes Termos de Uso ou aos servicos prestados, o cliente pode entrar em contato pelos seguintes canais:</p>
+              <ul>
+                <li><strong style="color:#fff;">E-mail:</strong> <a href="mailto:contato@lacerdaassessoria.com.br">contato@lacerdaassessoria.com.br</a></li>
+                <li><strong style="color:#fff;">WhatsApp:</strong> <a href="https://wa.me/5585991578001" target="_blank">(85) 99157-8001</a></li>
+                <li><strong style="color:#fff;">Horario de atendimento:</strong> Segunda a Sexta, das 08h as 18h; Sabados das 08h as 12h</li>
+              </ul>
+              <p>Eventuais controversias decorrentes destes Termos ou dos contratos firmados serao submetidas ao foro da Comarca de Fortaleza - CE, renunciando as partes a qualquer outro, por mais privilegiado que seja, salvo disposicao contratual especifica em contrario. Estes Termos sao regidos pelas leis da Republica Federativa do Brasil.</p>
+              <p>A Lacerda Assessoria compromete-se a responder toda e qualquer comunicacao no prazo maximo de 2 dias uteis. Para urgencias, recomendamos o contato direto pelo WhatsApp.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ══ END CORPO DOS TERMOS ══ -->
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="cs_footer cs_style_1 cs_type_2 position-relative overflow-hidden">
+    <div class="cs_height_130 cs_height_lg_80"></div>
+    <div class="container">
+      <div class="cs_footer_main position-relative z-1">
+        <div class="row cs_gap_y_30">
+          <div class="col-xl-5 col-lg-4 col-md-7">
+            <div class="cs_footer_widget cs_text_widget">
+              <div class="cs_brand cs_mb_13 wow fadeInUp">
+                <img src="assets/img/LOGO-LACERDA-2.gif" alt="Lacerda Assessoria" style="height: 65px;">
+              </div>
+              <p class="cs_mb_27">Assessoria especializada em gestao empresarial, mentoria, juridico e financeiro. Transformamos negocios com estrategia, metodo e comprometimento real com os seus resultados.</p>
+              <div class="d-flex flex-column">
+                <a href="mailto:contato@lacerdaassessoria.com.br" aria-label="Email" class="cs_support_link cs_white_color cs_semibold cs_mb_23">
+                  <span class="cs_support_icon cs_center cs_radius_100">
+                    <img src="assets/img/icons/envelopes.svg" alt="Email icon">
+                  </span>
+                  <span class="cs_support_text">contato@lacerdaassessoria.com.br</span>
+                </a>
+                <a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp" class="cs_support_link cs_white_color cs_semibold cs_phone">
+                  <span class="cs_support_icon cs_center cs_radius_100">
+                    <img src="assets/img/icons/phone-rotary.svg" alt="Phone icon">
+                  </span>
+                  <span class="cs_support_text">(85) 99157-8001</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-4 offset-lg-0 offset-md-1">
+            <div class="cs_footer_widget cs_links_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Links Rapidos</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li><a href="index.html" aria-label="Inicio">Inicio</a></li>
+                <li><a href="services.html" aria-label="Servicos">Servicos</a></li>
+                <li><a href="about-us.html" aria-label="Quem somos">Quem Somos</a></li>
+                <li><a href="contact.html" aria-label="Contato">Contato</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-7">
+            <div class="cs_footer_widget cs_help_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Nossos Servicos</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li>Show de Gestao</li>
+                <li>Mentoria</li>
+                <li>Juridico</li>
+                <li>Financeiro</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-4 offset-md-1 offset-lg-0">
+            <div class="cs_footer_widget cs_contact_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Atendimento</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li><a href="contact.html" aria-label="Fale Conosco">Fale Conosco</a></li>
+                <li><a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp">WhatsApp</a></li>
+                <li><a href="#" aria-label="Politica de privacidade">Politica de Privacidade</a></li>
+                <li><a href="term-condition.html" aria-label="Termos de Uso">Termos de Uso</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cs_height_62 cs_height_lg_40"></div>
+    <hr>
+    <div class="container">
+      <div class="cs_footer_bottom position-relative z-1">
+        <div class="cs_footer_text cs_white_color">Copyright &copy; <span class="cs_getting_year"></span> Lacerda Assessoria. Todos os direitos reservados.</div>
+        <div class="cs_social_links cs_style_1 cs_white_color">
+          <a href="#" aria-label="Social link">
+            <span class="cs_social_icon"><i class="fa-brands fa-facebook"></i></span>
+            <span>Facebook</span>
+          </a>
+          <a href="#" aria-label="Social link">
+            <span class="cs_social_icon"><i class="fa-brands fa-youtube"></i></span>
+            <span>YouTube</span>
+          </a>
+          <a href="#" aria-label="Social link">
+            <span class="cs_social_icon"><i class="fa-brands fa-square-instagram"></i></span>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="cs_ellipse_1 position-absolute"></div>
+    <div class="cs_ellipse_2 position-absolute"></div>
+    <div class="cs_ellipse_3 position-absolute"></div>
+    <div class="cs_ellipse_4 position-absolute"></div>
+    <div class="cs_vector_1 position-absolute">
+      <img src="assets/img/vector_4.svg" alt="Vector shape">
+    </div>
+  </footer>
+  <!-- ══ END FOOTER ══ -->
+
+  <!-- Scroll Up -->
+  <button type="button" aria-label="Scroll to top button" class="cs_scrollup cs_purple_bg cs_white_color cs_radius_100">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z" fill="currentColor"/>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Sidebar: marcar link ativo conforme scroll
+    (function () {
+      var sections = document.querySelectorAll('.terms-section');
+      var navLinks = document.querySelectorAll('.sidebar-nav a');
+      if (!sections.length || !navLinks.length) return;
+
+      function onScroll() {
+        var scrollY = window.scrollY + 130;
+        sections.forEach(function (sec) {
+          var top = sec.offsetTop;
+          var bottom = top + sec.offsetHeight;
+          if (scrollY >= top && scrollY < bottom) {
+            navLinks.forEach(function (a) { a.classList.remove('active'); });
+            var id = sec.getAttribute('id');
+            var active = document.querySelector('.sidebar-nav a[href="#' + id + '"]');
+            if (active) active.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Scroll suave para as ancoras
+      navLinks.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var href = a.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            e.preventDefault();
+            var target = document.querySelector(href);
+            if (target) {
+              window.scrollTo({ top: target.offsetTop - 105, behavior: 'smooth' });
+            }
+          }
+        });
+      });
+    })();
+  </script>
+</body>
 </html>

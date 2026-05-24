@@ -1,13 +1,826 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=index.html">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Redirecting...</title>
-    <script>window.location.replace('index.html');</script>
-  </head>
-  <body>
-    <p>Redirecting to <a href="index.html">index.html</a>...</p>
-  </body>
+<!DOCTYPE html>
+<html class="no-js" lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="assets/img/favicon.png">
+  <title>Serviços | Lacerda Assessoria</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ── Layout ──────────────────────────────────────────────── */
+    .container { padding-left: 80px; padding-right: 80px; }
+    @media (max-width: 1199px) { .container { padding-left: 48px; padding-right: 48px; } }
+    @media (max-width: 768px)  { .container { padding-left: 24px; padding-right: 24px; } }
+
+    /* ── Spacing helpers ─────────────────────────────────────── */
+    .cs_height_140, .cs_height_136, .cs_height_134,
+    .cs_height_130, .cs_height_123 { height: 65px; }
+
+    /* ── Page Hero ───────────────────────────────────────────── */
+    .sv_hero {
+      position: relative;
+      min-height: 45vh;
+      display: flex;
+      align-items: center;
+      background: url('assets/img/feature_1.jpg') center center / cover no-repeat;
+      margin-top: 80px;
+    }
+    .sv_hero_overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(5, 17, 26, 0.96) 50%,
+        rgba(5, 17, 26, 0.70) 100%
+      );
+    }
+    .sv_hero_content {
+      position: relative;
+      z-index: 1;
+      padding: 80px 0;
+    }
+    .sv_breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .sv_breadcrumb a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .sv_breadcrumb a:hover { color: #C9A96E; }
+    .sv_breadcrumb .sv_sep { color: rgba(255,255,255,0.3); }
+    .sv_label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #C9A96E;
+      border: 1px solid rgba(201,169,110,0.4);
+      padding: 5px 18px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .sv_hero_title {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.12;
+      margin-bottom: 20px;
+      max-width: 680px;
+    }
+    .sv_hero_sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.75;
+      max-width: 500px;
+      margin: 0;
+    }
+
+    /* ── Service blocks ──────────────────────────────────────── */
+    .sv_services_wrap {
+      background: #05111a;
+    }
+    .sv_service_block {
+      padding: 100px 0;
+      border-bottom: 1px solid rgba(201,169,110,0.12);
+      position: relative;
+    }
+    .sv_service_block:last-child { border-bottom: none; }
+
+    .sv_service_img {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+    .sv_service_img img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .sv_service_img:hover img { transform: scale(1.04); }
+    .sv_service_img_badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: #C9A96E;
+      color: #05111a;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+    }
+
+    .sv_service_text { padding: 20px 0; }
+    .sv_service_number {
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(201,169,110,0.10);
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: -10px;
+    }
+    .sv_service_tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #C9A96E;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .sv_service_title {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .sv_service_desc {
+      font-size: 16px;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.80;
+      margin-bottom: 32px;
+    }
+    .sv_check_list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .sv_check_list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.6;
+    }
+    .sv_check_list li .sv_icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(201,169,110,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .sv_check_list li .sv_icon i {
+      font-size: 10px;
+      color: #C9A96E;
+    }
+    .sv_service_btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: transparent;
+      border: 1.5px solid #C9A96E;
+      color: #C9A96E;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+    }
+    .sv_service_btn:hover {
+      background: #C9A96E;
+      color: #05111a;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .sv_service_btn i { transition: transform 0.3s; }
+    .sv_service_btn:hover i { transform: translateX(4px); }
+
+    @media (min-width: 992px) {
+      .sv_text_left  { padding-right: 60px; }
+      .sv_text_right { padding-left:  60px; }
+    }
+    @media (max-width: 991px) {
+      .sv_service_block { padding: 60px 0; }
+      .sv_service_img img { height: 280px; }
+      .sv_text_left,
+      .sv_text_right { padding: 0; }
+    }
+
+    /* ── Divider ─────────────────────────────────────────────── */
+    .sv_gold_divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, #C9A96E, rgba(201,169,110,0.2));
+      border-radius: 2px;
+      margin-bottom: 30px;
+    }
+
+    /* ── How it works ────────────────────────────────────────── */
+    .sv_how_section {
+      background: #0a1520;
+      padding: 100px 0;
+    }
+    .sv_how_section_header { text-align: center; margin-bottom: 70px; }
+    .sv_how_section_label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #C9A96E;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .sv_how_section_title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .sv_how_section_sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.60);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .sv_step_card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,169,110,0.15);
+      border-radius: 20px;
+      padding: 48px 36px 40px;
+      position: relative;
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+      height: 100%;
+    }
+    .sv_step_card:hover {
+      background: rgba(201,169,110,0.05);
+      border-color: rgba(201,169,110,0.40);
+      transform: translateY(-6px);
+    }
+    .sv_step_number {
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(201,169,110,0.12);
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      pointer-events: none;
+    }
+    .sv_step_icon_wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: rgba(201,169,110,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .sv_step_icon_wrap i {
+      font-size: 22px;
+      color: #C9A96E;
+    }
+    .sv_step_title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .sv_step_desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      margin: 0;
+    }
+    @media (max-width: 991px) {
+      .sv_how_section { padding: 70px 0; }
+    }
+
+    /* ── CTA Final ───────────────────────────────────────────── */
+    .sv_cta_section {
+      background: #05111a;
+      padding: 0 0 100px;
+    }
+    .sv_cta_inner {
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 24px;
+      background: linear-gradient(
+        135deg,
+        rgba(201,169,110,0.08) 0%,
+        rgba(5,17,26,0.00) 60%
+      );
+      padding: 80px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sv_cta_inner::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(201,169,110,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .sv_cta_label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #C9A96E;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .sv_cta_title {
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .sv_cta_sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 44px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sv_cta_btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 42px;
+      background: #7c3aed;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+    .sv_cta_btn:hover {
+      background: #6d28d9;
+      color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(124,58,237,0.40);
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .sv_cta_inner { padding: 56px 28px; }
+    }
+  </style>
+</head>
+<body class="cs_task_management">
+
+  <!-- Preloader -->
+  <div class="cs_preloader cs_white_bg">
+    <div class="cs_preloader_in position-relative"><span></span><span></span></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════════════════════ -->
+  <header class="cs_site_header cs_style_1 cs_type_1 cs_sticky_header">
+    <div class="cs_main_header cs_white_color cs_semibold">
+      <div class="container">
+        <div class="cs_main_header_in">
+          <div class="cs_main_header_left">
+            <a class="cs_site_branding" href="index.html" aria-label="Home page link">
+              <img src="assets/img/LOGO-LACERDA-2.gif" alt="Logo" style="height:70px;">
+            </a>
+          </div>
+          <div class="cs_main_header_center">
+            <div class="cs_nav">
+              <ul class="cs_nav_list">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="menu-item-has-children active"><a href="services.html">Serviços</a>
+                  <ul>
+                    <li><a href="services.html#show-gestao">Show de Gestão</a></li>
+                    <li><a href="services.html#mentoria">Mentoria</a></li>
+                    <li><a href="services.html#juridico">Juridico</a></li>
+                    <li><a href="services.html#financeiro">Financeiro</a></li>
+                  </ul>
+                </li>
+                <li><a href="about-us.html">Quem somos</a></li>
+                <li><a href="contact.html">Contatos</a></li>
+              </ul>
+            </div>
+            <div class="cs_main_header_right">
+              <a href="https://wa.me/5585991578001" target="_blank" class="cs_btn cs_style_1 cs_fs_16 cs_semibold cs_purple_bg cs_white_color cs_accent_hover" style="padding:13px 28px;font-size:15px;"><span>WhatsApp</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       1. PAGE HERO
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="sv_hero">
+    <div class="sv_hero_overlay"></div>
+    <div class="container">
+      <div class="sv_hero_content">
+        <nav class="sv_breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Início</a>
+          <span class="sv_sep"><i class="fa-solid fa-chevron-right" style="font-size:9px;"></i></span>
+          <span style="color:rgba(255,255,255,0.85);">Serviços</span>
+        </nav>
+        <span class="sv_label">Nossos Serviços</span>
+        <h1 class="sv_hero_title">Soluções completas para a sua empresa crescer</h1>
+        <p class="sv_hero_sub">Da gestão ao jurídico, da mentoria ao financeiro — estamos ao lado da sua empresa em cada etapa da jornada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       2. BLOCOS DE SERVIÇO
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="sv_services_wrap">
+
+    <!-- ── 2A. Show de Gestão — imagem esquerda / texto direita ── -->
+    <div class="sv_service_block" id="show-gestao">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="sv_service_img">
+              <img src="assets/img/feature_5.jpg" alt="Show de Gestão — diagnóstico e implantação de processos">
+              <span class="sv_service_img_badge">Show de Gestão</span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="sv_service_text sv_text_right">
+              <span class="sv_service_number">01</span>
+              <span class="sv_service_tag">Gestão Empresarial</span>
+              <div class="sv_gold_divider"></div>
+              <h2 class="sv_service_title">Show de Gestão</h2>
+              <p class="sv_service_desc">Transformamos a gestão da sua empresa com um olhar 360°. Identificamos gargalos, implantamos processos eficientes e acompanhamos os resultados de perto, garantindo crescimento sustentável e previsível.</p>
+              <ul class="sv_check_list">
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Diagnóstico completo de processos e indicadores
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Implantação de rotinas de gestão e metas claras
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Acompanhamento periódico e ajuste de estratégias
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Estruturação de times e organograma funcional
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Dashboards de resultados em tempo real
+                </li>
+              </ul>
+              <a href="https://wa.me/5585991578001?text=Olá!%20Tenho%20interesse%20no%20Show%20de%20Gestão." target="_blank" class="sv_service_btn">
+                Falar sobre este serviço <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2B. Mentoria — texto esquerda / imagem direita ── -->
+    <div class="sv_service_block" id="mentoria">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 order-lg-2">
+            <div class="sv_service_img">
+              <img src="assets/img/feature_6.jpg" alt="Mentoria para líderes e empresários">
+              <span class="sv_service_img_badge">Mentoria</span>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="sv_service_text sv_text_left">
+              <span class="sv_service_number">02</span>
+              <span class="sv_service_tag">Desenvolvimento de Liderança</span>
+              <div class="sv_gold_divider"></div>
+              <h2 class="sv_service_title">Mentoria para Líderes e Empresários</h2>
+              <p class="sv_service_desc">Sessões personalizadas que aceleram o desenvolvimento de líderes e empresários. Com experiência prática e metodologia comprovada, ajudamos você a tomar melhores decisões e elevar seu negócio ao próximo nível.</p>
+              <ul class="sv_check_list">
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Sessões individuais e personalizadas por módulo
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Desenvolvimento de liderança e tomada de decisão
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Planejamento de carreira e expansão de negócios
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Inteligência emocional aplicada à gestão
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Networking estratégico e conexões de valor
+                </li>
+              </ul>
+              <a href="https://wa.me/5585991578001?text=Olá!%20Tenho%20interesse%20na%20Mentoria." target="_blank" class="sv_service_btn">
+                Falar sobre este serviço <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2C. Jurídico — imagem esquerda / texto direita ── -->
+    <div class="sv_service_block" id="juridico">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="sv_service_img">
+              <img src="assets/img/feature_1.jpg" alt="Assessoria Jurídica Empresarial">
+              <span class="sv_service_img_badge">Jurídico</span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="sv_service_text sv_text_right">
+              <span class="sv_service_number">03</span>
+              <span class="sv_service_tag">Assessoria Jurídica</span>
+              <div class="sv_gold_divider"></div>
+              <h2 class="sv_service_title">Jurídico Empresarial Completo</h2>
+              <p class="sv_service_desc">Proteja seu negócio com assessoria jurídica especializada. Atuamos em todas as frentes do direito empresarial para que você tome decisões seguras e minimize riscos legais de forma preventiva e eficaz.</p>
+              <ul class="sv_check_list">
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Direito empresarial e societário
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Assessoria trabalhista e relações de emprego
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Elaboração e revisão de contratos comerciais
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Planejamento tributário e compliance fiscal
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Recuperação de crédito e gestão de passivos
+                </li>
+              </ul>
+              <a href="https://wa.me/5585991578001?text=Olá!%20Tenho%20interesse%20no%20Jurídico." target="_blank" class="sv_service_btn">
+                Falar sobre este serviço <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2D. Financeiro — texto esquerda / imagem direita ── -->
+    <div class="sv_service_block" id="financeiro">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 order-lg-2">
+            <div class="sv_service_img">
+              <img src="assets/img/feature_2.jpg" alt="Gestão Financeira Empresarial">
+              <span class="sv_service_img_badge">Financeiro</span>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="sv_service_text sv_text_left">
+              <span class="sv_service_number">04</span>
+              <span class="sv_service_tag">Gestão Financeira</span>
+              <div class="sv_gold_divider"></div>
+              <h2 class="sv_service_title">Financeiro Sólido e Estratégico</h2>
+              <p class="sv_service_desc">Organize as finanças da sua empresa com metodologia e inteligência. Ajudamos a estruturar o fluxo de caixa, planejar investimentos e controlar custos para que seu negócio seja lucrativo e sustentável.</p>
+              <ul class="sv_check_list">
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Gestão e projeção de fluxo de caixa
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Planejamento financeiro e orçamento anual
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Controle e redução de custos operacionais
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Análise de rentabilidade por produto e serviço
+                </li>
+                <li>
+                  <span class="sv_icon"><i class="fa-solid fa-check"></i></span>
+                  Estruturação para captação de crédito e investimento
+                </li>
+              </ul>
+              <a href="https://wa.me/5585991578001?text=Olá!%20Tenho%20interesse%20no%20Financeiro." target="_blank" class="sv_service_btn">
+                Falar sobre este serviço <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       3. COMO FUNCIONA
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="sv_how_section">
+    <div class="container">
+
+      <div class="sv_how_section_header">
+        <span class="sv_how_section_label">Nossa Metodologia</span>
+        <h2 class="sv_how_section_title">Como funciona a nossa assessoria</h2>
+        <p class="sv_how_section_sub">Um processo claro e estruturado que garante resultados reais para a sua empresa.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+
+        <!-- Passo 01 — Diagnóstico -->
+        <div class="col-lg-4 col-md-12 d-flex">
+          <div class="sv_step_card w-100">
+            <span class="sv_step_number">01</span>
+            <div class="sv_step_icon_wrap">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+            <h3 class="sv_step_title">Diagnóstico</h3>
+            <p class="sv_step_desc">Mergulhamos na realidade da sua empresa. Mapeamos processos, identificamos gargalos e oportunidades para entender exatamente onde atuar com maior impacto.</p>
+          </div>
+        </div>
+
+        <!-- Seta conectora — desktop -->
+        <div class="col-lg-auto d-none d-lg-flex align-items-center justify-content-center px-0">
+          <i class="fa-solid fa-arrow-right" style="font-size:22px;color:rgba(201,169,110,0.30);"></i>
+        </div>
+
+        <!-- Passo 02 — Planejamento -->
+        <div class="col-lg-4 col-md-12 d-flex">
+          <div class="sv_step_card w-100">
+            <span class="sv_step_number">02</span>
+            <div class="sv_step_icon_wrap">
+              <i class="fa-solid fa-pen-ruler"></i>
+            </div>
+            <h3 class="sv_step_title">Planejamento</h3>
+            <p class="sv_step_desc">Com base no diagnóstico, desenhamos um plano de ação personalizado — com metas, prazos e responsáveis definidos — alinhado ao seu momento e objetivos de negócio.</p>
+          </div>
+        </div>
+
+        <!-- Seta conectora — desktop -->
+        <div class="col-lg-auto d-none d-lg-flex align-items-center justify-content-center px-0">
+          <i class="fa-solid fa-arrow-right" style="font-size:22px;color:rgba(201,169,110,0.30);"></i>
+        </div>
+
+        <!-- Passo 03 — Implementação -->
+        <div class="col-lg-4 col-md-12 d-flex">
+          <div class="sv_step_card w-100">
+            <span class="sv_step_number">03</span>
+            <div class="sv_step_icon_wrap">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3 class="sv_step_title">Implementação</h3>
+            <p class="sv_step_desc">Colocamos o plano em prática lado a lado com o seu time. Monitoramos resultados, ajustamos rotas e garantimos que as mudanças gerem crescimento consistente e duradouro.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       4. CTA FINAL
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="sv_cta_section">
+    <div class="container">
+      <div class="sv_cta_inner">
+        <span class="sv_cta_label">Dê o próximo passo</span>
+        <h2 class="sv_cta_title">Pronto para transformar<br>a sua empresa?</h2>
+        <p class="sv_cta_sub">Fale agora com um especialista da Lacerda Assessoria e descubra qual solução se encaixa melhor no seu negócio.</p>
+        <a href="https://wa.me/5585991578001?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20serviços%20da%20Lacerda%20Assessoria." target="_blank" class="sv_cta_btn">
+          <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
+          Falar pelo WhatsApp agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="cs_footer cs_style_1 position-relative overflow-hidden">
+    <div style="height:65px;"></div>
+    <div class="container">
+      <div class="cs_footer_main position-relative z-1">
+        <div class="row cs_gap_y_30">
+          <div class="col-xl-5 col-lg-4 col-md-7">
+            <div class="cs_footer_widget cs_text_widget">
+              <div class="cs_brand cs_mb_13"><img src="assets/img/LOGO-LACERDA-2.gif" alt="Lacerda Assessoria" style="height:65px;"></div>
+              <p class="cs_mb_27">Assessoria especializada em gestão empresarial, mentoria, jurídico e financeiro.</p>
+              <div class="d-flex flex-column">
+                <a href="mailto:contato@lacerdaassessoria.com.br" class="cs_support_link cs_white_color cs_semibold cs_mb_23">
+                  <span class="cs_support_icon cs_center cs_radius_100" style="background:#C9A96E;"><img src="assets/img/icons/envelopes.svg" alt="Email"></span>
+                  <span class="cs_support_text">contato@lacerdaassessoria.com.br</span>
+                </a>
+                <a href="https://wa.me/5585991578001" target="_blank" class="cs_support_link cs_white_color cs_semibold cs_phone">
+                  <span class="cs_support_icon cs_center cs_radius_100" style="background:#C9A96E;"><img src="assets/img/icons/phone-rotary.svg" alt="Phone"></span>
+                  <span class="cs_support_text">(85) 99157-8001</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-4">
+            <div class="cs_footer_widget cs_links_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Links Rápidos</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="about-us.html">Quem Somos</a></li>
+                <li><a href="contact.html">Contato</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-7">
+            <div class="cs_footer_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Nossos Serviços</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li>Show de Gestão</li>
+                <li>Mentoria</li>
+                <li>Jurídico</li>
+                <li>Financeiro</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-4">
+            <div class="cs_footer_widget">
+              <h3 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_mb_24">Atendimento</h3>
+              <ul class="cs_footer_medu cs_mp_0">
+                <li><a href="contact.html">Fale Conosco</a></li>
+                <li><a href="https://wa.me/5585991578001" target="_blank">WhatsApp</a></li>
+                <li><a href="term-condition.html">Termos de Uso</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height:40px;"></div>
+    <hr>
+    <div class="container">
+      <div class="cs_footer_bottom position-relative z-1">
+        <div class="cs_footer_text cs_white_color">Copyright &copy; <span class="cs_getting_year"></span> Lacerda Assessoria. Todos os direitos reservados.</div>
+        <div class="cs_social_links cs_style_1 cs_white_color">
+          <a href="#"><span class="cs_social_icon"><i class="fa-brands fa-facebook"></i></span><span>Facebook</span></a>
+          <a href="#"><span class="cs_social_icon"><i class="fa-brands fa-instagram"></i></span><span>Instagram</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="cs_scrollup cs_purple_bg cs_white_color cs_radius_100">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z" fill="currentColor"/></svg>
+  </button>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    var y = document.querySelector('.cs_getting_year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
