@@ -57,9 +57,15 @@
         line-height: 1.5 !important;
       }
 
-      /* FAQ — borda dourada */
-      .cs_task_management .cs_accordian.cs_type_1 {
-        border: 1.5px solid #C9A96E !important;
+      /* Header button — ouro com hover verde */
+      .cs_header_wpp_btn span {
+        color: #05111A !important;
+      }
+      .cs_header_wpp_btn::before {
+        background-color: #25D366 !important;
+      }
+      .cs_header_wpp_btn:hover span {
+        color: #ffffff !important;
       }
 
       .cs_breath_section {
@@ -271,8 +277,16 @@
       .cs_task_management .cs_pricing_table.cs_style_1.cs_type_2,
       .cs_task_management .cs_accordian.cs_type_1 {
         background-color: #091720 !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
         box-shadow: none !important;
+      }
+      .cs_task_management .cs_card.cs_style_1,
+      .cs_task_management .cs_card.cs_style_2,
+      .cs_task_management .cs_pricing_table.cs_style_1.cs_type_2 {
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      }
+      /* FAQ — borda dourada */
+      .cs_task_management .cs_accordian.cs_type_1 {
+        border: 1.5px solid #C9A96E !important;
       }
 
       .cs_task_management .cs_card.cs_style_1 h1,
@@ -384,7 +398,7 @@
         display: inline-block;
         padding: 16px 38px;
         background-color: #C9A96E;
-        color: #ffffff;
+        color: #05111A !important;
         font-size: 14px;
         font-weight: 700;
         text-decoration: none;
@@ -395,8 +409,11 @@
       }
       .cs_banner_btn:hover {
         background-color: #b8944e;
-        color: #ffffff;
+        color: #05111A !important;
         transform: translateY(-2px);
+      }
+      .cs_banner_btn span {
+        color: #05111A !important;
       }
       .cs_banner_prev,
       .cs_banner_next {
@@ -684,8 +701,8 @@
                 </ul>
               </div>
               <div class="cs_main_header_right">
-                <a href="https://wa.me/5585991578001" target="_blank" aria-label="WhatsApp" class="cs_btn cs_style_1 cs_fs_16 cs_semibold cs_purple_bg cs_white_color cs_accent_hover" style="padding: 13px 28px; font-size: 15px;">
-                <span>WhatsApp</span>
+                <a href="https://wa.me/5585991578001" target="_blank" aria-label="Fale conosco" class="cs_btn cs_style_1 cs_fs_16 cs_semibold cs_header_wpp_btn" style="padding: 13px 28px; font-size: 15px; background-color: #C9A96E;">
+                <span>Fale conosco</span>
                 </a>
               </div>
             </div>
@@ -703,7 +720,7 @@
           <div class="cs_banner_content">
             <h1 class="cs_banner_title">Transforme sua empresa com estratégia e resultado</h1>
             <p class="cs_banner_subtitle">Gestão, mentoria, jurídico e financeiro — tudo que seu negócio precisa em um só lugar.</p>
-            <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn">Quero Conhecer</a>
+            <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn"><span>Quero Conhecer</span></a>
           </div>
         </div>
       </div>
@@ -714,7 +731,7 @@
           <div class="cs_banner_content">
             <h1 class="cs_banner_title">Mentoria para líderes que querem crescer de verdade</h1>
             <p class="cs_banner_subtitle">Clareza, estratégia e acompanhamento próximo para acelerar seus resultados.</p>
-            <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn">Quero Ser Mentorado</a>
+            <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn"><span>Quero Ser Mentorado</span></a>
           </div>
         </div>
       </div>
@@ -725,7 +742,7 @@
           <div class="cs_banner_content">
             <h1 class="cs_banner_title">Proteção jurídica e financeira para o seu negócio</h1>
             <p class="cs_banner_subtitle">Segurança e solidez para crescer sem surpresas.</p>
-            <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn">Falar com Especialista</a>
+            <a href="https://wa.me/5585991578001" target="_blank" class="cs_banner_btn"><span>Falar com Especialista</span></a>
           </div>
         </div>
       </div>
@@ -1409,7 +1426,7 @@
             <div class="col-xl-5 col-lg-4 col-md-7">
               <div class="cs_footer_widget cs_text_widget">
                 <div class="cs_brand cs_mb_13 wow fadeInUp">
-                  <img src="assets/img/LOGO-LACERDA-2.gif" alt="Lacerda Assessoria" style="height: 65px;">
+                  <img src="assets/img/LOGO-LACERDA-1.gif" alt="Lacerda Assessoria" style="height: 65px;">
                 </div>
                 <p class="cs_mb_27">Assessoria especializada em gestão empresarial, mentoria, jurídico e financeiro. Transformamos negócios com estratégia, método e comprometimento real com os seus resultados.</p>
                 <div class="d-flex flex-column">
