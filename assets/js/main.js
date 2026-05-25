@@ -38,6 +38,7 @@
   });
 
   $(function () {
+    preloader();
     mainNav();
     stickyHeader();
     dynamicBackground();
@@ -65,9 +66,13 @@
    01. Preloader
   --------------------------------------------------------------*/
   function preloader() {
-    $('.cs_preloader').fadeOut();
-    $('cs_preloader_in').delay(150).fadeOut('slow');
+    $('.cs_preloader').addClass('cs_preloader_hide');
+    setTimeout(function () {
+      $('.cs_preloader').remove();
+    }, 300);
   }
+
+  setTimeout(preloader, 1200);
 
   /*--------------------------------------------------------------
    02. Mobile Menu
