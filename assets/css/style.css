@@ -3182,7 +3182,7 @@ hr {
     color: var(--accent-color);
   }
   .cs_site_header.cs_style_1.cs_type_1 .cs_nav_list a::before {
-    background-color: var(--purple-color);
+    background-color: var(--accent-color);
   }
   .cs_site_header.cs_style_1.cs_type_2 .cs_nav_list a:hover {
     color: var(--white-color);
