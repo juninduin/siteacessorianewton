@@ -3540,6 +3540,38 @@ hr {
 .cs_footer.cs_style_1.cs_type_2 a:hover {
   color: var(--accent-color);
 }
+.cs_footer.cs_style_1.cs_type_2 {
+  background-color: #ffffff;
+}
+.cs_footer.cs_style_1.cs_type_2 p,
+.cs_footer.cs_style_1.cs_type_2 .cs_footer_medu a,
+.cs_footer.cs_style_1.cs_type_2 .cs_footer_medu li,
+.cs_footer.cs_style_1.cs_type_2 .cs_footer_text,
+.cs_footer.cs_style_1.cs_type_2 .cs_support_text,
+.cs_footer.cs_style_1.cs_type_2 .cs_social_links a,
+.cs_footer.cs_style_1.cs_type_2 .cs_social_links span {
+  color: #475569 !important;
+}
+.cs_footer.cs_style_1.cs_type_2 .cs_white_color,
+.cs_footer.cs_style_1.cs_type_2 .cs_footer_widget_title,
+.cs_footer.cs_style_1.cs_type_2 .cs_support_link,
+.cs_footer.cs_style_1.cs_type_2 .cs_footer_text {
+  color: #0f172a !important;
+}
+.cs_footer.cs_style_1.cs_type_2 hr {
+  border-color: #e2e8f0;
+}
+.cs_footer.cs_style_1.cs_type_2 .cs_ellipse_1,
+.cs_footer.cs_style_1.cs_type_2 .cs_ellipse_2,
+.cs_footer.cs_style_1.cs_type_2 .cs_ellipse_3,
+.cs_footer.cs_style_1.cs_type_2 .cs_ellipse_4,
+.cs_footer.cs_style_1.cs_type_2 .cs_vector_1 {
+  display: none;
+}
+.cs_footer.cs_style_1 .cs_support_link .cs_support_icon,
+.cs_footer.cs_style_1 .cs_support_link.cs_phone .cs_support_icon {
+  background-color: #C9A96E;
+}
 .cs_footer.cs_style_1.cs_type_2 .cs_ellipse_1 {
   width: 425px;
   height: 246px;
