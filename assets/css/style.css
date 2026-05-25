@@ -2275,6 +2275,20 @@ hr {
   transform: translateX(20px);
 }
 
+.cs_header_wpp_btn {
+  background-color: #C9A96E;
+  color: #05111A;
+}
+.cs_header_wpp_btn span {
+  color: #05111A !important;
+}
+.cs_header_wpp_btn::before {
+  background-color: #b8944e !important;
+}
+.cs_header_wpp_btn:hover span {
+  color: #ffffff !important;
+}
+
 .cs_btn.cs_style_2 {
   display: inline-flex;
   align-items: center;
