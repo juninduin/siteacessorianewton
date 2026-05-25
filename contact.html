@@ -67,27 +67,48 @@
     .contact-form-card h2 { color: #fff; font-size: 26px; font-weight: 700; margin-bottom: 10px; }
 
     /* Inputs */
-    .contact-input {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px; color: #fff; padding: 14px 18px; width: 100%;
-      font-size: 15px; margin-bottom: 16px; outline: none; transition: border 0.3s;
-      display: block; font-family: inherit;
+    .contact-input,
+    .cs_task_management input.contact-input,
+    .cs_task_management textarea.contact-input,
+    .cs_task_management select.contact-input {
+      background-color: #1a2d3e !important;
+      -webkit-appearance: none;
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.15) !important;
+      border-radius: 10px;
+      color: #fff !important;
+      padding: 14px 18px; width: 100%;
+      font-size: 15px; margin-bottom: 20px; outline: none;
+      transition: border 0.3s, background 0.3s;
+      display: block; font-family: inherit; color-scheme: dark;
     }
-    .contact-input:focus { border-color: #C9A96E; background: rgba(255,255,255,0.07); }
-    .contact-input::placeholder { color: rgba(255,255,255,0.38); }
+    .cs_task_management input.contact-input:focus,
+    .cs_task_management textarea.contact-input:focus,
+    .cs_task_management select.contact-input:focus { border-color: #C9A96E !important; background-color: #1e3347 !important; }
+    .cs_task_management input.contact-input::placeholder,
+    .cs_task_management textarea.contact-input::placeholder { color: rgba(255,255,255,0.35) !important; }
+    .contact-input:-webkit-autofill,
+    .contact-input:-webkit-autofill:hover,
+    .contact-input:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0px 1000px #1a2d3e inset !important;
+      -webkit-text-fill-color: #fff !important;
+      border-color: rgba(255,255,255,0.15) !important;
+    }
     textarea.contact-input { resize: vertical; min-height: 140px; }
     select.contact-input option { background: #0d1a24; color: #fff; }
-    .input-label {
-      color: rgba(255,255,255,0.55); font-size: 12px; font-weight: 600;
-      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; display: block;
+    .contact-form-card .input-label,
+    .contact-info-card .input-label {
+      color: rgba(255,255,255,0.55); font-size: 11px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; display: block;
     }
     .contact-submit {
-      background: #C9A96E; color: #fff; border: none; padding: 17px 40px;
-      border-radius: 10px; font-weight: 700; font-size: 15px; letter-spacing: 1px;
-      text-transform: uppercase; cursor: pointer; transition: background 0.3s, transform 0.2s;
+      background: linear-gradient(135deg, #C9A96E 0%, #b8944e 100%);
+      color: #fff; border: none; padding: 18px 40px;
+      border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 1.5px;
+      text-transform: uppercase; cursor: pointer; transition: opacity 0.3s, transform 0.2s;
       width: 100%; font-family: inherit;
     }
-    .contact-submit:hover { background: #b8944e; transform: translateY(-2px); }
+    .contact-submit:hover { opacity: 0.88; transform: translateY(-2px); }
 
     /* ── Card de informacoes ── */
     .contact-info-card {
@@ -215,7 +236,7 @@
           <div class="contact-form-card h-100">
             <h2>Envie sua mensagem</h2>
             <div class="divider-gold"></div>
-            <form id="contactForm" novalidate>
+            <form id="contactForm" novalidate autocomplete="off">
               <div class="row g-0">
                 <div class="col-md-6 pe-md-2">
                   <label class="input-label" for="cf-name">Nome completo</label>
@@ -250,6 +271,7 @@
               <button type="submit" class="contact-submit">
                 <i class="fa-solid fa-paper-plane" style="margin-right: 10px;"></i>Enviar Mensagem
               </button>
+
             </form>
           </div>
         </div>
