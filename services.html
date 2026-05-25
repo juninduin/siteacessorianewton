@@ -313,8 +313,26 @@
       line-height: 1.75;
       margin: 0;
     }
+    .sv_steps_row {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+    .sv_steps_row > .sv_step_card {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+    .sv_step_arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      flex-shrink: 0;
+    }
     @media (max-width: 991px) {
       .sv_how_section { padding: 70px 0; }
+      .sv_steps_row { flex-direction: column; gap: 24px; }
+      .sv_step_arrow { display: none; }
     }
 
     /* ── CTA Final ───────────────────────────────────────────── */
@@ -670,52 +688,46 @@
         <p class="sv_how_section_sub">Um processo claro e estruturado que garante resultados reais para a sua empresa.</p>
       </div>
 
-      <div class="row g-4 align-items-stretch">
+      <div class="sv_steps_row">
 
         <!-- Passo 01 — Diagnóstico -->
-        <div class="col-lg-4 col-md-12 d-flex">
-          <div class="sv_step_card w-100">
-            <span class="sv_step_number">01</span>
-            <div class="sv_step_icon_wrap">
-              <i class="fa-solid fa-magnifying-glass-chart"></i>
-            </div>
-            <h3 class="sv_step_title">Diagnóstico</h3>
-            <p class="sv_step_desc">Mergulhamos na realidade da sua empresa. Mapeamos processos, identificamos gargalos e oportunidades para entender exatamente onde atuar com maior impacto.</p>
+        <div class="sv_step_card">
+          <span class="sv_step_number">01</span>
+          <div class="sv_step_icon_wrap">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
           </div>
+          <h3 class="sv_step_title">Diagnóstico</h3>
+          <p class="sv_step_desc">Mergulhamos na realidade da sua empresa. Mapeamos processos, identificamos gargalos e oportunidades para entender exatamente onde atuar com maior impacto.</p>
         </div>
 
         <!-- Seta conectora — desktop -->
-        <div class="col-lg-auto d-none d-lg-flex align-items-center justify-content-center px-0">
+        <div class="sv_step_arrow">
           <i class="fa-solid fa-arrow-right" style="font-size:22px;color:rgba(201,169,110,0.30);"></i>
         </div>
 
         <!-- Passo 02 — Planejamento -->
-        <div class="col-lg-4 col-md-12 d-flex">
-          <div class="sv_step_card w-100">
-            <span class="sv_step_number">02</span>
-            <div class="sv_step_icon_wrap">
-              <i class="fa-solid fa-pen-ruler"></i>
-            </div>
-            <h3 class="sv_step_title">Planejamento</h3>
-            <p class="sv_step_desc">Com base no diagnóstico, desenhamos um plano de ação personalizado — com metas, prazos e responsáveis definidos — alinhado ao seu momento e objetivos de negócio.</p>
+        <div class="sv_step_card">
+          <span class="sv_step_number">02</span>
+          <div class="sv_step_icon_wrap">
+            <i class="fa-solid fa-pen-ruler"></i>
           </div>
+          <h3 class="sv_step_title">Planejamento</h3>
+          <p class="sv_step_desc">Com base no diagnóstico, desenhamos um plano de ação personalizado — com metas, prazos e responsáveis definidos — alinhado ao seu momento e objetivos de negócio.</p>
         </div>
 
         <!-- Seta conectora — desktop -->
-        <div class="col-lg-auto d-none d-lg-flex align-items-center justify-content-center px-0">
+        <div class="sv_step_arrow">
           <i class="fa-solid fa-arrow-right" style="font-size:22px;color:rgba(201,169,110,0.30);"></i>
         </div>
 
         <!-- Passo 03 — Implementação -->
-        <div class="col-lg-4 col-md-12 d-flex">
-          <div class="sv_step_card w-100">
-            <span class="sv_step_number">03</span>
-            <div class="sv_step_icon_wrap">
-              <i class="fa-solid fa-rocket"></i>
-            </div>
-            <h3 class="sv_step_title">Implementação</h3>
-            <p class="sv_step_desc">Colocamos o plano em prática lado a lado com o seu time. Monitoramos resultados, ajustamos rotas e garantimos que as mudanças gerem crescimento consistente e duradouro.</p>
+        <div class="sv_step_card">
+          <span class="sv_step_number">03</span>
+          <div class="sv_step_icon_wrap">
+            <i class="fa-solid fa-rocket"></i>
           </div>
+          <h3 class="sv_step_title">Implementação</h3>
+          <p class="sv_step_desc">Colocamos o plano em prática lado a lado com o seu time. Monitoramos resultados, ajustamos rotas e garantimos que as mudanças gerem crescimento consistente e duradouro.</p>
         </div>
 
       </div>
